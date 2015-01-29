@@ -58,7 +58,7 @@
                 </ul>
             </div>
         </section>
-        
+
         <section class="slide title">
             <h1>Let's get started!</h1>
         </section>
@@ -199,7 +199,7 @@
             <p>Let's head over there and take a look and try to point out the differences.</p>
         </section>
 
-        <section class="slide">
+        <!-- <section class="slide">
             <h2>One more concept: mobile-first design</h2>
             <p>We used to design with only a desktop in mind, this has changed with smartphones and tablets, giving rise to "mobile first design"</p>
             <p>What is it?</p>
@@ -213,80 +213,99 @@
             <blockquote>"When you lose 80% of your screen real estate, all the extraneous bloat that tends to finds its way onto large screen designs doesn’t seem so attractive or necessary anymore. Mobile provides a great opportunity to reevaluate what content/functionality is necessary and gives us an opportunity to strip away the cruft across the board (and not just for mobile users either). These constraints also encourage ease-of-use, intuitiveness and speed as essential ingredients to a good user experience."
             </blockquote>
             <cite><a href="http://bradfrostweb.com/blog/mobile/the-many-faces-of-mobile-first/">Brad Frost, The Many Faces of Mobile First</a></cite>
-        </section>
+        </section> -->
 
         <section class="slide title">
-            <h1>Crash Course in HTML5</h1>
-        </section>
-
-        <section class="slide">
-            <h2>A bit of background info</h2>
-            <p>HTML5, or "HyperText Markup Language" is what we wrap the <strong>content</strong> of our site in. It's the only thing you truly need to have a website.</p>
-            <p>However, it takes on default styles of the browser. Uuuuugly. We'll learn how to override these styles in a bit with CSS, which is where we do all our cosmetic changes.</p>
-            <p>For now, let's open up our starter HTML file, <strong>html-ex1.html</strong> in your <strong>"examples" folder</strong></p>
-        </section>
-
-        <section class="slide">
-            <h2>This is it!</h2>
-            <p>This is everthing you need for your HTML file to work properly in a browser.</p>
-            <p>NOTE: those things inside of <code>&lt;!-- --&gt;</code> are comments!</p> 
-            <p>Go ahead and type anything inside the <code>&#60;body&#62;&#60;&#47;body&#62;</code> tags</p>
-            <p>Then refresh your browser's page to see the results!</p>
+            <h1>Crash Course in HTML</h1>
         </section>
 
         <section class="slide" data-markdown>
-            ##Tags/Elements
+## HTML Overview / Review
 
-            Those things with the angled brackets are called HTML tags, they tell the browser what kind of content each of the bits of your website is. The tags plus the content inside of them are an HTML "element".
+HTML (HyperText Markup Language) is used to wrap the contents and assign meaning to parts of your web document using **tags** to create HTML **elements**. HTML5 is the latest version of HTML.
 
-            There's almost always an "opening" tag and a "closing" one. The closing tag has a forward slash. Example: opening paragraph tag: `&#60;p&#62;` closing paragraph tag: `&#60;&#47;p&#62;`
+Example:
 
-            You close tags in the reverse order in which they appear, just like in math. For example, in this code block:
+```xml
+&lt;p>This is a paragraph.&lt;/p>
+```
 
-            ```xml
-            &lt;span&gt;&lt;a href=&quot;#&quot;&gt;&lt;p&gt;paragraph wrapped in a link wrapped in a span&lt;/p&gt;&lt;/a&gt;&lt;/span&gt;
-            ```
-            The span opens, the `a` (a link or "anchor" tag) opens, then the paragraph opens. The paragraph closes, the link closes, then the span closes.
+The angled brackets (`< >`) represent HTML tags; they tell the browser what *kind* of content each bit is. The tags *plus* the content inside of them are HTML *elements*. Almost all elements have an "opening" tag and a "closing" tag. The closing tag has a forward slash (`/`). Remember to close tags in reverse order. 
+
+Example:
+
+```xml
+&lt;p&gt;Paragraph with a &lt;a href=&quot;#&quot;&gt;link&lt;/a&gt;.&lt;/p&gt;
+```
         </section>
 
-        <section class="slide">
-            <h2>Important Note!</h2>
-            <p>Remember, HTML is about content, it has default browser styles but it is not for styling your document. That's what CSS is for, and we need to keep the both separate!</p>
-            <p>So let's review what we've learned so far and learn what some common HTML elements are.</p>
-            <p>Open up our second HTML example file, <strong>html-ex2.html</strong></p>
+        <section class="slide" data-markdown>
+## What are all the elements?
+
+We'd be here all day if we had to go over every single HTML & HTML5 element - there's so many!
+
+[Here's a handy list](https://developer.mozilla.org/en/docs/Web/Guide/HTML/HTML5/HTML5_element_list). The ones with the little orange "5" beside them are new in HTML5.
+
+More resources:
+
+* [http://www.sitepoint.com/web-foundations/elements/](http://www.sitepoint.com/web-foundations/elements/)
+* [http://websitesetup.org/html5-cheat-sheet/](http://websitesetup.org/html5-cheat-sheet/)
+* [html-elements.txt](project/examples/html-elements.txt), located in your **projects > examples** folder 
+
+Take a look!
         </section>
 
-        <section class="slide">
-            <h2>Siblings, Parents, and Children</h2>
-            <p>Elements can have "relationships" with other elements in the HTML document.</p>
-            <p>If you put one element inside of another, the element on the outside is the <strong>"parent"</strong> element, while the one inside is the <strong>"child"</strong> element. You can have many child elements inside of a parent, but they all only have one parent.</p>
-            <p>Two or more elements that are both children of the <em>same</em> element are called <strong>"siblings"</strong> - they are on the same level as each other. For example the <code>&lt;head&gt;&lt;/head&gt;</code> and <code>&lt;body&gt;&lt;/body&gt;</code>elements in every HTML document</p>
+        <section class="slide" data-markdown>
+## HTML Element Relationships
+
+Elements have relationships with other elements in the HTML document that follow a family tree-like structure with branches of descendants, siblings, parents and children.
+
+![](framework/img/workshop/dom-tree.png)
         </section>
-        <section class="slide">
-            <h2>Parent, Child, Siblings Example</h2>
-            <pre><code>
-                &lt;body&gt; &lt;!--this body element is a parent to the div element and normally a child of the html element--&gt;
-                &lt;div&gt; &lt;!--this div is a child of the body element, and a parent of the p elements--&gt;
-                &lt;p&gt;I am a sibling of the p below me! I am also a child of the div.&lt;/p&gt;
-                &lt;p&gt;I am a sibling of the p above me! I am also a child of the div&lt;/p&gt;
-                &lt;/div&gt;
-                &lt;/body&gt;
-            </code></pre>
-            <p>Notice the way that the tags are indented, so that you can easily read the HTML and see what is a child, parent, and sibling of what elements. This will come in handy later, so keep up this way of indenting (2 spaces or one tab)</p>
-        </section>
-        <section class="slide">
-            <h2>HTML Element Relationships:</h2>
-            <p>Don't worry about what each of these are, we'll go over that very soon. Just look at the structure.</p>
-            <img src="framework/img/DOM_tree.png" />
+        
+        <section class="slide" data-markdown>
+##Let's look at some code!
+
+Inside of the folder you downloaded today, there are several folders that contain different content. 
+
+```
+llc-responsive-design-master
+    |-- framework // Contains files needed for slide presentation. Do not edit!
+    |-- project // Contains exercise files for today's workshop.
+    |-- index.html // This is the file you're viewing right now (slides)!
+```
+
+In Sublime Text, let's open [html-ex1.html](html-ex1.html) in your **project > examples** folder, to see this family tree in HTML *markup* and to set up our work flow for the day.
+
+Open Sublime Text and go to **File > Open**.
+
+![](http://cl.ly/image/103C1W2s2T1H/Image%202015-01-28%20at%209.51.34%20PM.png)
+
+Navigate to the **project** folder (in the folder you downloaded with today's slides). With the entire folder selected, select Open.  
+
+OR go to your Finder/Windows Explorer, click once and drag & drop the folder into Sublime Text.
+
+The folder and included files will appear in Sublime's side bar. Double click on **html-ex1.html** to open it.
         </section>
 
-        <section class="slide">
-            <h2>What are all the Elements?</h2>
-            <p>We'd be here all day if we had to go over every single HTML5 element - there's so many!</p>
-            <p><a href="https://developer.mozilla.org/en/docs/Web/Guide/HTML/HTML5/HTML5_element_list" alt="HTML5 element list">Here's a handy list of all the ones in use today</a>. The ones with the little orange "5" beside them are new for HTML5.</p>
-            <p>Don't worry, you don't by any means need to memorize all of these!</p>
-            <p>For your reference, I've made a list of the most commonly used tags in the <strong>examples folder</strong> called <strong>html-elements.txt</strong>. Take a look!</p>
+        <section class="slide" data-markdown>
+## Parent, Child, Siblings & Indentation
+
+Notice the way that the tags are indented, so that you can easily read the HTML and see what is a child, parent, and sibling of what elements. This will come in handy later, so keep up this way of indenting.
+
+```xml
+&lt;body&gt; &lt;!--this body element is a parent to the div element --&gt;
+    &lt;div&gt; &lt;!--this div is a child of the body element, and a parent of the p elements--&gt;
+        &lt;p&gt;I am a sibling of the p below me! I am also a child of the div.&lt;/p&gt;
+        &lt;p&gt;I am a sibling of the p above me! I am also a child of the div&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+```
+
         </section>
+        
+
+        
 
         <section class="slide">
             <h2>One more thing...HTML Attributes!</h2>
