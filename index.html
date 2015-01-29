@@ -253,31 +253,6 @@ Elements have relationships with other elements in the HTML document that follow
 		</section>
 		
 		<section class="slide" data-markdown>
-##Let's look at some code!
-
-Inside of the folder you downloaded today, there are several folders that contain different content. 
-
-```
-llc-responsive-design-master
-	|-- framework // Contains files needed for slide presentation. Do not edit!
-	|-- project // Contains exercise files for today's workshop.
-	|-- index.html // This is the file you're viewing right now (slides)!
-```
-
-In Sublime Text, let's open [html-ex1.html](html-ex1.html) in your **project > examples** folder, to see this family tree in HTML *markup* and to set up our work flow for the day.
-
-Open Sublime Text and go to **File > Open**.
-
-![](http://cl.ly/image/103C1W2s2T1H/Image%202015-01-28%20at%209.51.34%20PM.png)
-
-Navigate to the **project** folder (in the folder you downloaded with today's slides). With the entire folder selected, select Open.  
-
-OR go to your Finder/Windows Explorer, click once and drag & drop the folder into Sublime Text.
-
-The folder and included files will appear in Sublime's side bar. Double click on **html-ex1.html** to open it.
-		</section>
-
-		<section class="slide" data-markdown>
 ## Parent, Child, Siblings & Indentation
 
 Notice the way that the tags are indented, so that you can easily read the HTML and see what is a child, parent, and sibling of what elements. This will come in handy later, so keep up this way of indenting.
@@ -290,32 +265,68 @@ Notice the way that the tags are indented, so that you can easily read the HTML 
 	&lt;/div&gt;
 &lt;/body&gt;
 ```
-
 		</section>
-		
 
-		
+		<section class="slide" data-markdown>
+## One more thing...HTML Attributes!
+
+Elements can also include **attributes**. There's also lots of attributes, but for today, here's a few you'll need: 
+
+*   `class` - used mostly for styling
+* 	`id` - used mostly for styling and in-page links
+*   `href` - used in the opening anchor tag, it contains a URL for the link
+*   `alt` - used as alternate text if the website can't represent the content or a screen reader is being used
+*   `src` - meaning source, used mostly for images, gives the url path for the embedded content
+
+[Here's another handy list](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes) of all of them!
+		</section>
+
+		<section class="slide" data-markdown>
+##Enough talk, let's code!
+
+Inside of the folder you downloaded today, there are several folders that contain different content. 
+
+```
+llc-responsive-design-master
+	|-- framework // Contains files needed for slide presentation. Do not edit!
+	|-- project // Contains exercise files for today's workshop.
+	|-- index.html // This is the file you're viewing right now (slides)!
+```
+
+In Sublime Text, let's open [index.html](project/indes.html) in your **project** folder and make some changes.
+
+Open Sublime Text and go to **File > Open**.
+
+![](http://cl.ly/image/103C1W2s2T1H/Image%202015-01-28%20at%209.51.34%20PM.png)
+
+Navigate to the **project** folder (in the folder you downloaded with today's slides). With the entire folder selected, select Open.  
+
+OR go to your Finder/Windows Explorer, click once and drag & drop the folder into Sublime Text.
+
+The folder and included files will appear in Sublime's side bar. Double click on **html-ex1.html** to open it.
+		</section>
 
 		<section class="slide">
-			<h2>One more thing...HTML Attributes!</h2>
-			<p>Elements can have things called "attributes". There's also lots of attributes, but don't worry there's only a few you'll need to know for this workshop:</p>
+			<h2>Exercise #1 (15mins)</h2>
+
+			<p>We’re still focusing on the HTML so don’t worry about how it looks right now.  Take some time to personalize your content but don’t add or change any HTML tags just yet!</p>
+
+			<p>Some content to update:</p>
+
 			<ul>
-				<li>"class" or "id", used mostly for styling</li>
-				<li>"href", used in the opening anchor tag, it contains a URL for the link</li>
-				<li>"alt", used as alternate text if the website can't represent the content or a screen reader is being used</li>
-				<li>"src", meaning source, used mostly for images, gives the url path for the embedded content</li>
+				<li>Header section: name &amp; tagline</li>
+				<li>About Me / Profile blurb &amp; image</li>
+				<li>Work Experience</li>
+				<li>Pretty much all the content on the page except the navigation!</li>
 			</ul>
-			<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes" alt="List of HTML attributes">Here's another handy list</a> of all of them!</p>
-		</section>
 
-		<section class="slide">
-			<h2>Enough talk, more code!</h2>
-			<p>Now that we've gone over a lot, let's go through an HTML document together and practice what we've learned!</p>
-			<p>Open up <strong>html-ex3.html</strong> from your examples folder.</p>
+			<div class="presenter-notes">
+				<p>Let the class know that they are not expected to update all the content.  Just enough to get a handle on updating the HTML.</p>
+			</div>
 		</section>
-
+		
 		<section class="slide title">
-			<h1>Goodbye Defaults, Hello CSS!</h1>
+			<h1>Goodbye Defaults,<br> Hello CSS!</h1>
 		</section>
 
 		<section class="slide">
