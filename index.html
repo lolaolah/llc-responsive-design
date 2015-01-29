@@ -273,7 +273,7 @@ Notice the way that the tags are indented, so that you can easily read the HTML 
 Elements can also include **attributes**. There's also lots of attributes, but for today, here's a few you'll need: 
 
 *   `class` - used mostly for styling
-* 	`id` - used mostly for styling and in-page links
+*   `id` - used mostly for styling and in-page links
 *   `href` - used in the opening anchor tag, it contains a URL for the link
 *   `alt` - used as alternate text if the website can't represent the content or a screen reader is being used
 *   `src` - meaning source, used mostly for images, gives the url path for the embedded content
@@ -329,69 +329,45 @@ The folder and included files will appear in Sublime's side bar. Double click on
 			<h1>Goodbye Defaults,<br> Hello CSS!</h1>
 		</section>
 
-		<section class="slide">
-			<h2>Intro to CSS</h2>
-			<p>CSS stands for "Cascading Style Sheets"</p>
-			<p>CSS is what we use to tell the browser how to style our HTML document - it's for making things pretty <strong>and usable/accessible</strong></p>
-			<p>Just like HTML, CSS has it's own way of writing it that we have to learn. It looks a little something like this:</p>
-			<textarea class="snippet" data-subject="#intro-css">background-color: lightblue;
-				font-family: "Times New Roman", serif;</textarea>
-				<div id="intro-css" class="example">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt sint beatae dolor dolorum aliquid quis explicabo vitae numquam, quas illo dolore molestiae ratione, perferendis, deleniti nemo ea voluptatibus! Quibusdam.</p>
-				</div>
-			</section>
+		<section class="slide" data-markdown>
+##CSS Overview
 
-			<section class="slide" data-markdown>
-				##CSS and HTML
+CSS stands for "Cascading Style Sheets" and is used to style the HTML elements by overriding the default styles or adding new styles.
 
-				A CSS document is made up of a bunch of lines of code, or "rules", that keep referring back to the HTML elements in our HTML document
+A CSS document is made up of a bunch of lines of code, or "rules", that keep referring back to the HTML elements in our HTML document. These rules are always made up of a **selector** and one or more **declarations**. Each declaration has a **property** and a **value**.
 
-				These rules are always made up of a **selector** and one or more **declarations**. Each declaration has a **property** and a **value**.
+```css
+selector {
+	property: value;
+}
+```
 
-				```css
-				selector {
-				property: value;
-			}
-			```
+The **selector** specifies which element(s) to apply the styling to. The **declaration** contains what styles to apply. 
 
-			The **selector** tells what element(s) to apply the styling to. The **declaration** contains what styles to apply. 
-			```css
-			h1 {
-			color: red;
-		}
-		``` 
+```css
+h1 {
+	color: red;
+}
+``` 
 		</section>
 
 		<section class="slide">
-			<h2>An Example</h2>
-			<pre><code>
-				body {
-				background-color: pink;
-				color: white;
-				font-family: Helvetica, Arial, sans-serif;
-				font-size: 16px;
-			}
-
-			p {
-			border: 1px solid #333;
-			color: #000;
-			font-weight: italic;
-		}
-		</code></pre>
-		<p>Here we have two selectors (body and p) and they each have their own sets of declatarions inside the { } brackets. The body selector has four declarations, while the p selector has three.</p>
+			<h2>CSS Syntax</h2>
+<pre><code>div {
+	border: 3px solid #333;
+	background-color: lightblue;
+}
+</code></pre>
+			<p>Notice that property & values are separated by a <em>colon</em> and each declaration ends in a <em>semi-colon</em>. These are necessary for the browser to understand your styles. The colon and semi-colon are used here a lot like they are in English!</p> 
+			<p>Although you could write all the styles on one line, that's hard to read, so always format your CSS rules this way, with each declaration on its own line.</p>
 		</section>
-
+		
 		<section class="slide">
-			<h2>An Example cont.</h2>
-			<pre><code>
-				div {
-				border: 3px solid #333;
-				background-color: lightblue;
-			}
-		</code></pre>
-		<p>Notice that each declaration ends in a semi-colon, and starts on a new line. In addition each property ends in a colon. These are necessary for the browser to understand your styles. The colon and semi-colon are used here a lot like they are in English!</p> 
-		<p>Although you could write all the styles on one line, that's hard to read, so always format your CSS rules this way</p>
+			<h2>CSS Properties</h2>
+			<p>If you thought there were a lot of HTML elements, there are even more CSS properties!</p>
+			<p>Here's a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference" alt="list of CSS properties">great resource</a> for all of them.</p>
 		</section>
+
 
 		<section class="slide">
 			<h2>Writing CSS - Where Does it Go?</h2>
@@ -400,11 +376,7 @@ The folder and included files will appear in Sublime's side bar. Double click on
 			<p><strong>NOTE:</strong> We've already seen inline styles used in our examples with the "style" attribute, and internal CSS is just CSS rules all together inside the head element, using a style tag.</p>
 		</section>
 
-		<section class="slide">
-			<h2>CSS Properties</h2>
-			<p>If you thought there were a lot of HTML elements, there are even more CSS properties!</p>
-			<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference" alt="list of CSS properties">Here's a great resource on all of them.</a>
-		</section>
+		
 
 		<section class="slide">
 			<h2>Let's make HTML and CSS documents and link them!</h2>
