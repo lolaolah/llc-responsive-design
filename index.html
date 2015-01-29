@@ -122,12 +122,12 @@
         </section>
 
         <section class="slide title">
-            <h1>What is Responsive Design?</h1>
+            <h1>What is <br> Responsive Design?</h1>
         </section>
 
         <section class="slide">
-            <h2>Different types of web design:</h2>
-            <p>In order to understand mobile/responsive web design and development, we have to understand what our options are:</p>
+            <h2>Different types of web design</h2>
+            <p>Flexible websites are not at totally new concepts so in order to understand responsive web design and development better, we have to understand what the options are:</p>
             <ul>
                 <li>Fixed</li>
                 <li>Fluid</li>
@@ -136,68 +136,57 @@
             </ul>
         </section>
 
-        <section class="slide">
-            <h2>Fixed web design</h2>
-            <ul>
-                <li class="delayed">What it sounds like!</li>
-                <li class="delayed">Everything has a set width (eg. 960px). A holdover from before mobile "smart" devices were common.</li>
-                <li class="delayed">Resize the browser, or look at it on a mobile screen and nothing will change</li>
-                <li class="delayed">You'll need an "m dot" site if you want something mobile friendly :( </li>
-            </ul>
-            <p class="delayed">Example: <a href="http://toronto.ca">toronto.ca</a> </br>(open this up on your phone or resize the browser)</p>
-            <p class="delayed">Example: <a href="https://m.facebook.com/">m.facebook.com</a> vs. <a href="https://facebook.com">facebook.com</a></p>
-        </section>
+        <section class="slide" data-markdown>
+##Fixed Web Design
 
-        <section class="slide">
-            <h2>Fluid web design</h2>
-            <ul>
-                <li class="delayed">Based on percentages</li>
-                <li class="delayed">Each block of content takes up some percentage of the page, for example a sidebar with a width of ~30% and main section with a width of ~70%</li>
-                <li class="delayed">When you resize the browser, the blocks of content will resize relative to the size of the page (aka the "viewport")</li>
-                <li class="delayed"><strong>Not</strong> made for specific devices. Just reducing the width of your content is usually not the best experience for smaller screens and mobile devices, doesn't give us enough control.</li>
-            </ul>
-            <p class="delayed">Example: <a href="http://alistapart.com/d/responsive-web-design/ex/ex-site-flexible.html">http://alistapart.com/d/responsive-web-design/ex/ex-site-flexible.html</a></p>
+*   Everything has a set width (eg. 960px). Popular method before mobile browsing became commonplace.
+*   On a mobile screen, it is zoomed out to the size of the device making the content really small. 
+*   Will need a separate site, usually an "m dot" site to make something mobile friendly :(
 
-            <p class="delayed"><a href="http://alistapart.com/article/responsive-web-design](http://alistapart.com/article/responsive-web-design">Full article here</a>. Also, the article that started the Responsive Design movement.</p>
-        </section>
+Try opening these sites on your phone or resize the browser:  
 
-        <section class="slide">
-            <h2>Adaptive web design</h2>
-            <ul>
-                <li class="delayed">Uses a series of fixed layouts</li>
-                <li class="delayed">Uses <em>media queries</em> to target specific viewport sizes (more on this later)</li>
-                <li class="delayed">The content itself changes</li>
-                <li class="delayed">Best to think of it as a <em>set</em> of fixed layouts that are invoked in response to the device size</li>
-            </ul>
-            <p class="delayed">Example: <a href="http://goo.gl/lUyNrZ" alt="Screaming Frog website">goo.gl/lUyNrZ</a></p>
-        </section>
-
-        <section class="slide">
-            <h2>And finally...responsive web design!</h2>
-            <ul>
-                <li class="delayed">Uses a fluid grid layout to get that sweet free adaptability</li>
-                <li class="delayed"><em>Also</em> uses media queries to change the look and feel depending on device size</li>
-                <li class="delayed">Page components are <strong>flexible</strong> in between common device sizes and designed with <strong>breakpoints</strong> to present content in the most suitable way for common device sizes.</li>
-                <li class="delayed">Can keep content layout similar and/or move/hide content.</li>
-                <p class="delayed">Example: 
-                    <a href="http://goo.gl/JNfJ5X">goo.gl/JNfJ5X</a><br><br>
-                    What do you notice about the changing layout?
-                </p>
-            </ul>
+[toronto.ca](http://toronto.ca)  
+[m.facebook.com](https://m.facebook.com/)  
+[facebook.com](https://facebook.com)
         </section>
 
         <section class="slide" data-markdown>
-            ##Why use responsive design?
+##Fluid web design
+*   Based on percentage widths, each block of content takes up a percentage of the page. (e.g. a sidebar with a width of 30% and main section with a width of ~70%)
+*   When you resize the browser, the blocks will resize *relative* to the size of the page (aka the "viewport").
+*   Not optimized for smaller screens & mobile devices.
 
-            One site can adapt gracefully between different resolutions & device sizes and respond accordingly to the context being viewed by the user. Fluid designs also allow for a consistent multi-screen experience while maintaining one code base.
+Example: [http://alistapart.com/d/responsive-web-design/ex/ex-site-flexible.html](http://alistapart.com/d/responsive-web-design/ex/ex-site-flexible.html)
+
+[Full article here](http://alistapart.com/article/responsive-web-design). Also, the article that started the Responsive Design movement.
         </section>
 
-        <section class="slide">
-            <h1>Recap</h1>
-            <h2>This website illustrates all the differences we just discussed:</h2>
-            <p><a href="http://liquidapsive.com/" alt="Liquidapsive site">liquidapsive.com</a></p>
-            <p>Let's head over there and take a look and try to point out the differences.</p>
+        <section class="slide" data-markdown>
+## Adaptive web design
+
+*   Uses a series of fixed layouts.
+*   Uses _media queries_ to target specific viewport sizes (more on this later).
+*   The content itself changes.
+*   Best to think of it as a _set_ of fixed layouts that are invoked in response to the device size.
+
+Example: [goo.gl/lUyNrZ](http://goo.gl/lUyNrZ)
         </section>
+
+        <section class="slide" data-markdown>
+            ## And finally...responsive web design!
+
+*   Uses a fluid grid layout.
+*   Unlike fluid designs, it _also_ uses media queries to change the look and feel depending on device size.
+*   Page components are **flexible** in between common device sizes and designed with **breakpoints** to present content in the most suitable way for common device sizes.
+*   Can keep content layout similar and/or move/hide content.
+
+Example: [goo.gl/JNfJ5X](http://goo.gl/JNfJ5X)
+
+What do you notice about the changing layout?
+
+This website illustrates all the differences we just discussed: [http://liquidapsive.com](http://liquidapsive.com/)
+        </section>
+
 
         <!-- <section class="slide">
             <h2>One more concept: mobile-first design</h2>
