@@ -27,25 +27,37 @@
     <base target="_blank">
 
     <!-- First/Intro slide -->
-    <header class="intro slide">
+    <!-- <header class="slide intro">
         <img class="logo" src="framework/img/logo-llc-white.png">
         <div class="info">
             <h1>
-                <span class="title-bg">Intro to HTML5 and Responsive Design</span><br>
-                <!-- second line if needed -->
+                <span class="title-bg">Welcome to </span><br>
+                <span class="title-bg">Ladies Learning Code!</span>
             </h1>
-            <h2><span>with</span> Emily Porta</h2>
-
-            <img class="instructor-img" src="framework/img/emily-porta.jpg" alt="Emily Porta">
-            <ul>
-                <li><i class="fa fa-envelope"></i><a href="mailto:">eeporta@gmail.com</li>
-                <li><i class="fa fa-desktop"></i><a href="#">emilyporta.com</a></li>
-                <li><i class="fa fa-twitter"></i><a href="http://twitter.com/agentemily">@agentemily</a></li>
-            </ul>
+            <span class="title-bg">Get connected:</span>
+            <span class="title-bg light">Network: The Lab<</span>
+            <span class="title-bg light">Password: Thisisthelab</span>
         </div>
-    </header>
-
+    </header> -->
+    
     <main>
+        <section class="slide intro">
+          <img class="logo" src="framework/img/logo-llc-white.png">
+          <div class="info">
+              <h1>
+                  <span class="title-bg">Intro to HTML5 and</span>
+                  <span class="title-bg">Responsive Design</span>
+              </h1>
+              <h2><span>with</span> Christina Truong</h2>
+
+              <img class="instructor-img" src="framework/img/christina-truong.jpg" alt="Christina Truong">
+              <ul>
+                  <li><i class="fa fa-envelope"></i><a href="mailto:hello@christinatruong.com">hello@christinatruong.com</li>
+                  <li><i class="fa fa-desktop"></i><a href="http://christinatruong.com">christinatruong.com</a></li>
+                  <li><i class="fa fa-twitter"></i><a href="http://twitter.com/christinatruong">@christinatruong</a></li>
+              </ul>
+          </div>
+        </section>
         <section class="slide title">
             <h1>Let's get started!</h1>
         </section>
@@ -73,29 +85,39 @@
             </ul>
         </section>
 
-        <section class="slide title">
-          <h1>Getting Set Up</h1>
-        </section>
-        
-        <section class="slide">
-          <h2>The WIFI</h2>
-          <p>Name: The Lab</p>
-          <p>Password: Thisisthelab</p>
+         <section class="slide centered" data-markdown>
+            ##Today's Project
 
-          <h2>Our text editor: <a href="http://www.sublimetext.com/3">Sublime Text <strong>THREE</strong>!</a></h2>
-          <p>No Dreamweaver, Word, etc. please!</p>
+            Follow [this link](project/final.html) to see the whole project!
+            
+            ![final project](framework/img/workshop/final-project.jpg)  
         </section>
 
-        <section class="slide">
+        <section class="slide" data-markdown>
+            ##Getting Set Up
 
-          <h2>Our Browser: <a href="https://www.google.com/chrome/?">Google Chrome</a></h2>
-          <p>Firefox, Safari, and IE 10+ are great, but their dev tools are different so stick to Chrome for this class please!</p>
-          <p>Make sure your default browser is Chrome! <a href="https://support.google.com/chrome/answer/95417?hl=en">Here are the instructions to do that.</a></p>
+            **[Sublime Text](http://www.sublimetext.com)** - a text editor with colour highlighting and other helpful features. If you are unable to install Sublime Text, try installing: [Notepad++](http://notepad-plus-plus.org/) (Windows), [Atom](https://atom.io/) (Mac) or [Text Wrangler](http://www.barebones.com/products/textwrangler/download.html) (older Macs).
 
-          <h2>Our Emulator: the Chrome Web Inspector</h2>
-          <p>Make sure you're up to date! Go to chrome://chrome/</p>
-          <p>Right click > "Inspect Element" > ensure little phone is blue!</p>
-          <img src="framework/img/emulation-mode.jpg" alt"emulation mode">
+            **[Google Chrome](https://www.google.com/intl/en-CA/chrome/browser/)** - Choose a modern web browser that supports current web standards and has good development tools. 
+
+            To set Chrome as your default browser, follow [these instructions](https://support.google.com/chrome/answer/95417?hl=en). 
+
+            Firefox, Safari, and IE 10+ are great, but their dev tools are different so stick to Chrome for this class please! Visit [browsehappy.com](http://browsehappy.com) for more info about modern browsers.
+        </section>
+
+        <section class="slide" data-markdown>
+            ##Chrome Dev Tools
+
+            **Developer tools** allow us to *inspect* any web page to see the code. It also includes a mobile emulator! The tools can be accessed in 3 ways:
+            
+            * right-click / two-finger tap on a web page and select **Inspect Element** OR
+            * select the menu icon in the top right hand corner of the Chrome browser and select **Tools > Developer Tools** OR
+            * keyboard shortcut: **Ctrl + Shift + I** (PC) / **Cmnd + Option + I** (Mac)
+            
+            Features are always being added/updated so make sure you're up to date by copying `chrome://chrome/` into your browser address bar.
+
+            Open dev tools. Ensure the little phone is blue to start the emulator! 
+            ![](http://cl.ly/image/3D2g2A370D38/Image%202015-01-28%20at%2012.58.57%20PM.png)
         </section>
 
         <section class="slide title">
@@ -122,7 +144,7 @@
                     <li class="delayed">You'll need an "m dot" site if you want something mobile friendly :( </li>
                 </ul>
                 <p class="delayed">Example: <a href="http://toronto.ca">toronto.ca</a> </br>(open this up on your phone or resize the browser)</p>
-                <p class="delayed">Example: <a href="https://m.facebook.com/">m.facebook.com</a></p>
+                <p class="delayed">Example: <a href="https://m.facebook.com/">m.facebook.com</a> vs. <a href="https://facebook.com">facebook.com</a></p>
         </section>
 
         <section class="slide">
@@ -131,17 +153,20 @@
                     <li class="delayed">Based on percentages</li>
                     <li class="delayed">Each block of content takes up some percentage of the page, for example a sidebar with a width of ~30% and main section with a width of ~70%</li>
                     <li class="delayed">When you resize the browser, the blocks of content will resize relative to the size of the page (aka the "viewport")</li>
-                    <li class="delayed"><strong>Not</strong> made for specific devices. Just reducing the width of your content is usually not the best experience for small screens, doesn't give us enough control.</li>
+                    <li class="delayed"><strong>Not</strong> made for specific devices. Just reducing the width of your content is usually not the best experience for smaller screens and mobile devices, doesn't give us enough control.</li>
                 </ul>
+                <p class="delayed">Example: <a href="http://alistapart.com/d/responsive-web-design/ex/ex-site-flexible.html">http://alistapart.com/d/responsive-web-design/ex/ex-site-flexible.html</a></p>
+
+                <p class="delayed"><a href="http://alistapart.com/article/responsive-web-design](http://alistapart.com/article/responsive-web-design">Full article here</a>. Also, the article that started the Responsive Design movement.</p>
         </section>
 
-        <section class="slide">
+         <section class="slide">
             <h2>Adaptive web design</h2>
                 <ul>
-                    <li class="delayed">Uses a series fixed layouts</li>
-                    <li class="delayed">Then adds in media queries to target specific viewport sizes</li>
+                    <li class="delayed">Uses a series of fixed layouts</li>
+                    <li class="delayed">Uses <em>media queries</em> to target specific viewport sizes (more on this later)</li>
                     <li class="delayed">The content itself changes</li>
-                    <li class="delayed">Best to think of it as a <em>set</em> of fixed layouts that are envoked in response to the device size</li>
+                    <li class="delayed">Best to think of it as a <em>set</em> of fixed layouts that are invoked in response to the device size</li>
                 </ul>
                 <p class="delayed">Example: <a href="http://goo.gl/lUyNrZ" alt="Screaming Frog website">goo.gl/lUyNrZ</a></p>
         </section>
@@ -151,17 +176,19 @@
                 <ul>
                     <li class="delayed">Uses a fluid grid layout to get that sweet free adaptability</li>
                     <li class="delayed"><em>Also</em> uses media queries to change the look and feel depending on device size</li>
-                    <li class="delayed">So your grid is both <strong>flexible</strong> inbetween common device sizes, and designed with <strong>breakpoints</strong> so that content is presented in the most suitable way for the device.</li>
-                    <li class="delayed">Content stays largely the same or similar.</li>
-                    <p class="delayed">Example: <a href="http://goo.gl/JNfJ5X">goo.gl/JNfJ5X</a></p>
-                    <p class="delayed">What do you notice about the changing layout?</p>
+                    <li class="delayed">Page components are <strong>flexible</strong> in between common device sizes and designed with <strong>breakpoints</strong> to present content in the most suitable way for common device sizes.</li>
+                    <li class="delayed">Can keep content layout similar and/or move/hide content.</li>
+                    <p class="delayed">Example: 
+                        <a href="http://goo.gl/JNfJ5X">goo.gl/JNfJ5X</a><br><br>
+                        What do you notice about the changing layout?
+                    </p>
                 </ul>
         </section>
 
-        <section class="slide">
-          <h2>Responsive Design: Definition</h2>
-          <p><strong>Responsive design means the best experience on all browsers, attained through responding to the viewport size.</strong></p>
-          <p>Note: NOT the device size or anything about a particular device. We size according to width, height, etc. not to a device (eg. an iPhone) specifically.</p>
+        <section class="slide" data-markdown>
+            ##Why use responsive design?
+
+            One site can adapt gracefully between different resolutions & device sizes and respond accordingly to the context being viewed by the user. Fluid designs also allow for a consistent multi-screen experience while maintaining one code base.
         </section>
 
         <section class="slide">
