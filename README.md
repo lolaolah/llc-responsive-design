@@ -1,10 +1,12 @@
-#Intro to HTML5 and Responsive Design
+#Ladies Learning Code
+##Intro to HTML5 and Responsive Design
 
-This slide content was created for the Ladies Learning Code workshop "Intro to HTML5 and Responsive Design". The course covers HTML and CSS basics, media queries, responsive design theory and practice, and is intended for complete beginners.
+Content created by [Emily Porta](https://twitter.com/agentemily) and [Christina Truong](https://twitter.com/christinatruong).
 
+This workshop covers HTML and CSS basics, media queries, responsive design theory and practice, and is intended for complete beginners.
 
-Created with <a href="https://github.com/LeaVerou/csss/sample-slideshow.html">Lea Verou's CSS-based SlideShow System</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>. Syntax highlighting courtesy of http://highlightjs.org. Best viewed in Chrome or Firefox.
+Workshop attendees: click the "Download zip" button to the right to download the slides. Open index.html to view the slides in your browser.
 
-If there are any issues or fixes required for this slide presentation, please open an issue, submit a pull request or email [christina@ladieslearningcode.com](mailto:christina@ladieslearningcode.com).
+Instructors: Please refer to https://github.com/ladieslearningcode/llc-slidedeck-template for instructions for customization of the slide deck and features. If there are any issues or fixes required for this workshop slide presentation, please open an issue, submit a pull request or email christina@ladieslearningcode.com.
 
 This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
