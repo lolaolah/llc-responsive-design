@@ -591,7 +591,7 @@ More info about this fix here: [http://www.paulirish.com/2012/box-sizing-border-
     </section> -->
 
     <section class="slide" data-markdown>
-##Percentages and Media Queries
+##Percentages and CSS3 Media Queries
 
 A fluid layout using percentages + media queries = responsive design
 
@@ -788,13 +788,13 @@ Don't forget to test it!
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   body {
     color: blue;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   body {
     color: red;
   }
@@ -935,7 +935,7 @@ Your CSS should be similar to the below snippet. Your width values may vary depe
     <section class="slide" data-markdown>
 ##Exercise (15mins) - Updating Work Experience 
 
-After looking at the Work Experience section, we've determined where the changes need to be made. The below snippet is the base CSS.  To get rid of the floated two columns styles, we'll need to reset the float (hint: use `none`), adjust the width to span all the way across and remove/update any padding & margin to your liking.
+After looking at the Work Experience section, we've determined where the changes need to be made. The below snippet is the base CSS.  To get rid of the floated two columns styles, reset the float (hint: use `none`), adjust the width to span all the way across and remove/update any padding & margin to your liking.
 
 ```css
 .work-experience .details {
@@ -950,13 +950,14 @@ After looking at the Work Experience section, we've determined where the changes
   margin-top: 5px;
 }
 ```
+**Pro tip!** Only use the properties that need to be changed.  For example, if the font-size doesn't need to be change, no need to add it to the media query.
 
 Sample CSS on the next slide.
     </section>
 
     <section class="slide" data-markdown>
 
-Sample solution for the previous slide's exercise.
+Sample solution for the previous slide's exercise. This should be included inside of the appropriate media query.
 
 ```css
 .work-experience .details {
@@ -965,74 +966,116 @@ Sample solution for the previous slide's exercise.
   padding-right: 0px; /* don't need padding anymore now that it spans across the page */
 }
 .work-experience .description {
-  font-size: 14px;
   width: 100%;
   float: none; /* removed float */
-  margin-top: 5px;
 }
 ```
     </section>
-
-    
 
     <section class="slide">
       <h2>Typography</h2>
       <p>We could have an entire class on web typography alone.</p>
       <p><strong>Margin, padding, line-height, text-size, and font-family.</strong></p>
       <p>These are all extremely important in responsive design - keep your text limited and meaningful, use one to two readable fonts, and make sure text is a good size for all screen sizes.</p>
-      <p>Typography on a responsive site should be: readable, efficient, and responsive itself. How do we accomplish this?</p>
+      <p>Typography on a responsive site should be: easy to read, efficient and responsive itself. How do we accomplish this?</p>
     </section>
 
     <section class="slide">
       <h2>Responsive Type: Rems and Ems Versus Pixels</h2>
       <ul>
-        <li class="delayed"><strong>px:</strong> pixels, not responsive. Boo.</li>
+        <li class="delayed"><strong>px:</strong> pixels, fixed size, not responsive. Boo.</li>
         <li class="delayed"><strong>em:</strong> size is relative to the type size of the parent element. Eg. if parent element is 14px and child element is 1em, child element is 14px. If child element is 0.5em child element is 7px</li>
-        <li class="delayed"><strong>rem:</strong> root ems - like ems but relative ONLY to the root element (html element)</li>
+        <li class="delayed"><strong>rem:</strong> root ems - like ems but relative ONLY to the root element (html element) - not supported in older browsers.</li>
       </ul>
       <p class="delayed">This can be very confusing. Here's a great way to approach it: <a href="http://css-tricks.com/rems-ems/" alt="css tricks rems versus ems article">http://css-tricks.com/rems-ems</a></p>
-      <p class="delayed">When in doubt, just use rems, and set font-size on your html element (default usually 16px).</p>
+      <p class="delayed">When in doubt, use rems, and set a base font-size on your html element. The default is equivalent to 16px, but you can set it to anything you want.</p>
     </section>
     <section class="slide" data-markdown>
-      ##Making our Web Copy Responsive
-      Let's go through our final project CSS and change some of the font-sizes to rems.
+##Making font sizes responsive
 
-      Since the root font-size is 16px, just divide the pixel size in the CSS by 16. 
+How do we calculate rems?  If you want the font-size to be equivalent to 80px, then divide it by the base font-size to get the rem value.
 
-      Example:
+80 / 16 = 5rem
 
-      ```css
-      h1 {
-      font-family: "Pacifico", cursive;
-      font-size: 5rem; /*used to be 80px*/
-      font-weight: 400;
-      margin: 0;
-    }
-    ```
+If you want simpler math, set your base font-size to either 62.5% or 10px.  
+Now, 1rem = 10px, 1.1rem = 11px, 2.4rem = 24px, etc.
+
+Let's update the h1 and h2 to rems.
+
+```css
+html {
+  font-size: 62.5%; /* sets base font size to be equal to 10px */
+}
+h1 {
+  font-family: "Pacifico", cursive;
+  font-size: 8rem; /* 80px */
+  font-weight: 400;
+  margin: 0;
+}
+h2 {
+  font-size: 3.2rem; /* 32px */
+}
+```
     </section>
 
-    <section class="slide">
-      <h2>Margin and Padding</h2>
-      <p>From the 768px media query down, the circles in the Skills section don't look great. We can change this by adjusting our <strong>margin</strong> and <strong>padding</strong> values.</p>
-      <ol>
-        <li class="delayed">First, let's use the web inspector to find out what classes/elements we need to target</li>
-        <li class="delayed">Next, we'll go to our CSS and target that class in our 768px media query</li>
-        <li class="delayed">We want to space the circles out a bit more, so let's add a margin to the elements</li>
-      </ol>
-    </section> 
+    <section class="slide" data-markdown>
+##How does this make it responsive?
+
+Let's go back to the browser and look our header text. When we hit our 600px breakpoint, we can make the text smaller to fit the viewport better.  Pixels are fixed units, so to make this change we would have to override both heading values.  Something like this:
+
+```css
+h1 {
+  font-size: 80px;
+}
+h2 {
+  font-size: 32px;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 60px;
+  }
+  h2 {
+    font-size: 22px;
+  }
+}
+```
+
+With relative units, we can just adjust the base font size.  Any fonts declared in pixels will not be affected by this change.  That can be useful for when you want the size to always remain fixed.
+
+```css
+html {
+  font-size: 62.5%;
+}
+h1 {
+  font-size: 80px;
+}
+h2 {
+  font-size: 32px;
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 40%;
+  }
+}
+```
+
+Let's add this update and see how it affects our page.
+    </section>
 
     <section class="slide" data-markdown>
-      ##Hiding Elements
-      Don't make this a habit: it's convenient but the browser still needs to load this code, and that slows your site down. Use it sparingly!
+##Hiding Elements
+Here's how to do it, but don't make this a habit. It's convenient but the browser still needs to load this code, and that slows your site down. Use it sparingly!
 
-      ```css
-      @media (max-width: somewidthpx) {
-      somediv {
-      display: none;
-    }
-    }
-    ```
-    That's it! If we look at our site as a small phone in the emulator we can see the "download pdf" button takes up too much screen real estate - let's hide it on our smallest screens.
+```css
+@media (max-width: somewidthpx) {
+  selector {
+    display: none;
+  }
+}
+```
+That's it! 
     </section>
 
     <section class="slide">
@@ -1040,20 +1083,33 @@ Sample solution for the previous slide's exercise.
       <p>Responsive is an iterative process. Don't get discouraged if every time you look back at your site, something needs to be changed! Websites are never "done", even the best can always be improved.</p>
       <p>When in doubt:</p>
       <ul>
-        <li>Center content (but keep it readable and large enough on small screens)</li>
-        <li>Don't use fixed elements, hover effects, etc. as necessary parts of the functionality of your site</li>
+        <li>Avoid fixed elements, hover effects, etc. as necessary parts of the functionality of your site</li>
         <li>Think about <strong>HOW</strong> your user will be using your site: mobile's different!</li>
         <li>Keep it simple! Less words, utilize white space</li>
         <li>Remember your site will never look pixel perfect on 100% of viewport sizes</li>
       </ul>
+
+      <p>Take a look at <strong>final.html</strong> & <strong>final.css</strong> to get some more ideas!</p>
     </section>
 
     <!-- Last slide -->
-    <section class="slide">
+    <section class="slide last">
       <h2>Thank you!</h2>
-      <p>My email: <a href="mailto:eeporta@gmail.com">eeporta@gmail.com</a></p>
-      <p>Twitter: <a href="http://twitter.com/agentemily" alt="emily's twitter account">@agentemily</a></p>
-      <p class="attribution">Slide deck created with <a href="https://github.com/LeaVerou/csss">Lea Verou's CSS-based SlideShow System</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
+
+      <h2 class="title">
+          <span class="title-bg">INTRO TO HTML5</span><br>
+          <span class="title-bg">AND RESPONSIVE DESIGN</span>
+      </h2>
+      <h3><span>with</span> Christina Truong</h3>
+
+      <img class="instructor-img" src="framework/img/christina-truong.jpg" alt="Christina Truong">
+      <ul>
+          <li><i class="fa fa-envelope"></i><a href="mailto:hello@christinatruong.com">hello@christinatruong.com</li>
+          <li><i class="fa fa-desktop"></i><a href="http://christinatruong.com">christinatruong.com</a></li>
+          <li><i class="fa fa-twitter"></i><a href="http://twitter.com/christinatruong">@christinatruong</a></li>
+      </ul>
+
+      <p class="attribution">Slidedecks created with <a href="https://github.com/LeaVerou/csss">Lea Verou's CSS-based SlideShow System</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
     </section>
 
     </main><!-- cls main section -->
