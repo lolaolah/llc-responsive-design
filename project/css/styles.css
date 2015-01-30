@@ -22,6 +22,7 @@ force clear the floats of the child elements */
 
 body {
   font-family: "Merriweather", serif;
+  font-size: 16px;
   line-height: 1.5;
   background: url(../images/background-4.jpg) no-repeat fixed;
   background-position: 50%;
@@ -75,12 +76,10 @@ ul {
 ul li {
   margin-bottom: 5px;
 }
-
 .content-wrap {
-  max-width: 1000px;
+  width: 1000px;
   margin: 0 auto;
-  padding: 90px 0;
-  width: 80%;
+  padding: 90px 0; 
 }
 
 
@@ -88,18 +87,7 @@ ul li {
 ----------*/
 header {
   text-align: center;
-  padding: 150px 50px;
-}
-
-.download {
-  background: #2C808C;
-  position: fixed;
-  color: white;
-  top: 0;
-  right: 0;
-  display: block;
-  padding: 20px;
-  text-decoration: none;
+  padding: 200px 50px;
 }
 
 
@@ -122,10 +110,10 @@ header {
   width: 70%;
 }
 .profile-image {
-  width: 27%;
   float: left;
-  padding: 4px;
+  width: 27%;
   margin-right: 3%;
+  padding: 4px;
   border: 1px solid #ddd;
   border-radius: 50%;
 }
@@ -135,6 +123,7 @@ header {
 -------------------------------*/
 /* job & education entries */
 .item {
+  overflow: hidden;
   border-bottom: 1px solid #ccc;
   margin-bottom: 20px;
   padding: 20px 0;
@@ -170,13 +159,13 @@ header {
   margin-top: 5px;
 }
 .work-experience .description p:first-child {
-  margin-top: 8px;
+  margin-top: 3px;
 }
 
 .company {
   font-family: "Pacifico", Georgia, cursive;
   font-size: 20px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   color: #2C808C;
 }
 
@@ -184,7 +173,7 @@ header {
 /* SKILLS
 ----------*/
 .skills {
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(images/background-2.jpg) no-repeat fixed 50%/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../images/background-4.jpg) no-repeat fixed 50%/cover;
   font-size: 20px;
 }
 .skills h3 {
@@ -241,97 +230,6 @@ footer {
 }
 
 
-/* MEDIA QUERIES 
------------------*/
-@media (max-width: 1000px) {
-  .profile .profile-image {
-    width: 50%;
-    float: right;
-    margin: 0 0 15px 20px;
-  }
-  .profile .summary {
-    width: auto;
-    float: none;
-  }
-}
-@media (max-width: 825px) {
-  body {
-    background: #fefefe;
-  }
 
-  header {
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
-
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    margin-bottom: 30px;
-    color: #2C808C;
-  }
-
-  h2 {
-    font-size: 24px;
-  }
-
-  .work-experience .details {
-    padding-right: 0;
-  }
-  .work-experience .details,
-  .work-experience .description {
-    width: 100%;
-    float: none;
-  }
-  .work-experience .date {
-    font-size: 13px;
-  }
-
-  .skills {
-    font-size: inherit;
-    background: rgba(0, 0, 0, 0.8);
-  }
-
-  .skills-list .columns {
-    width: 50%;
-  }
-  .skills-list .columns:last-child {
-    width: 100%;
-    margin-top: 20px;
-  }
-}
-@media (max-width: 650px) {
-  .content-wrap {
-    width: 85%;
-  }
-
-  .contact {
-    text-align: center;
-  }
-  .contact .social {
-    width: 100%;
-    text-align: center;
-  }
-}
-@media (max-width: 480px) {
-  .profile .profile-image {
-    width: 65%;
-    margin: 0px auto;
-    display: block;
-    float: none;
-  }
-  .profile h2 {
-    display: block;
-    transform: rotate(0deg);
-    margin-top: 20px;
-  }
-
-  h2,
-  .work-experience .details {
-    text-align: center;
-  }
-
-  .skills-list .columns {
-    width: 100%;
-  }
-}
+/* MEDIA QUERIES
+--------------------*/
