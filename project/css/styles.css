@@ -1,3 +1,9 @@
+/*---------------------------------------
+Template created by Ladies Learning Code 
+http://ladieslearningcode.com
+-----------------------------------------*/
+
+
 /* GLOBAL STYLES
 -----------------*/
 /* apply a natural box layout model to all elements */
@@ -17,134 +23,104 @@ force clear the floats of the child elements */
 body {
   font-family: "Merriweather", serif;
   line-height: 1.5;
-  background: url(../images/background-5.jpg) no-repeat fixed;
+  background: url(../images/background-4.jpg) no-repeat fixed;
   background-position: 50%;
   background-size: cover;
+  padding: 0;
+  margin: 0;
 }
 
 h1 {
-  font-family: "Pacifico", cursive;
+  font-family: "Pacifico", Georgia, cursive;
   font-size: 80px;
   font-weight: 400;
   margin: 0;
 }
-
 h2, h3, h4 {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   margin: 0;
 }
-
 h2, h3 {
   text-transform: uppercase;
 }
-
 h2 {
   font-size: 32px;
 }
 
+/* every other section element, 
+starting with the second section */
+section:nth-child(2n+1) { 
+  background: #fefefe;
+}
+section:nth-child(2n+2) {
+  color: #fff;
+}
 section h2 {
   border-bottom: 1px solid #ccc;
   margin-bottom: 20px;
 }
 
 a {
-  color: #16a085;
-  transition: all 0.2s;
+  color: #2C808C;
 }
 a:hover {
-  color: #fff;
+  color: white;
   text-decoration: none;
+}
+
+ul {
+  padding-left: 20px;
+}
+ul li {
+  margin-bottom: 5px;
 }
 
 .content-wrap {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 60px 0;
+  padding: 90px 0;
   width: 80%;
 }
+
 
 /* HEADER
 ----------*/
 header {
   text-align: center;
-  padding: 150px 0;
+  padding: 150px 50px;
 }
 
 .download {
-  background: #16a085;
+  background: #2C808C;
   position: fixed;
   color: white;
   top: 0;
   right: 0;
   display: block;
-  padding: 18px;
+  padding: 20px;
   text-decoration: none;
 }
 
-/* NAVIGATION
--------------*/
-nav {
-  background-color: #fff;
-  font-size: 1rem;
-}
-
-nav ul {
-  margin: 0;
-  padding: 0;
-  text-align: center;
-}
-
-nav ul li {
-  display: inline;
-  list-style-type: none;
-}
-
-nav a {
-  display: inline-block;
-  padding: 20px 10px;
-  text-decoration: none;
-}
-
-nav a:hover {
-  color: #000;
-}
-
-/* COMMON SECTION STYLES 
--------------------------*/
-.work-experience,
-.education {
-  background: #fefefe;
-}
-
-.profile,
-.skills,
-.contact {
-  color: #fff;
-}
 
 /* ABOUT ME / PROFILE
 ----------------------*/
 .profile {
   background: rgba(0, 0, 0, 0.8);
+  color: #fff;
 }
 .profile h2 {
-  background: #16a085;
+  background: #2C808C;
   display: inline-block;
   padding: 10px 20px;
   transform: rotate(-4deg);
   margin-bottom: 10px;
   border: none;
-  transition: all 0.5s ease;
-}
-.profile h2:hover {
-  transform: rotate(4deg);
 }
 .profile .summary {
   float: left;
   width: 70%;
 }
-
 .profile-image {
   width: 27%;
   float: left;
@@ -153,6 +129,7 @@ nav a:hover {
   border: 1px solid #ddd;
   border-radius: 50%;
 }
+
 
 /* WORK EXPERIENCE & EDUCATION
 -------------------------------*/
@@ -167,6 +144,7 @@ nav a:hover {
   margin-bottom: 0;
 }
 
+
 /* WORK EXPERIENCE
 -------------------*/
 .work-experience .date {
@@ -177,9 +155,8 @@ nav a:hover {
   line-height: 1.25;
   font-size: 16px;
 }
-.work-experience strong {
-  font-weight: 400;
-  text-transform: uppercase;
+.work-experience a:hover {
+  color: black;
 }
 .work-experience .details {
   float: left;
@@ -190,69 +167,51 @@ nav a:hover {
   font-size: 14px;
   width: 70%;
   float: right;
+  margin-top: 5px;
 }
 .work-experience .description p:first-child {
   margin-top: 8px;
 }
 
 .company {
-  font-family: "Pacifico", cursive;
+  font-family: "Pacifico", Georgia, cursive;
   font-size: 20px;
   letter-spacing: 0.08em;
-  color: #16a085;
+  color: #2C808C;
 }
+
 
 /* SKILLS
 ----------*/
 .skills {
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../images/background-1.jpg) no-repeat fixed 50%;
-  background-size: cover;
-  text-align: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(images/background-2.jpg) no-repeat fixed 50%/cover;
   font-size: 20px;
 }
 .skills h3 {
-  margin: 20px;
-}
-.skills h4 {
   margin-bottom: 10px;
-  color: #16a085;
+  color: #2C808C;
 }
 .skills i {
-  color: #16a085;
+  color: #2C808C;
 }
 
 .skills-list .columns {
+  margin-top: 20px;
   width: 33.33%;
   float: left;
 }
-
-.skills-list ul,
-.skills-circles ul {
+.skills-list ul {
   list-style-type: none;
   padding: 0;
 }
 
-.skills-circles ul li {
-  height: 150px;
-  width: 150px;
-  line-height: 150px;
-  display: inline-block;
-  padding: 0 10px;
-  border: 2px solid #16a085;
-  border-radius: 50%;
-  background: black;
-}
-.skills-circles span {
-  line-height: normal;
-  display: inline-block;
-  vertical-align: middle;
-}
 
 /* EDUCATION
 -------------*/
 .education h4 {
-  color: #16a085;
+  color: #2C808C;
 }
+
 
 /* CONTACT & FOOTER 
 --------------------*/
@@ -265,22 +224,114 @@ nav a:hover {
 .contact p:first-of-type {
   margin-top: 35px;
 }
-
-.social {
+.contact .social {
   width: 50%;
   float: right;
   text-align: right;
   font-size: 30px;
 }
-.social a {
+.contact .social a {
   margin: 0 8px;
-}
-.social a:hover {
-  color: white;
 }
 
 footer {
   clear: both;
   font-size: 12px;
   margin-top: 50px;
+}
+
+
+/* MEDIA QUERIES 
+-----------------*/
+@media (max-width: 1000px) {
+  .profile .profile-image {
+    width: 50%;
+    float: right;
+    margin: 0 0 15px 20px;
+  }
+  .profile .summary {
+    width: auto;
+    float: none;
+  }
+}
+@media (max-width: 825px) {
+  body {
+    background: #fefefe;
+  }
+
+  header {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  h1 {
+    font-size: 60px;
+    line-height: 1;
+    margin-bottom: 30px;
+    color: #2C808C;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .work-experience .details {
+    padding-right: 0;
+  }
+  .work-experience .details,
+  .work-experience .description {
+    width: 100%;
+    float: none;
+  }
+  .work-experience .date {
+    font-size: 13px;
+  }
+
+  .skills {
+    font-size: inherit;
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  .skills-list .columns {
+    width: 50%;
+  }
+  .skills-list .columns:last-child {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+@media (max-width: 650px) {
+  .content-wrap {
+    width: 85%;
+  }
+
+  .contact {
+    text-align: center;
+  }
+  .contact .social {
+    width: 100%;
+    text-align: center;
+  }
+}
+@media (max-width: 480px) {
+  .profile .profile-image {
+    width: 65%;
+    margin: 0px auto;
+    display: block;
+    float: none;
+  }
+  .profile h2 {
+    display: block;
+    transform: rotate(0deg);
+    margin-top: 20px;
+  }
+
+  h2,
+  .work-experience .details {
+    text-align: center;
+  }
+
+  .skills-list .columns {
+    width: 100%;
+  }
 }
