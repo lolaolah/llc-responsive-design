@@ -622,7 +622,9 @@ In **styles.css**, look for this code block.  It should be around line 79.  Noti
 }
 ```
 
-That means no matter what, that container will always be 1000px.  Let's change it to `max-width: 1000px;` and also add `width: 80%;` and see how that changes the page.
+That means no matter what, that container will always be 1000px.  
+
+Let's change it to `max-width: 1000px;` and also add `width: 80%;` and see how that changes the page.
     </section>
 
     <section class="slide side-by-side" data-markdown>
@@ -634,18 +636,191 @@ It works much better now, but when you get to a smaller size, you might want to 
 ![](http://cl.ly/image/3Z3U023P361J/Image%202015-01-30%20at%2012.37.27%20AM.png)
     </section>
 
-<section class="slide side-by-side" data-markdown>
+    <section class="slide side-by-side" data-markdown>
 ##What if we did something like this?
 
 Now this is an example of a responsive change. We've *changed* the CSS based on a screen size. 
 
 ![](http://cl.ly/image/3Z3U023P361J/Image%202015-01-30%20at%2012.37.27%20AM.png)
 ![](http://cl.ly/image/03403z392120/Screen%20Shot%202015-01-30%20at%2012.33.31%20AM.png)
-</section>
+    </section>
+
+    <section class="slide" data-markdown>
+##Media Queries
+
+Media queries are the key to making a responsive website because it allows you to apply CSS to your document *only* when the screen has reach a certain size. Lets take a look at a basic media query.
+
+```css
+@media (max-width: 940px) {
+  body {
+    background: red;
+  }
+}
+```
+In the above we target all [media types](https://developer.mozilla.org/en-US/docs/Web/CSS/@media) and the max-width of 940px. Anything *equal* or *less than* 940px wide will apply this CSS.
+
+Notice how the CSS is nested inside of what looks like another CSS rule? You can have multiple CSS declaration blocks in one media query.
+
+```css
+@media (max-width: 940px) {
+  body {
+    background: red;
+  }
+  h2 {
+    font-size: 20px;
+  }
+}
+```
+
+The above CSS gets applied when the browser reaches a width of 940px or smaller. This is referred to as a **breakpoint**.
+    </section>
+
+    <section class="slide" data-markdown>
+##Media Queries and Width
+
+The most common way to use media queries is by targeting the width of a device.
+
+The previous example had a `max-width` declared meaning that any styles in that media query will only apply to a screen that is equal to or smaller than the max-width. You can also use `min-width` to target screen sizes that are equal to or *larger* than the min-width.  This is useful when using a mobile-first approach to designing.
+
+```css
+@media (min-width: 400px) {
+  ...
+}
+```
+
+You can also specify a range by combining min-width and max-width. This will only be applied when the width of your browser is greater or equal to 768px and less or equal to 940px.
+
+```css
+@media (min-width: 768px) and (max-width: 940px) { 
+    ...     
+}
+```
+    </section>
+
+    <section class="slide" data-markdown>
+##Media Queries and Heights
+
+Heights can be targeting in the same way as widths are using min-height or max-height.
+
+```css
+@media (min-height: 568px) {
+    /* anything as high or higher than the iPhone 5 */
+}
+```
+
+You can also mix height and width in the same media query:
+
+```css
+@media (min-height: 568px) and (min-width:320px) {
+    ...
+}
+```
+
+**Note**: Height-based media queries can be tricky. For example, browser bars may take up different heights and most of the time, you want your content to just flow as long as it needs to be. 
+    </section>
+
+    <section class="slide" data-markdown>
+##Class Exercise: Media Queries!
+
+Let's add our first media query!  Adding a noticeable change like a background colour into each media query can help us to see easily where our breakpoints are, like this:
+
+```css
+@media (max-width: 1000px) {
+
+  body {
+    background-color: lightblue;
+  }  
+}
+```
+
+In today's project, we have an image set as the background so in this specific instance, this trick might not be as easy to see.  Let's try changing the font colour instead.
+
+```css
+@media (max-width: 1000px) {
+
+  body {
+    color: lightblue;
+  }  
+}
+```
+    </section>
+
+    <section class="slide" data-markdown>
+##Common breakpoints
+
+There are many different device sizes so trying to target a specific device is tricky.  It's best to combine fluid techniques *with* media queries so the design is still flexible in between common breakpoints. Here are some to consider:
+
+320px — Mobile portrait  
+480px — Mobile landscape  
+600px — Small tablet  
+768px — Tablet portrait  
+940px - 1024px — Tablet landscape, small desktop  
+1280px & greater — Desktop  
+
+These are just general guidelines. Add media queries to optimize for desktop/laptops, tablets and mobile phones. Use fluid techniques wherever possible, then add a breakpoint when the design breaks and is no longer suitable that viewport.
+
+On the other hand, be careful about using too many breakpoints. If you find that you have two media queries that are close, see if you can move the styles to one or the other instead of creating another breakpoint.
+    </section>
+
+    <section class="slide" data-markdown>
+##Exercise (10 mins)
+
+Using the general breakpoint guidelines and the first media query example, add two more media queries to target tablet and mobile.
+
+Don't forget to test it!
+
+(See the next slide for the answer but only if you're really stuck!)
+    </section>
+
+
+    <section class="slide" data-markdown>
+```css     
+/* MEDIA QUERIES
+--------------------*/
+@media (max-width: 1000px) {
+  body {
+    color: lightblue;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    color: blue;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    color: red;
+  }
+}
+```
+    </section>
+
+    
+
+    <section class="slide" data-markdown>
+## A Brief Interlude: the Web Inspector
+
+We have a handy tool to see our page in specific device sizes, and to help us figure out what elements get what styles from where. It's the Web Inspector!
+
+*   Right click anywhere in the browser viewport
+*   Select **Inspect Element**
+*   Make sure the little phone is blue to start the emulator and click it again to turn it off.
+*   Refresh the browser
+      
+![](http://f.cl.ly/items/3S1g1h1c383845123O0P/Image%202015-01-28%20at%2012.58.57%20PM.png)
+    </section>
+
     <section class="slide">
-      <h2>Media Queries</h2>
-      <p>A fluid layout using percentages + media queries = responsive design</p>
-      <p>Step one: the meta viewport tag</p>
+      <h2>A Brief Interlude: the Web Inspector</h2>
+       <a href="https://developer.chrome.com/devtools/docs/device-mode">More about the web inspector</a>
+      <p>The red box: our website. The green box: our HTML. The orange box: our CSS rules.</p>
+      <img src="images/emulator.jpg">
+    </section>
+    <section class="slide">
+      <h2>Viewport meta tag</h2>
+
       <pre><code>
         &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
       </code></pre>
@@ -653,111 +828,12 @@ Now this is an example of a responsive change. We've *changed* the CSS based on 
       <p>Let's add it in to our final project site now.</p>
     </section>
 
-    <section class="slide">
-      <h2>Media Queries cont.</h2>
-      <p><strong>What do media queries do?</strong></p>
-      <p>They apply CSS to your document only when the viewport has reached a certain size (eg. 1200px)</p>
-      <p><strong>What do they look like?</strong></p>
-      <pre><code>
-        @media (max-width: 1200px) {
-        body {
-        background-color: purple;
-      }
-    }
-    </code></pre>
-    <p>The above says any viewport with a maximum width of 1200px will have a body with a background-color of purple. So any screen 1200px wide or LESS will get the styles inside of this media query.</p> 
-    <p>If the viewport is 1201px will the background be purple? What if it's 1199px?</p>
-    </section>
-
-    <section class="slide">
-      <h2>Media Queries: an Example</h2>
-      <p>To see what this looks like, open up <strong>html-ex6.html</strong> and <strong>css-ex6.css</strong></p>
-      <p>We'll want to add some media queries in to our CSS to change a few things. Resize the browser window - what breaks?</p>
-    </section>
-
-    <section class="slide">
-      <h2>Solving our Problems with Media Queries</h2>
-      <p>How about this:</p>
-      <img src="images/outside-numbers.jpg">
-      <p>While there are lots of things we can do to solve this, a easy one is change the text size!</p>
-    </section>
-
-    <section class="slide" data-markdown>
-      ##Coding Media Queries
-      First, let's add some background colours into each media query to help us see where the breakpoints are, like this:
-
-      ```css
-      /* Portrait tablet and small desktops */
-      @media (max-width: 940px) {
-      body {
-      background-color: pink;
-    }
-    }
-    ```
-    </section>
-
-    <section class="slide" data-markdown>
-      ##Coding Media Queries cont.
-      Let's try changing the size of the text (.box p) to 3rem, 2.5rem, and then 2rem.
-
-      The first one will look like this:
-
-      ```css
-      /* Portrait tablet and small desktops */
-      @media (max-width: 940px) {
-      body {
-      background-color: pink;
-    }
-    .box p {
-    font-size: 3rem;
-    }
-    }
-    ```
-    </section>
-    <section class="slide" data-markdown>
-      ##Coding Media Queries cont.
-      How about the size of the text in the aside (sidebar) and the big paragraph?
-
-      Lets make them a bit smaller on smaller size screens. 
-
-      How about **1.5rem on the p selector**? Remember why that won't effect the paragraph in the .box div?
-    </section>
-
-    <section class="slide">
-      <h2>Coding Media Queries cont.</h2>
-      <p>Let's try one more, a harder one this time. The aside element looks pretty squished when we resize the browser to a smaller viewport.</p>
-      <p>Let's make the element sit on top of the three .box elements</p>
-      <p>But...how?</p>
-      <ul>
-        <li class="delayed">Set the width of the aside to 100%</li>
-        <li class="delayed">This works only becuase we've put it before the main block of elements</li>
-        <li class="delayed">Set aside p to display:inline-block</li>
-        <li class="delayed">What else should we do?</li>
-      </ul>
-    </section>
-
-    <section class="slide">
-      <h2>A Brief Interlude: the Web Inspector</h2>
-      <p>We have a handy tool to see our page in specific device sizes, and to help us figure out what elements get what styles from where. It's the Web Inspector!</p>
-      <ul>
-        <li>Right click anywhere in the browser viewport</li>
-        <li>Select <strong>Inspect Element</strong></li>
-        <li>Refresh the browser</li>
-      </ul>
-    </section>
-
-    <section class="slide">
-      <h2>A Brief Interlude: the Web Inspector</h2>
-      <p>The red box: our website. The green box: our HTML. The orange box: our CSS rules.</p>
-      <img src="images/emulator.jpg">
-    </section>
-
-    <section class="slide">
+    <!-- <section class="slide">
       <h2>Responsive and the Web Inspector</h2>
       <a href="https://developer.chrome.com/devtools/docs/device-mode">More about the web inspector</a>
       <p>The new web inspector has awesome media query support!</p>
       <img src="images/web-inspector-mq.jpg" alt="media queries in new web inspector">
-    </section>
+    </section> -->
 
     <section class="slide">
       <h2>Starting our Final Project!</h2>
