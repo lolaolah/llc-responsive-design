@@ -73,8 +73,6 @@
         <li class="delayed">Crash course in HTML5</li>
         <li class="delayed">CSS fundamentals</li>
       </ul>
-      <p class="delayed"><em>Lunch Break!</em></p>
-
       <p class="delayed"><strong>Part Two: Implementation</strong></p>
       <ul>
         <li class="delayed">CSS fundamentals continued</li>
@@ -299,9 +297,9 @@ Open Sublime Text and go to **File > Open**.
 
 ![](http://cl.ly/image/103C1W2s2T1H/Image%202015-01-28%20at%209.51.34%20PM.png)
 
-Navigate to the **project** folder (in the folder you downloaded with today's slides). With the entire folder selected, select Open.  
+Then, navigate to the **project** folder (in the folder you downloaded with today's slides). With the entire folder selected, click **Open**.  
 
-OR go to your Finder/Windows Explorer, click once and drag & drop the folder into Sublime Text.
+**OR** go to your Finder/Windows Explorer, click once and drag & drop the folder into Sublime Text.
 
 The folder and included files will appear in Sublime's side bar. Double click on **html-ex1.html** to open it.
     </section>
@@ -317,7 +315,7 @@ The folder and included files will appear in Sublime's side bar. Double click on
         <li>Header section: name &amp; tagline</li>
         <li>About Me / Profile blurb &amp; image</li>
         <li>Work Experience</li>
-        <li>Pretty much all the content on the page except the navigation!</li>
+        <li>Pretty much all the content on the page!</li>
       </ul>
 
       <div class="presenter-notes">
@@ -369,215 +367,281 @@ h1 {
     </section>
 
 
-    <section class="slide">
-      <h2>Writing CSS - Where Does it Go?</h2>
-      <p>You can technically put CSS in one of three places: inline, internal, and in it's own document (linked/external).</p>
-      <p>In this class, we're going to skip the first two because they're not good practice anyway, and go straight to making our own CSS documents.</p>
-      <p><strong>NOTE:</strong> We've already seen inline styles used in our examples with the "style" attribute, and internal CSS is just CSS rules all together inside the head element, using a style tag.</p>
-    </section>
+    <section class="slide" data-markdown>
+##Writing CSS - Where Does it Go?
 
+You can add CSS to your web page in many ways. Today we're going to put the CSS in it's own document, in a linked/external style sheet. This method is recommended because it separates the CSS from the HTML document and can be referenced on any HTML page where the styles need to be included.
+
+Referenced in the `&lt;head>` element with a `&lt;link&gt;` tag and two **attributes**, `rel` and `href`. Just like creating links, the value of the `href` points to the location of the style sheet. Though it is not required, css files are often saved in a css folder for organization, so make sure the file path points to the appropriate directory.
+
+
+```
+&lt;head&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&gt;
+&lt;/head&gt;
+```
+
+**Pro tip!**  Sublime Text shortcut: type "link" + tab key. Ta da!
+    </section>
     
+    <section class="slide" data-markdown>
+##Class exercise
 
-    <section class="slide">
-      <h2>Let's make HTML and CSS documents and link them!</h2>
-      <p>In your examples folder you have <strong>html-ex4.html</strong> and <strong>css-ex4.css</strong> and they're both blank.</p>
-      <ol>
-        <li>First, lets write some content in our HTML document</li>
-        <li>Next, we'll write some CSS styles to make it look different</li>
-        <li>Finally we'll get them working together by linking them in the HTML</li>
-      </ol>
-    </section>
+For today's final project, we are going to take a web page that is already styled but not mobile friendly or optimized for different screen sizes.  
 
-    <section class="slide">
-      <h2>Critical CSS Concepts</h2>
-      <p>There are a few things we need to learn about in order to understand our final project.</p>
-      <p>Open up <strong>html-ex5.html</strong> and <strong>css-ex5.css</strong> in your text editor. We'll reference this small site for the next few concepts before moving on to our final project.</p>
-    </section>
-
-    <section class="slide">
-      <h2>First up: the "class" attribute!</h2>
-      <pre><code>
-        &lt;!--in the HTML--&gt;
-
-        &lt;div class=&quot;warning&quot;&gt;&lt;/div&gt;
-
-        /*in the CSS*/
-
-        .warning {
-        background-color: red;
-      }
-    </code></pre>
-    <p>Classes are used mostly for styling purposes, and can be reused throughout your code</p>
-    <p>In the CSS, a class selector starts with a ".", unlike HTML elements</p>
-    <p>You can have an unlimited number of classes on each element, but only add them if you absolutely need to.</p>
-    <p>Let's look at our html-ex5.html and css-ex5.css files for examples</p>
+Go back to Sublime and **index.html**.  We're going to link the existing CSS file, **styles.css** to and see what happens!  The styles are there but try resizing the browser.  What happens?
+  
+Before we go into responsive design techniques, let's go over & review some fundamental concepts first.
     </section>
 
     <section class="slide" data-markdown>
-      ##CSS Selectors
-      ###Type Selectors
-      ```css
-      div {
-      /*styles for all divs on the page*/
-    }
+## First up: the `class` attribute!
 
-    a {
-    /*styles for all links on the page*/  
-    }
+Classes are used mostly for styling and can be reused throughout your code.  Name the class anything you want! To use it, include it in the *opening* tag. You can have an unlimited number of classes on each element, but only add them if you absolutely need to.
 
-    p {
-    /*styles for all paragraphs on the page*/
-    }
-    ```
+```xml
+&lt;div class="message">&lt;/div>
+&lt;div class="message warning">&lt;/div>
+
+```
+
+In the CSS, a class selector starts with a leading period, unlike HTML element selectors. (More on this soon.)
+
+```
+.warning {
+  background-color: red;
+}
+```
+
+Let's look at the **index.html** and **styles.css** files for examples.
     </section>
 
     <section class="slide" data-markdown>
-      ##CSS Selectors cont.
-      ###Descendant Selectors
-      ```css
-      div p {
-      /*all paragraphs that are descendants of any divs*/
-    }
+##Type & Descendant Selectors
 
-    ul li a {
-    /*links inside of list items inside of unordered lists. 
-    Question: will this affect links inside of ordered lists (ol's)?*/
-    }
-    ```
+Type selectors select HTML elements by using the tag name.
+
+```css
+div {
+  /*styles for all divs on the page*/
+}
+a {
+  /*styles for all links on the page*/  
+}
+```
+
+Descendant selectors target any child/descendant elements.  Note the space *in between* the element names.
+
+```css
+div p {
+  /*all paragraphs that are descendants of any divs*/
+}
+
+ul li a {
+  /*links inside of list items, inside of unordered lists. 
+  Question: will this affect links inside of ordered lists (ol's)?*/
+}
+```
     </section>
 
     <section class="slide" data-markdown>
-      ##CSS Selectors cont.
-      ###Class Selectors
-      ```css
-      .container {
-      /*styles for all elements with a class of container, no matter what type*/
-    }
+##Class Selectors
 
-    p.container {
-    /*styles for all paragraph elements with a class of "container"*/
-    }
+Selects elements based on class names.  Can be combined with other classes or type selectors.
 
-    p.container a {
-    /*guess what this one does!*/
-    }
-    .container .warning {
-    /*how about this one?*/
-    }
+```css
+.container {
+  /*styles for all elements with a class of container, no matter what element type*/
+}
+p.container {
+  /* styles for all paragraph elements with a class of "container" - matches type & class */
+}
+.container.warning {
+  /* styles for all elements with BOTH a class of container and warning */
+}
+.container .warning {
+  /* how is this different from the one above? */
+}
+p.container a {
+  /* guess what this one does! */
+}
 
-    .container.warning {
-    /*styles for all elements with BOTH a class of container and warning*/
-    }
-    ```
+```
     </section>
 
     <section class="slide" data-markdown>
-      ##CSS Selectors cont.
-      ###Grouping
-      ```css
-      h1, h2, h3 {
-      /*all h1, h2, and h3's*/
-    }
+##Combining selectors
+Sometimes you'll have several elements that share the same styles.  You can *combine* the selectors.
 
-    p, li, a {
-    /*what will this one select?*/
-    }
+```css
+h1, h2, h3 {
+  /*all h1, h2, and h3's*/
+}
 
-    .warning, a, p.cats {
-    /*what will this one select?*/
-    }
-    ```
-    </section>
+p, a {
+  /*what will this one select?*/
+}
 
-    <section class="slide">
-      <h2>CSS Selectors cont.</h2>
-      <p>Let's look at our example five CSS and HTML files again, and try to find each type of selector and the grouping we've just learned about:</p>
-      <ul>
-        <li>Type Selectors</li>
-        <li>Descendant Selectors</li>
-        <li>Class Selectors</li>
-        <li>Grouping</li>
-      </ul>
-    </section>
-
-    <section class="slide">
-      <h2>Inheritance</h2>
-      <p>If we look at our <strong>css-ex5.css</strong> file again and look at the body selector. It has a font-size and font-family and so on set on it. But our webpage clearly has paragraphs and other elements we could declare a font on. Why is it on body then?</p>
-      <p>Remember that CSS stands for Cascading Style Sheets? Now we know what they mean by cascading! The browser reads the CSS from the top of the page down, and some of these styles are "inherited" from their parents.</p>
-
+.warning, a, p.cats {
+  /*what will this one select?*/
+}
+```
     </section>
 
     <section class="slide" data-markdown>
-      ##Specificity
-      ###What's going on here? Why are there so many "h2"'s?
-      ```css
-      h2, h3, h4 {
-      font-family: "Open Sans", sans-serif;
-      font-weight: 400;
-      margin: 0;
-    }
+## CSS Selectors
 
-    h2, h3 {
-    text-transform: uppercase;
-    }
+Let's go back to **styles.css** and try to find each type of selector and combinations we've just learned about:
 
-    h2 {
-    font-size: 32px;
-    }
-
-    section h2 {
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 20px;
-    }
-    ```
+*   Type Selectors
+*   Descendant Selectors
+*   Class Selectors
+*   Combined Selectors
     </section>
 
     <section class="slide" data-markdown>
-      ##Specificity cont.
-      The most specific OR the most recent CSS rule will be selected. Which one gets selected is based largely on magic.
+## Inheritance
 
-      GENERAL RULE: the styles for an element that came last in the CSS document will be used, unless overridden by a more "specific" selector. Classes, for example, make things more specific than just a type selector would be.
+In the **styles.css** file, the body selector contains a `font-family` property. 
 
-      Example:
-      ```css
-      p {
-      /*less specific*/
-    }
+```css
+body {
+  font-family: "Merriweather", serif;
+  ...
+}
+```
+Why is it declared here?
 
-    p.special-paragraph {
-    /*more specific*/
-    }
-    ```
+Remember, CSS stands for *Cascading* Style Sheets. The browser reads the CSS from *top to bottom* (or cascades) and some of these styles are inherited from their parent elements. This makes it more efficient than declaring this same styles over and over again for each element.
     </section>
+
+    <section class="slide" data-markdown>
+##Specificity
+
+What's going on here? Why are there so many `h2`'s?
+
+```css
+h2, h3, h4 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  margin: 0;
+}
+h2, h3 {
+  text-transform: uppercase;
+}
+h2 {
+  font-size: 32px;
+}
+section h2 {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+```
+    </section>
+
+    <section class="slide" data-markdown>
+##Specificity cont.
+The most specific selector OR the most recent CSS rule will be selected and rendered into the browser. Which one gets selected is based largely on magic.
+
+GENERAL RULE: the styles for an element that came last in the CSS document will be used, *unless* overridden by a more *specific* selector. Classes, for example, are more specific than a type selector.
+
+```css
+p {
+/* all paragraphs - less specific */
+}
+
+p.special-paragraph {
+/* only paragraphs with this class - more specific */
+}
+```
+    </section>
+
     <section class="slide">
       <h2>The Box Model</h2>
-      <p>Margins, padding, widths, and borders oh my: the glorious box model.</p>
-      <img src="images/boxmodel.png" alt="box model">
+      <p>Margins, padding, widths, and borders, oh my: the glorious box model.</p>
+      <img src="framework/img/workshop/box-model.png" alt="box model">
     </section>
-    <section class="slide" data-markdown>
-      ##Border-Box
 
-      Now that we know what the box model is, lets fix it. Because CSS is so very broken.
-      ```css
-      *, *:before, *:after {
-      box-sizing: border-box;
-    }
-    ```
-    Check out **css-ex5.css** for an example.
+    <section class="slide" data-markdown>
+##Border-Box
+
+Now that we know what the box model is, here's the fix.
+
+```css
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+```
+Note that this snippet is already included in **styles.css**.
+
+More info about this fix here: [http://www.paulirish.com/2012/box-sizing-border-box-ftw/](http://www.paulirish.com/2012/box-sizing-border-box-ftw/)
     </section>
 
     <section class="slide title">
-      <h1>Part Two: Implementation</h1>
-      <h2>How do we make our site responsive?</h2>
+      <h1>Ok, let's make something responsive already!</h1>
     </section>
 
-    <section class="slide">
+    <!-- <section class="slide">
       <h2>Responsive Design</h2> 
       <p>Remember: responsive design simply means <strong>the best user experience on all devices.</strong></p>
       <p>Responsive CSS will react to the resizing of the browser's viewport (the bit of the page you can see on your screen without scrolling) and change it's rules to best suit that viewport size.</p>
       <p>How???</p> 
+    </section> -->
+
+    <section class="slide" data-markdown>
+##Percentages and Media Queries
+
+A fluid layout using percentages + media queries = responsive design
+
+Let's see what happens when the CSS is not fluid. Larger resolution looks great:
+
+![](http://cl.ly/image/0G3l1q3E0n2M/Image%202015-01-29%20at%2011.55.08%20PM.png)
+
+Smaller resolutions, not so good:
+
+![](http://cl.ly/image/3c2y1v2A2o1q/Image%202015-01-29%20at%2011.55.36%20PM.png)
+
+On the phone, it's even worse! (Screen shot from Chrome's emulator dev tool - more on this later.)
+
+![](http://cl.ly/image/1u0r0i0z0w1L/Image%202015-01-30%20at%2012.03.46%20AM.png)
+
     </section>
 
+    <section class="slide" data-markdown>
+##Percentages first, then media queries
+
+In **styles.css**, look for this code block.  It should be around line 79.  Notice that the width is set to a fixed width of 1000px.  
+
+```css
+.content-wrap {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 90px 0; 
+}
+```
+
+That means no matter what, that container will always be 1000px.  Let's change it to `max-width: 1000px;` and also add `width: 80%;` and see how that changes the page.
+    </section>
+
+    <section class="slide side-by-side" data-markdown>
+##Fluid is not the same as responsive
+
+It works much better now, but when you get to a smaller size, you might want to make changes that go beyond just scaling up/down the width of the page components. 
+
+![](http://cl.ly/image/3c2y1v2A2o1q/Image%202015-01-29%20at%2011.55.36%20PM.png)
+![](http://cl.ly/image/3Z3U023P361J/Image%202015-01-30%20at%2012.37.27%20AM.png)
+    </section>
+
+<section class="slide side-by-side" data-markdown>
+##What if we did something like this?
+
+Now this is an example of a responsive change. We've *changed* the CSS based on a screen size. 
+
+![](http://cl.ly/image/3Z3U023P361J/Image%202015-01-30%20at%2012.37.27%20AM.png)
+![](http://cl.ly/image/03403z392120/Screen%20Shot%202015-01-30%20at%2012.33.31%20AM.png)
+</section>
     <section class="slide">
       <h2>Media Queries</h2>
       <p>A fluid layout using percentages + media queries = responsive design</p>
@@ -860,6 +924,10 @@ h1 {
 </footer>
 
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+// Fallback to loading jQuery from a local path if the CDN is unavailable
+(window.jQuery || document.write('<script src="framework/scripts/jquery-1.11.0.min.js"><\/script>'));
+</script>
 <script src="framework/scripts/slideshow.js"></script>
 
 <!-- Uncomment the plugins you need -->
