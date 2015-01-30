@@ -63,7 +63,7 @@
       <h1>Let's get started!</h1>
     </section>
 
-    <section class="slide">
+    <!-- <section class="slide">
       <h2>Workshop Outline</h2>
       <p><strong>Part One: Fundamentals</strong></p>
       <ul>
@@ -82,7 +82,7 @@
         <li class="delayed">Typography</li>
         <li class="delayed">Layout</li>
       </ul>
-    </section>
+    </section> -->
 
     <section class="slide centered" data-markdown>
       ##Today's Project
@@ -305,7 +305,7 @@ The folder and included files will appear in Sublime's side bar. Double click on
     </section>
 
     <section class="slide">
-      <h2>Exercise #1 (15mins)</h2>
+      <h2>Exercise (15mins)</h2>
 
       <p>We’re still focusing on the HTML so don’t worry about how it looks right now.  Take some time to personalize your content but don’t add or change any HTML tags just yet!</p>
 
@@ -639,7 +639,7 @@ It works much better now, but when you get to a smaller size, you might want to 
     <section class="slide side-by-side" data-markdown>
 ##What if we did something like this?
 
-Now this is an example of a responsive change. We've *changed* the CSS based on a screen size. 
+Now this is an example of a responsive change. The CSS has *changed* based on a screen size. 
 
 ![](http://cl.ly/image/3Z3U023P361J/Image%202015-01-30%20at%2012.37.27%20AM.png)
 ![](http://cl.ly/image/03403z392120/Screen%20Shot%202015-01-30%20at%2012.33.31%20AM.png)
@@ -743,6 +743,11 @@ In today's project, we have an image set as the background so in this specific i
   }  
 }
 ```
+
+Where to add the media queries? Personal preference.
+Some people like to create a separate style sheet just for media queries, others like to group it with the CSS section it's being applied to (e.g. responsive header changes are added directly under the base header styles).
+
+For today, let's just group all of our media queries at the bottom of the style sheet.
     </section>
 
     <section class="slide" data-markdown>
@@ -797,8 +802,6 @@ Don't forget to test it!
 ```
     </section>
 
-    
-
     <section class="slide" data-markdown>
 ## A Brief Interlude: the Web Inspector
 
@@ -818,69 +821,159 @@ We have a handy tool to see our page in specific device sizes, and to help us fi
       <p>The red box: our website. The green box: our HTML. The orange box: our CSS rules.</p>
       <img src="images/emulator.jpg">
     </section>
-    <section class="slide">
-      <h2>Viewport meta tag</h2>
 
-      <pre><code>
-        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-      </code></pre>
-      <p>Without this our media queries won't work. It goes inside the head tags in our HTML document. Don't forget it!</p>
-      <p>Let's add it in to our final project site now.</p>
+    <section class="slide" data-markdown>
+##Don't Forget the Viewport Meta Tag!
+
+The viewport meta tag **must** be included in the <head> of your HTML document to ensure that the page responds on mobile devices. This tag tells browsers (primarily mobile browsers) how to size itself.
+
+```xml
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+```
+
+* `meta` is the tag name and goes in the `&lt;head` of the web page.
+* `name="viewport"` use viewport to tell the browser sizing information.
+* `content` provides info about how to size the viewport. Multiple `key=value` are comma separated.
+* `width=device-width` tells the browser to be as wide as the device.
+* `initial-scale` is the zoom value at which the site is zoomed in/out by default. A value of 1.0 will render the size without any zoom.
+* `user-scalable=no` (not shown in example), will limit users from being able to zoom into your website.
+* `minimum-scale` & `maximum-scale` will limit how far in or out a user can scale/zoom into the website.
+
+In the Chrome emulator, see how the layout changes once the viewport meta tag is added.
     </section>
 
-    <!-- <section class="slide">
-      <h2>Responsive and the Web Inspector</h2>
-      <a href="https://developer.chrome.com/devtools/docs/device-mode">More about the web inspector</a>
-      <p>The new web inspector has awesome media query support!</p>
-      <img src="images/web-inspector-mq.jpg" alt="media queries in new web inspector">
-    </section> -->
-
     <section class="slide">
-      <h2>Starting our Final Project!</h2>
-      <p>We now know enough to dive into our project for today!</p>
-      <p>In our class files we have a folder called <strong>final-project</strong>. Open the <strong>index.html</strong> file in Sublime and in your browser - where are all the styles? Why does it still look like the default styling?</p>
-    </section>
-
-    <section class="slide">
-      <h2>Starting our Final Project</h2>
-      <p>We're starting with a nice fluid design, where most of the content is centered. This means we're already ahead of the game. </p>
-      <p>Let's find some things we've learned throughout the code in this website:</p>
+      <h2>What Can We Improve?</h2>
+      <p>Here are some things to look out for when optimizing design and page layouts for different screens.</p>
       <ul>
-        <li class="delayed">Nesting HTML elements</li>
-        <li class="delayed">Attributes, including class attributes</li>
-        <li class="delayed">CSS rule syntax: selector, declaration (property + value)</li>
-        <li class="delayed">CSS selectors: type, class, descendant. Grouping them together.</li>
-        <li class="delayed">Inheritence and Specificity</li>
-        <li class="delayed">Percentage-based fluid layout (eg. see .content-wrap)</li>
-      </ul>
-    </section>
-
-    <section class="slide">
-      <h2>What can we Improve?</h2>
-      <p>We'll target a few main things that are always important to keep in mind when doing responsive design.</p>
-      <ul>
-        <li class="delayed">Hide fixed elements on smaller screens</li>
-        <li class="delayed">Margin, padding and text sizing on header and circle elements</li>
-        <li class="delayed">Image size and positioning</li>
-        <li class="delayed">:hover effects and similar things to think about</li>
-        <li class="delayed">Centering all the things, spacing/whitespace</li>
-        <li class="delayed">Navigation!</li>
+        <li class="delayed">Hide elements for smaller screens. ( Use this sparingly though.  If you're hiding a lot of content, maybe you don't need it at all?)</li>
+        <li class="delayed">Margin, padding and text sizing.</li>
+        <li class="delayed">Image size and positioning.</li>
+        <li class="delayed">:hover effects don't work on mobile.</li>
+        <li class="delayed">Spacing, whitespace, alignment of elements.</li>
       </ul>
     </section>
 
     <section class="slide" data-markdown>
-      ##Hiding Elements
-      Don't make this a habit: it's convenient but the browser still needs to load this code, and that slows your site down. Use it sparingly!
+##Class Exercise
 
-      ```css
-      @media (max-width: somewidthpx) {
-      somediv {
-      display: none;
-    }
-    }
-    ```
-    That's it! If we look at our site as a small phone in the emulator we can see the "download pdf" button takes up too much screen real estate - let's hide it on our smallest screens.
+Let's figure out what we need to change to get it to look like this:
+
+![](http://cl.ly/image/03403z392120/Screen%20Shot%202015-01-30%20at%2012.33.31%20AM.png)
+
+1. What breakpoint should we make this change at?
+1. Move the image to the right side.
+1. Adjust the width of the image and content area.
+
+This means we have to override the current CSS.  To override it, we need to use the same selector or a more specific selector.  Using the Chrome dev tools will make it easier to figure out rather than just looking at the CSS files.  Let's open it now, look for the selectors to target and test out some CSS changes.
     </section>
+
+    <section class="slide" data-markdown>
+##Exercise (15mins) - Updating the About section
+
+After looking through the dev tools, we've determine where and what changes to make.  
+
+1. Breakpoint should be around 768px - 900px-ish (You decide what looks good.)
+1. The classes that should be targeted are `.profile-image` and `.profile .summary`
+1. For `.profile-image`, these are the values that need to change:
+```
+float: left;
+width: 27%;
+margin-right: 3%;
+```
+  * adjust these values to make it float to the right as well as increase the profile image width.
+1. For `.profile .summary`, these are the values that need to change:
+```
+float: left;
+width: 70%;
+```
+  * adjust these values to reflect the width changes in the profile image and remove the float so the text wraps the image.
+
+Hints: 
+
+* Make sure your width percentages equals 100%, including margin!
+* Since you can't delete CSS with media queries, use the value of `none` to reset a float.
+
+(A sample answer is on the next slide.)
+    </section>
+
+    <section class="slide" data-markdown>
+Your CSS should be similar to the below snippet. Your width values may vary depending on what you decide looks best to you.
+
+```
+@media (max-width: 825px) {
+  /* this is here just for testing */
+  body {
+    color: blue;
+  }
+  
+  /* About section */
+  .profile-image {
+    width: 48%;
+    float: right;
+    margin: 0 0 15px 2%;
+  }
+  .profile .summary {
+    width: auto; /* resets the width setting */
+    /* or could also use width: 50% - if you don't want the text to wrap */
+    float: none; /* removes the float */
+  }
+}
+```
+    </section>
+    
+    <section class="slide" data-markdown>
+      ##What else can we change?
+
+      The **Work Experience** section looks fine at this breakpoint but once we start going smaller, it starts to get squished.  So let's go back to the Chrome dev tools and see what to adjust here.
+
+      Perhaps changing it from two columns, side by side, to stacking the content on top of each other will do the trick.  Let's check it out! 
+
+      Heads up: making responsive changes requires a lot of tweaking and testing and inspecting elements.  Be prepared to do a lot of experimenting!
+    </section>
+
+    <section class="slide" data-markdown>
+##Exercise (15mins) - Updating Work Experience 
+
+After looking at the Work Experience section, we've determined where the changes need to be made. The below snippet is the base CSS.  To get rid of the floated two columns styles, we'll need to reset the float (hint: use `none`), adjust the width to span all the way across and remove/update any padding & margin to your liking.
+
+```css
+.work-experience .details {
+  float: left;
+  width: 30%;
+  padding-right: 30px;
+}
+.work-experience .description {
+  font-size: 14px;
+  width: 70%;
+  float: right;
+  margin-top: 5px;
+}
+```
+
+Sample CSS on the next slide.
+    </section>
+
+    <section class="slide" data-markdown>
+
+Sample solution for the previous slide's exercise.
+
+```css
+.work-experience .details {
+  float: none; /* removed float */
+  width: 100%; /* auto will work as well */
+  padding-right: 0px; /* don't need padding anymore now that it spans across the page */
+}
+.work-experience .description {
+  font-size: 14px;
+  width: 100%;
+  float: none; /* removed float */
+  margin-top: 5px;
+}
+```
+    </section>
+
+    
 
     <section class="slide">
       <h2>Typography</h2>
@@ -926,48 +1019,20 @@ We have a handy tool to see our page in specific device sizes, and to help us fi
         <li class="delayed">Next, we'll go to our CSS and target that class in our 768px media query</li>
         <li class="delayed">We want to space the circles out a bit more, so let's add a margin to the elements</li>
       </ol>
-    </section>
+    </section> 
 
-    <section class="slide">
-      <h2>Resizing Elements</h2>
-      <p>You might notice that at our 480px media query the circles are in one long line. They're taking up too much room! Scrolling is boring, so let's make these a bit smaller.</p>
-      <p>Again, target the element in the media query. Then change the height, width, margin, and line-height properties.</p>
-      <p>Oh no! the font size is too big too, let's change that! Notice how we don't have to include the margin value from the last query - remember styles inherit/cascade!</p>
-    </section>
-
-    <section class="slide">
-      <h2>Profile Image</h2>
-      <p>Our profile image gets really small at smaller screens. It also takes up a lot of room from 480px. What should we do with it?</p>
-      <ol>
-        <li>Make it a bit smaller by changing width to 60%</li>
-        <li>set the display property to the value "block"</li>
-        <li>set margin to 0 auto, the magical centering declaration for block elements</li>
-        <li>Set float to "none", as it was float:left before</li>
-        <li>Go back to margin and actually set it to     margin:0 auto 4rem; to put some space on the bottom</li>
-      </ol>
-    </section>
     <section class="slide" data-markdown>
-      ##Centering Text, Removing Floats
-
-      The content under our profile picture doesn't look so hot on our smallest screen. Centering content is a simple, common way of getting some white space on a cramped mobile screen.
-
-      Try this out on our 480px media query:
+      ##Hiding Elements
+      Don't make this a habit: it's convenient but the browser still needs to load this code, and that slows your site down. Use it sparingly!
 
       ```css
-      .profile .summary {
-      text-align: center;
-      float: none;
-      width: 100%; /*notice we still have padding from the code above*/
+      @media (max-width: somewidthpx) {
+      somediv {
+      display: none;
+    }
     }
     ```
-
-    </section>
-
-    <section class="slide">
-      <h2>A Note on Navigation</h2>
-      <p>So far we're using the "do nothing approach" and for our site, it's ok</p>
-      <p>But what if we wanted to add more sections/links? We're not showing any content </p>
-      <p><strong>Next steps:</strong> <a href="http://bradfrostweb.com/blog/web/responsive-nav-patterns/">common mobile navigation solutions</a> and what to think about when designing navigation.</p>
+    That's it! If we look at our site as a small phone in the emulator we can see the "download pdf" button takes up too much screen real estate - let's hide it on our smallest screens.
     </section>
 
     <section class="slide">
