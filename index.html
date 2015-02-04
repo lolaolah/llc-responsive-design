@@ -107,7 +107,7 @@
     <section class="slide" data-markdown>
       ##Chrome Dev Tools
 
-      **Developer tools** allow us to *inspect* any web page to see the code. It also includes a mobile emulator! The tools can be accessed in 3 ways:
+      **Developer tools** allow us to *inspect* any web page to see the code. It also includes a *mobile device emulator*! The tools can be accessed in 3 ways:
 
       * right-click / two-finger tap on a web page and select **Inspect Element** OR
       * select the menu icon in the top right hand corner of the Chrome browser and select **Tools > Developer Tools** OR
@@ -237,11 +237,64 @@ More resources:
 
 * [http://www.sitepoint.com/web-foundations/elements/](http://www.sitepoint.com/web-foundations/elements/)
 * [http://websitesetup.org/html5-cheat-sheet/](http://websitesetup.org/html5-cheat-sheet/)
-* [html-elements.txt](project/examples/html-elements.txt), located in your **projects > examples** folder 
+* [html-elements.txt](project/html-elements.txt), located in your **project** folder 
 
-Take a look!
+Let's go over some commonly used tags.
     </section>
+    <section class="slide" data-markdown>
+##HTML: Commonly used tags
 
+**Title**: Found in the `&lt;head>` section of the HTML document. Used for defining the page title. Displays in the browser's tab, search engine results and bookmarks.
+
+```xml
+&lt;title&gt;Page Title&lt;/title&gt;
+```
+
+**Headings**: There are 6 heading tags available (`&lt;h1&gt;,&lt;h2&gt;,...,&lt;h6&gt;`) and follow a hierarchical structure. It's important to use the appropriate tag to describe the content, not for the default heading styles. That's what CSS is for!
+
+```xml
+&lt;h1&gt;Most Important Heading&lt;/h1&gt;
+&lt;h2&gt;Second Most Important Heading&lt;/h2&gt;
+```
+
+**Paragraphs**: Created with the `&lt;p&gt;&lt;/p&gt;` tags.
+```xml
+&lt;p&gt;I'm a paragraph.&lt;/p&gt;
+```
+
+**Link**: requires the addition of an `href` *attribute* (more on this later) to specify where to link to.
+
+```
+&lt;a href=&quot;http://website.com&quot;&gt;link&lt;/a&gt;
+```
+
+**Lists**: There are two kinds of lists: ordered (`ol`) for numbered lists & undordered (`ul`) for lists with bullets. Content must be included only within the list item (`li`).
+
+```xml
+&lt;ul&gt;
+    &lt;li&gt;Unordered list item&lt;/li&gt;
+    &lt;li&gt;Unordered list item&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+    &lt;li&gt;Ordered list item&lt;/li&gt;
+    &lt;li&gt;Ordered list item&lt;/li&gt;
+&lt;/ol&gt;
+```
+**Images**: like links, also requires the an additional attribute, `src`, for linking to the image file.
+
+```
+&lt;img src=&quot;path/to/image.jpg&quot;&gt;    ```
+    </section>
+    
+    <section class="slide" data-markdown>
+##HTML vs HTML5
+
+HTML5 is the latest *version* of HTML.  This latest version includes better browser support for  multimedia and graphical content like `video`, `audio` and `canvas` elements.
+
+HTML5 also introduced a number of *semantic* tags that better describe blocks of content. Prior to this latest version, the `&lt;div>` tag was used for grouping elements. While it is still valid, HTML5 introduced a number of semantic tags that better describe blocks of content. You'll see some in **index.html** provided in today's project.  
+
+Here's a great resource to learn more about HTML5: http://html5doctor.com/   
+    </section>
     <section class="slide" data-markdown>
 ## HTML Element Relationships
 
@@ -291,7 +344,7 @@ llc-responsive-design-master
   |-- index.html // This is the file you're viewing right now (slides)!
 ```
 
-In Sublime Text, let's open [index.html](project/indes.html) in your **project** folder and make some changes.
+In Sublime Text, let's open [index.html](project/index.html) in your **project** folder and make some changes.
 
 Open Sublime Text and go to **File > Open**.
 
@@ -301,11 +354,11 @@ Then, navigate to the **project** folder (in the folder you downloaded with toda
 
 **OR** go to your Finder/Windows Explorer, click once and drag & drop the folder into Sublime Text.
 
-The folder and included files will appear in Sublime's side bar. Double click on **html-ex1.html** to open it.
+The folder and included files will appear in Sublime's side bar. Double click on **index.html** to open it.
     </section>
 
     <section class="slide">
-      <h2>Exercise (15mins)</h2>
+      <h2>Exercise (20mins)</h2>
 
       <p>We’re still focusing on the HTML so don’t worry about how it looks right now.  Take some time to personalize your content but don’t add or change any HTML tags just yet!</p>
 
@@ -318,8 +371,10 @@ The folder and included files will appear in Sublime's side bar. Double click on
         <li>Pretty much all the content on the page!</li>
       </ul>
 
+      <p><strong>Note:</strong> Avoid changing the existing tags since there is existing CSS attached to it but feel free to add/remove non-structural elements like paragraphs and images.  Ask your mentors if you're not sure!</p>
+
       <div class="presenter-notes">
-        <p>Let the class know that they are not expected to update all the content.  Just enough to get a handle on updating the HTML.</p>
+        <p>Let the class know that they are not expected to update all the content.  Just enough to get a handle on updating the HTML. Now would be a good time to be open to a discussion or questions about HTML since it is not specifically covered in this workshop.  Newer learners can ask questions while more experience learners can continue to update the content.</p>
       </div>
     </section>
     
@@ -393,7 +448,7 @@ For today's final project, we are going to take a web page that is already style
 
 Go back to Sublime and **index.html**.  We're going to link the existing CSS file, **styles.css** to and see what happens!  The styles are there but try resizing the browser.  What happens?
   
-Before we go into responsive design techniques, let's go over & review some fundamental concepts first.
+Before we go into responsive design techniques, let's go over & review some fundamental concepts first so we can make sense of the existing CSS provided in today's project.
     </section>
 
     <section class="slide" data-markdown>
@@ -557,24 +612,32 @@ p.special-paragraph {
 }
 ```
     </section>
+<section class="slide" data-markdown>
+##What is this?
 
-    <section class="slide">
-      <h2>The Box Model</h2>
-      <p>Margins, padding, widths, and borders, oh my: the glorious box model.</p>
-      <img src="framework/img/workshop/box-model.png" alt="box model">
-    </section>
-
-    <section class="slide" data-markdown>
-##Border-Box
-
-Now that we know what the box model is, here's the fix.
+You will see this little snippet at the top of your CSS file. But what does it do?
 
 ```css
 *, *:before, *:after {
   box-sizing: border-box;
 }
 ```
-Note that this snippet is already included in **styles.css**.
+    </section>
+
+    <section class="slide" data-markdown>
+##The Box Model
+
+Margins, padding, widths, and borders, oh my: the glorious box model.
+
+![](framework/img/workshop/box-model.png)
+
+This snippet is the fix for the way the box model handles the sizing of elements.
+
+```css
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+```
 
 More info about this fix here: [http://www.paulirish.com/2012/box-sizing-border-box-ftw/](http://www.paulirish.com/2012/box-sizing-border-box-ftw/)
     </section>
@@ -582,13 +645,6 @@ More info about this fix here: [http://www.paulirish.com/2012/box-sizing-border-
     <section class="slide title">
       <h1>Ok, let's make something responsive already!</h1>
     </section>
-
-    <!-- <section class="slide">
-      <h2>Responsive Design</h2> 
-      <p>Remember: responsive design simply means <strong>the best user experience on all devices.</strong></p>
-      <p>Responsive CSS will react to the resizing of the browser's viewport (the bit of the page you can see on your screen without scrolling) and change it's rules to best suit that viewport size.</p>
-      <p>How???</p> 
-    </section> -->
 
     <section class="slide" data-markdown>
 ##Percentages and CSS3 Media Queries
@@ -606,7 +662,6 @@ Smaller resolutions, not so good:
 On the phone, it's even worse! (Screen shot from Chrome's emulator dev tool - more on this later.)
 
 ![](http://cl.ly/image/1u0r0i0z0w1L/Image%202015-01-30%20at%2012.03.46%20AM.png)
-
     </section>
 
     <section class="slide" data-markdown>
@@ -625,21 +680,25 @@ In **styles.css**, look for this code block.  It should be around line 79.  Noti
 That means no matter what, that container will always be 1000px.  
 
 Let's change it to `max-width: 1000px;` and also add `width: 80%;` and see how that changes the page.
+
+**Pro tip!** In Sublime, select **Find > Find...**  OR Control/Command F -- this will open a bar at the bottom of the screen.  Type in **.content-wrap** and select Find.  This will make it easier to search for code snippets.
     </section>
 
     <section class="slide side-by-side" data-markdown>
 ##Fluid is not the same as responsive
 
-It works much better now, but when you get to a smaller size, you might want to make changes that go beyond just scaling up/down the width of the page components. 
+It works much better now, the content is scaled relative to the size of the browser.
 
 ![](http://cl.ly/image/3c2y1v2A2o1q/Image%202015-01-29%20at%2011.55.36%20PM.png)
 ![](http://cl.ly/image/3Z3U023P361J/Image%202015-01-30%20at%2012.37.27%20AM.png)
+
+But sometimes, when you get to a smaller size, you might want to make changes that go beyond just scaling up/down the width of the page components. 
     </section>
 
     <section class="slide side-by-side" data-markdown>
 ##What if we did something like this?
 
-Now this is an example of a responsive change. The CSS has *changed* based on a screen size. 
+This is an example of a responsive change. The CSS has *changed* based on a screen size. 
 
 ![](http://cl.ly/image/3Z3U023P361J/Image%202015-01-30%20at%2012.37.27%20AM.png)
 ![](http://cl.ly/image/03403z392120/Screen%20Shot%202015-01-30%20at%2012.33.31%20AM.png)
@@ -768,17 +827,25 @@ On the other hand, be careful about using too many breakpoints. If you find that
     </section>
 
     <section class="slide" data-markdown>
-##Exercise (10 mins)
+##Exercise (15 mins)
 
-Using the general breakpoint guidelines and the first media query example, add two more media queries to target tablet and mobile.
+Using the general breakpoint guidelines and the first media query example, add two more media queries to target tablet and mobile.  
 
 Don't forget to test it!
 
 (See the next slide for the answer but only if you're really stuck!)
+
+**Bonus exercise**:    
+Change your accent colour! Using Chrome's dev tools, *inspect* any element that has a colour, try the "Hello" background or a link, to see if you can figure out where the blue CSS color is coming from and change it to your own colour choice.
+
+Here's a great resource for colours: http://colours.neilorangepeel.com/
     </section>
 
 
     <section class="slide" data-markdown>
+## Exercise Solution
+
+These are just general suggestions, you may find that you'll need to adjust these sizes as you start to make changes to your page design & layout. Let's discuss what breakpoints you all chose to use.
 ```css     
 /* MEDIA QUERIES
 --------------------*/
@@ -997,10 +1064,11 @@ How do we calculate rems?  If you want the font-size to be equivalent to 80px, t
 
 80 / 16 = 5rem
 
-If you want simpler math, set your base font-size to either 62.5% or 10px.  
+If you want simpler math, set your base font-size to either 62.5% or 10px.
+
 Now, 1rem = 10px, 1.1rem = 11px, 2.4rem = 24px, etc.
 
-Let's update the h1 and h2 to rems.
+Let's update just the font-size for h1 and h2 to rems.
 
 ```css
 html {
@@ -1016,6 +1084,8 @@ h2 {
   font-size: 3.2rem; /* 32px */
 }
 ```
+
+**Pro tip!** Using percent-based & relative measurements can give you finer control because you can use decimals with pixels.
     </section>
 
     <section class="slide" data-markdown>
@@ -1048,10 +1118,10 @@ html {
   font-size: 62.5%;
 }
 h1 {
-  font-size: 80px;
+  font-size: 8rem;
 }
 h2 {
-  font-size: 32px;
+  font-size: 3.2rem;
 }
 
 @media (max-width: 600px) {
@@ -1063,7 +1133,32 @@ h2 {
 
 Let's add this update and see how it affects our page.
     </section>
+    <section class="slide" data-markdown>
+##rem & px
 
+In the previous example, changing the root font size (`html`) made all of the relative units size accordingly, but you can still use pixels for the styles that need to be at a fixed size and not relative.  For example, you may just want your headings to get smaller but the paragraphs remain the same.
+
+```css
+html {
+  font-size: 62.5%;
+}
+h1 {
+  font-size: 8rem;
+}
+h2 {
+  font-size: 3.2rem;
+}
+p {
+  font-size: 16px; /* will not change sizes */
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 40%;
+  }
+}
+```
+    </section>
     <section class="slide" data-markdown>
 ##Hiding Elements
 Here's how to do it, but don't make this a habit. It's convenient but the browser still needs to load this code, and that slows your site down. Use it sparingly!
@@ -1090,6 +1185,7 @@ That's it!
       </ul>
 
       <p>Take a look at <strong>final.html</strong> & <strong>final.css</strong> to get some more ideas!</p>
+      <p>Check out the next slide for more resources.</p>
     </section>
 
     <section class="slide" data-markdown>
@@ -1098,7 +1194,8 @@ That's it!
       * [Learn to Code Advanced HTML & CSS](http://learn.shayhowe.com/advanced-html-css/)
       * [Mobile First](http://www.lukew.com/resources/mobile_first.asp) by Luke Wroblewski
       * [Responsive Resources](http://bradfrost.github.io/this-is-responsive/resources.html)
-      * [http://mediaqueri.es/](http://mediaqueri.es/)
+      * [http://mediaqueri.es/](http://mediaqueri.es/) - collection of responsive websites
+      * http://responsivenavigation.net/ - responsive navigation examples
       
     </section>
 
