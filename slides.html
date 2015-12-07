@@ -1,520 +1,679 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Ladies Learning Code</title>
-    <!-- Don't alter slideshow.css, CSSS slide deck needs it to work -->
-    <link rel="stylesheet" href="framework/css/slideshow.css" data-noprefix>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Ladies Learning Code</title>
+  <link rel="stylesheet" href="framework/css/slideshow.css" data-noprefix>
+  <link rel="stylesheet" href="framework/css/fonts.css" data-noprefix>
+  <link rel="stylesheet" href="framework/css/highlightjs/github.css" data-noprefix>
+  <link rel="stylesheet" href="framework/css/styles.css" data-noprefix>
+  <link rel="shortcut icon" href="framework/img/favicon.ico">
 
-    <!-- Theme-specific styles -->
-    <link href='http://fonts.googleapis.com/css?family=Quicksand%7CPacifico%7COpen+Sans:400italic,400,300' rel='stylesheet' type='text/css' data-noprefix>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="framework/css/highlightjs-themes/github.css" data-noprefix>
-    <link rel="stylesheet" href="framework/css/theme-llc.css" data-noprefix>
-    <link rel="shortcut icon" href="framework/img/favicon.ico"> 
-
-    <!-- Workshop-specific styles -->
-    <link rel="stylesheet" href="framework/css/workshop.css" data-noprefix>
-
-    <!-- Takes care of CSS3 prefixes! -->
-    <script src="framework/scripts/prefixfree.min.js"></script>
-
-    <!-- opens all links in a new window -->
-    <base target="_blank">
+  <!-- Takes care of CSS3 prefixes -->
+  <script src="framework/scripts/prefixfree.min.js"></script>
+  
+  <!-- opens all links in a new window -->
+  <base target="_blank">
 </head>
 
 <!-- Timer/progress bar: Define the presentation duration using "data-duration" in minutes. -->
-<body data-duration="360">
-
-  <!-- Welcome slide -->
-  <header class="slide intro first">
-    <img class="logo" src="framework/img/logo-llc-white.png" alt="Ladies Learning Code logo">
-    <div class="info">
-      <h1 class="heading-bg">
-        <span class="dark">Welcome to</span><br>
-        <span>Ladies Learning Code!</span>
-      </h1>
-      <!-- <div class="heading-bg connected">
-        <span class="dark">GET CONNECTED:</span>
-        <span class="light">NETWORK: network name</span><br>
-        <span class="light">PASSWORD: thepassword</span>
-      </div> -->
-    </div>
-
-    <div class="sponsor">
-      <p>In partnership with:</p>
-      <img src="framework/img/telus-logo-white.svg" alt="Telus logo">
-    </div>
-  </header>
-
+<body class="en" data-duration="360">
   <main>
-    <!-- Instructor info -->
-    <section class="slide intro">
-        <img class="logo" src="framework/img/logo-llc-white.png" alt="Ladies Learning Code logo">
-        <div class="info">
-            <h1 class="heading-bg">
-                <span>Intro to Responsive Design:</span><br>
-                <span>Build Mobile Friendly Websites</span>
-            </h1>
-            <!-- <h2><span>with</span> Instructor Name</h2>
-
-            <img class="instructor-img" src="http://cl.ly/image/0r3Q3H110G36/profile-generic.jpg" alt="instructor name">
+    <section class="slide welcome">
+      <h1><img class="logo-stacked" src="framework/img/llc-logo-stacked-white.png" alt="Ladies Learning Code logo">Welcome!</h1>
+      
+      <div class="instructions no-bullet-list">
+        <!-- ADD WIFI INFO HERE -->
+        <h2>Get Connected</h2>
+        <ul class="connected">
+          <li>Network: wifi network</li>
+          <li>Password: wifi password</li>
+        </ul>
+        <hr>
+        
+        <h2>Download<br> & Install</h2>
+        <ul class="downloads">
+          <li>Learner files (zip file): <a href="http://bit.ly/llc-responsive">bit.ly/llc-responsive</a>
             <ul>
-                <li><i class="fa fa-envelope"></i><a href="mailto:">hello@email.com</a></li>
-                <li><i class="fa fa-desktop"></i><a href="#">mywebsite.com</a></li>
-                <li><i class="fa fa-twitter"></i><a href="http://twitter.com/">@twitter</a></li>
-            </ul> -->
-        </div>
+              <li>unzip the learner file (<em>extract all</em> if you’re on a PC)</li>
+              <li>open <strong>slides.html</strong> in the browser to view the slides</li>
+            </ul>
+          </li>
+          <li>Atom Editor: <a href="http://atom.io">http://atom.io</a></li>
+          <li>Chrome Browser: <a href="https://www.google.ca/chrome/browser/desktop/">https://www.google.ca/chrome</a></li>
+          </li>
+        </ul>
+      </div>
+
+      <footer>
+        <a class="left" rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.png" /></a>
+        <p class="left">Content created by <a href="https://twitter.com/agentemily">Emily Porta</a> and <a href="http://christinatruong.com">Christina Truong</a> for <a prefix="cc: http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
+        <p class="right">Use the left <span class="arrow">&#8592;</span> and right <span class="arrow">&#8594;</span> arrow keys to navigate</p>
+      </footer>
     </section>
-
-    <section class="slide title">
-      <h1>Let's get started!</h1>
-    </section>
-
-    <section class="slide centered" data-markdown>
-      ##Today's Project
-
-      Follow [this link](project/final.html) to see the whole project!
-
-      ![final project](framework/img/workshop/final-project.jpg)  
+    
+    <section class="slide intro">
+      <img class="logo" src="framework/img/llc-logo-white.png" alt="Ladies Learning Code logo">
+      <h1 class="heading-bg">
+        <span>Intro to Responsive <br>Web Design</span>
+      </h1>
+      
+      <!-- FILL IN INSTRUCTOR DETAILS -->
+      <img class="instructor" src="http://christinatruong.com/christina-truong-square.jpg" alt="Christina Truong">
+      <h2><span class="cursive">with</span> Instructor name</h2>  
+      <ul>
+        <li><a href="mailto:">hello@email.com</a></li>
+        <li><a href="http://website.com">website.com</a></li>
+        <li><a href="http://twitter.com/">@twitter</a></li>
+      </ul>
+      
+      <div class="sponsor">
+        <p>In partnership with<br> <img src="framework/img/telus-logo-white.svg" alt="Telus"></p>
+      </div>
+      <footer>
+        <a class="left" rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.png" /></a>
+        <p class="left">Content created by <a href="https://twitter.com/agentemily">Emily Porta</a> and <a href="http://christinatruong.com">Christina Truong</a> for <a prefix="cc: http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
+        <p class="right">Use the left <span class="arrow">&#8592;</span> and right <span class="arrow">&#8594;</span> arrow keys to navigate</p>
+      </footer>
     </section>
 
     <section class="slide" data-markdown>
-      ##Getting Set Up
+      <script type="text/template">
+        #Today's Project
+        
+        For today's final project, we'll take an existing web page and optimize it for different screen sizes. Follow [this link](project/final.html) to see the whole project!
 
-      **[Sublime Text](http://www.sublimetext.com)** - a text editor with colour highlighting and other helpful features. If you are unable to install Sublime Text, try installing: [Notepad++](http://notepad-plus-plus.org/) (Windows), [Atom](https://atom.io/) (Mac) or [Text Wrangler](http://www.barebones.com/products/textwrangler/download.html) (older Macs).
+        ![final project](framework/img/workshop/final-project.jpg)
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+      #Getting Set Up
+
+      **[Atom](https://atom.io/)** - a text editor with colour highlighting and other useful features. 
+      
+      If you are unable to install Atom, try installing: <!-- .element: class="note" -->[Notepad++](http://notepad-plus-plus.org/) (Windows), [Sublime Text](http://www.sublimetext.com) (Mac or Windows) or [Text Wrangler](http://www.barebones.com/products/textwrangler/download.html) (older Macs).
 
       **[Google Chrome](https://www.google.com/intl/en-CA/chrome/browser/)** - Choose a modern web browser that supports current web standards and has good development tools. 
 
-      To set Chrome as your default browser, follow [these instructions](https://support.google.com/chrome/answer/95417?hl=en). 
+      To set Chrome as your default browser, follow<!-- .element: class="note" --> [these instructions](https://support.google.com/chrome/answer/95417?hl=en). 
 
-      Firefox, Safari, and IE 10+ are great, but their dev tools are different so stick to Chrome for this class please! Visit [browsehappy.com](http://browsehappy.com) for more info about modern browsers.
+      Firefox, Safari, and IE 10+ are great, but their dev tools are slightly different so stick to Chrome for this class please! 
+      
+      Visit [browsehappy.com](http://browsehappy.com) for more info about modern browsers.
+      </script>
     </section>
 
     <section class="slide" data-markdown>
-      ##Chrome Dev Tools
+      <script type="text/template">
+      #Chrome Developer Tools
 
-      **Developer tools** allow us to *inspect* any web page to see the code. It also includes a *mobile device emulator*! The tools can be accessed in 3 ways:
+      **Developer tools** allow us to *inspect* any web page and also includes a *mobile device emulator*. Access the tool in 2 ways:
 
-      * right-click / two-finger tap on a web page and select **Inspect Element** OR
-      * select the menu icon in the top right hand corner of the Chrome browser and select **Tools > Developer Tools** OR
+      * right-click / two-finger tap on a web page and select **Inspect Element** 
       * keyboard shortcut: **Ctrl + Shift + I** (PC) / **Cmnd + Option + I** (Mac)
-
-      Features are always being added/updated so make sure you're up to date by copying `chrome://chrome/` into your browser address bar.
-
-      Open dev tools. Ensure the little phone is blue to start the emulator! 
-      ![](http://cl.ly/image/3D2g2A370D38/Image%202015-01-28%20at%2012.58.57%20PM.png)
+      
+      Once open, click on the the phone icon to start the emulator. It changes to blue when it's on, and click it again to turn it off.
+      ![](framework/img/workshop/dev-tools-emulator.jpg)
+      
+      Features are always being added/updated so make sure you're up to date by copying <!-- .element: class="note" --> `chrome://chrome/` into your browser address bar.
+      </script>
     </section>
 
-    <section class="slide title">
-      <h1>What is <br> Responsive Design?</h1>
-    </section>
-
-    <section class="slide">
-      <h2>Different types of web design</h2>
-      <p>Flexible websites are not at totally new concepts so in order to understand responsive web design and development better, we have to understand what the options are:</p>
-      <ul>
-        <li>Fixed</li>
-        <li>Fluid</li>
-        <li>Adaptive</li>
-        <li>Responsive</li>
-      </ul>
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #What is Responsive <br>Web Design?
+      </script>
     </section>
 
     <section class="slide" data-markdown>
-##Fixed Web Design
+      <script type="text/template">
+        #Different types of web design
 
-*   Everything has a set width (eg. 960px). Popular method before mobile browsing became commonplace.
-*   On a mobile screen, it is zoomed out to the size of the device making the content really small. 
-*   Will need a separate site, usually an "m dot" site to make something mobile friendly :(
+        Flexible websites are not new concepts so in order to understand responsive web design and development better, we have to understand what the options are:
 
-Try opening these sites on your phone or resize the browser:  
-
-[toronto.ca](http://toronto.ca)  
-[m.facebook.com](https://m.facebook.com/)  
-[facebook.com](https://facebook.com)
+        *   Fixed
+        *   Fluid
+        *   Adaptive
+        *   Responsive
+      </script>
     </section>
 
     <section class="slide" data-markdown>
-##Fluid web design
-*   Based on percentage widths, each block of content takes up a percentage of the page. (e.g. a sidebar with a width of 30% and main section with a width of ~70%)
-*   When you resize the browser, the blocks will resize *relative* to the size of the page (aka the "viewport").
-*   Not optimized for smaller screens & mobile devices.
+      <script type="text/template">
+      #Fixed Web Design
 
-Example: [http://alistapart.com/d/responsive-web-design/ex/ex-site-flexible.html](http://alistapart.com/d/responsive-web-design/ex/ex-site-flexible.html)
+      *   Everything has a set width (eg. 960px). 
+      *   Popular method before mobile browsing became commonplace.
+      *   On a mobile screen, it is zoomed out to the size of the device making the content really small. 
+      *   Needs a separate site, usually an "m dot" site, to make something mobile friendly :(
 
-[Full article here](http://alistapart.com/article/responsive-web-design). Also, the article that started the Responsive Design movement.
+      > Try opening these sites on your phone or resize the browser. What are the differences?
+      [m.facebook.com](https://m.facebook.com/), [facebook.com](https://facebook.com)
+      </script>
     </section>
 
     <section class="slide" data-markdown>
-## Adaptive web design
+      <script type="text/template">
+        #Fluid web design
+        
+        *   Based on percentage widths, each block of content takes up a percentage of the page. (e.g. a sidebar with a width of 30% and main section with a width of ~70%)
+        *   When you resize the browser, the blocks will resize *relative* to the size of the page (aka the "viewport").
+        *   Not optimized for smaller screens & mobile devices.
 
-*   Uses a series of fixed layouts.
-*   Uses _media queries_ to target specific viewport sizes (more on this later).
-*   The content itself changes.
-*   Best to think of it as a _set_ of fixed layouts that are invoked in response to the device size.
-
-Example: [goo.gl/lUyNrZ](http://goo.gl/lUyNrZ)
+        >Let's take a look at an example [here](http://alistapart.com/d/responsive-web-design/ex/ex-site-flexible.html).  Try making your browser window bigger and smaller.  What happens to the page layout?
+        
+        ---
+        ###Resource
+        Read the [Full article here](http://alistapart.com/article/responsive-web-design). Also, this is the article that started the Responsive Design movement.
+      </script>
     </section>
 
     <section class="slide" data-markdown>
-      ## And finally...responsive web design!
+      <script type="text/template">
+      #Adaptive web design
 
-*   Uses a fluid grid layout.
-*   Unlike fluid designs, it _also_ uses media queries to change the look and feel depending on device size.
-*   Page components are **flexible** in between common device sizes and designed with **breakpoints** to present content in the most suitable way for common device sizes.
-*   Can keep content layout similar and/or move/hide content.
-
-Example: [goo.gl/JNfJ5X](http://goo.gl/JNfJ5X)
-
-What do you notice about the changing layout?
-
-This website illustrates all the differences we just discussed: [http://liquidapsive.com](http://liquidapsive.com/)
-    </section>
-
-
-    <!-- <section class="slide">
-      <h2>One more concept: mobile-first design</h2>
-      <p>We used to design with only a desktop in mind, this has changed with smartphones and tablets, giving rise to "mobile first design"</p>
-      <p>What is it?</p>
-      <li class="delayed">Design an experience for mobile devices first, then desktop, making mobile integral, not an afterthought</li>
-      <li class="delayed">"Graceful Degradation" and "Progressive Enhancement" - fancy words for simple things</li>
-      <li class="delayed">A bit difficult to think this way, but worth it to give all users the best experience possible</li>
-      <li class="delayed">This link is a great overview: <a href="http://designshack.net/articles/css/mobilefirst/" alt="design hack blog">designshack.net/articles/css/mobilefirst/</a></li>
-    </section>
-
-    <section class="slide">
-      <blockquote>"When you lose 80% of your screen real estate, all the extraneous bloat that tends to finds its way onto large screen designs doesn’t seem so attractive or necessary anymore. Mobile provides a great opportunity to reevaluate what content/functionality is necessary and gives us an opportunity to strip away the cruft across the board (and not just for mobile users either). These constraints also encourage ease-of-use, intuitiveness and speed as essential ingredients to a good user experience."
-      </blockquote>
-      <cite><a href="http://bradfrostweb.com/blog/mobile/the-many-faces-of-mobile-first/">Brad Frost, The Many Faces of Mobile First</a></cite>
-    </section> -->
-
-    <section class="slide title">
-      <h1>Crash Course in HTML</h1>
+      *   Uses a series of fixed layouts.
+      *   Uses _media queries_ to target specific viewport sizes (more on this later).
+      *   The content itself changes.
+      *   Best to think of it as a _set_ of fixed layouts that are invoked in response to the device size.
+      
+      >Let's take a look at an example [here](http://www.screamingfrog.co.uk/). Try making your browser window bigger and smaller. How is this different from the fluid layout?
+      </script>
     </section>
 
     <section class="slide" data-markdown>
-## HTML Overview / Review
+      <script type="text/template">
+        #And finally...responsive web design!
 
-HTML (HyperText Markup Language) is used to wrap the contents and assign meaning to parts of your web document using **tags** to create HTML **elements**. HTML5 is the latest version of HTML.
-
-Example:
-
-```xml
-&lt;p>This is a paragraph.&lt;/p>
-```
-
-The angled brackets (`< >`) represent HTML tags; they tell the browser what *kind* of content each bit is. The tags *plus* the content inside of them are HTML *elements*. Almost all elements have an "opening" tag and a "closing" tag. The closing tag has a forward slash (`/`). Remember to close tags in reverse order. 
-
-Example:
-
-```xml
-&lt;p&gt;Paragraph with a &lt;a href=&quot;#&quot;&gt;link&lt;/a&gt;.&lt;/p&gt;
-```
+        *   Uses a fluid grid layout.
+        *   Page components are **flexible** in between common device sizes.
+        *   _Also_ uses media queries to change the layout depending on device size.
+        *   Designed with **breakpoints** to present content in the most suitable way for common device sizes.
+        
+        > Let's compare the difference between a [fluid layout](http://alistapart.com/d/responsive-web-design/ex/ex-site-flexible.html) vs [fluid and responsive](http://alistapart.com/d/responsive-web-design/ex/ex-site-FINAL.html).
+        
+        ---
+        ###Resources
+        * [http://liquidapsive.com](http://liquidapsive.com/)
+        * [9 basic principles of responsive web design](http://blog.froont.com/9-basic-principles-of-responsive-web-design/)
+      </script>
     </section>
 
     <section class="slide" data-markdown>
-## What are all the elements?
+      <script type="text/template">
+      #One more concept: mobile-first design
 
-We'd be here all day if we had to go over every single HTML & HTML5 element - there's so many!
+      We used to design with only a desktop in mind, but this has changed with smartphones and tablets, giving rise to "mobile first design."
 
-[Here's a handy list](https://developer.mozilla.org/en/docs/Web/Guide/HTML/HTML5/HTML5_element_list). The ones with the little orange "5" beside them are new in HTML5.
+      What is it?
 
-More resources:
+      *   Design an experience for mobile devices first, then desktop
+      *   Make mobile integral, not an afterthought
+      *   "Graceful Degradation" and "Progressive Enhancement"
 
-* [http://www.sitepoint.com/web-foundations/elements/](http://www.sitepoint.com/web-foundations/elements/)
-* [http://websitesetup.org/html5-cheat-sheet/](http://websitesetup.org/html5-cheat-sheet/)
-* [html-elements.txt](project/html-elements.txt), located in your **project** folder 
-
-Let's go over some commonly used tags.
+      ---
+      ###Resource
+      [Mobile First Design: Why It’s Great and Why It Sucks](http://designshack.net/articles/css/mobilefirst/)
+      </script>
     </section>
+
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+      <h1>HTML Crash Course!</h1>
+      </script>
+    </section>
+
     <section class="slide" data-markdown>
-##HTML: Commonly used tags
+      <script type="text/template">
+        #HTML (HyperText Markup Language) Overview
+        
+        * HTML is the language browsers read 
+        * used to wrap content and text to assign meaning to the web document
+        * use **tags** to create HTML **elements**
+        * HTML5 is the latest version
 
-**Title**: Found in the `&lt;head>` section of the HTML document. Used for defining the page title. Displays in the browser's tab, search engine results and bookmarks.
+        ```xml
+        <p>This is a paragraph.</p>
+        ```
 
-```xml
-&lt;title&gt;Page Title&lt;/title&gt;
-```
+        Almost all elements have an "opening" tag and a "closing" tag. The closing tag has a forward slash (`/`). Remember to close tags in reverse order. 
 
-**Headings**: There are 6 heading tags available (`&lt;h1&gt;,&lt;h2&gt;,...,&lt;h6&gt;`) and follow a hierarchical structure. It's important to use the appropriate tag to describe the content, not for the default heading styles. That's what CSS is for!
+        Example:
 
-```xml
-&lt;h1&gt;Most Important Heading&lt;/h1&gt;
-&lt;h2&gt;Second Most Important Heading&lt;/h2&gt;
-```
+        ```xml
+        <p>Paragraph with a <a href="#">link</a>.</p>
+        ```
+      </script>
+    </section>
 
-**Paragraphs**: Created with the `&lt;p&gt;&lt;/p&gt;` tags.
-```xml
-&lt;p&gt;I'm a paragraph.&lt;/p&gt;
-```
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # HTML Elements
 
-**Link**: requires the addition of an `href` *attribute* (more on this later) to specify where to link to.
+        We'd be here all day if we had to go over every single HTML & HTML5 element - there are so many! So here's a [handy list](https://developer.mozilla.org/en/docs/Web/Guide/HTML/HTML5/HTML5_element_list) for reference.
 
-```
-&lt;a href=&quot;http://website.com&quot;&gt;link&lt;/a&gt;
-```
+        More resources:
 
-**Lists**: There are two kinds of lists: ordered (`ol`) for numbered lists & undordered (`ul`) for lists with bullets. Content must be included only within the list item (`li`).
+        * [http://www.sitepoint.com/web-foundations/elements/](http://www.sitepoint.com/web-foundations/elements/)
+        * [http://websitesetup.org/html5-cheat-sheet/](http://websitesetup.org/html5-cheat-sheet/)
+        * [html-elements.txt](project/html-elements.txt), located in your **project** folder 
 
-```xml
-&lt;ul&gt;
-    &lt;li&gt;Unordered list item&lt;/li&gt;
-    &lt;li&gt;Unordered list item&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol&gt;
-    &lt;li&gt;Ordered list item&lt;/li&gt;
-    &lt;li&gt;Ordered list item&lt;/li&gt;
-&lt;/ol&gt;
-```
-**Images**: like links, also requires the an additional attribute, `src`, for linking to the image file.
-
-```
-&lt;img src=&quot;path/to/image.jpg&quot;&gt;    ```
+        Let's go over some commonly used tags.
+      </script>
     </section>
     
     <section class="slide" data-markdown>
-##HTML vs HTML5
+      <script type="text/template">
+        #HTML: Common tags
 
-HTML5 is the latest *version* of HTML.  This latest version includes better browser support for  multimedia and graphical content like `video`, `audio` and `canvas` elements.
+        **Title**: Found in the `<head>` section of the HTML document. Defines the page title. Displays in the browser's tab, search engine results and bookmarks.
 
-HTML5 also introduced a number of *semantic* tags that better describe blocks of content. Prior to this latest version, the `&lt;div>` tag was used for grouping elements. While it is still valid, HTML5 introduced a number of semantic tags that better describe blocks of content. You'll see some in **index.html** provided in today's project.  
+        ```xml
+        <title>Page Title</title>
+        ```
 
-Here's a great resource to learn more about HTML5: http://html5doctor.com/   
-    </section>
-    <section class="slide" data-markdown>
-## HTML Element Relationships
+        **Headings**: There are 6 heading tags (`<h1>,<h2>,...,<h6>`) and follow a hierarchical structure. It's important to use the appropriate tag to describe the content, not for the default heading styles. That's what CSS is for!
 
-Elements have relationships with other elements in the HTML document that follow a family tree-like structure with branches of descendants, siblings, parents and children.
+        ```xml
+        <h1>Most Important Heading</h1>
+        <h2>Second Most Important Heading</h2>
+        ```
 
-![](framework/img/workshop/dom-tree.png)
+        **Paragraphs**: Created with the `<p></p>` tags.
+        ```xml
+        <p>I'm a paragraph.</p>
+        ```
+        **Lists**: There are two kinds of lists: ordered (`ol`) for numbered lists & undordered (`ul`) for lists with bullets. Content must be included only within the list item (`li`).
+
+        ```xml
+        <ul>
+            <li>Unordered list item</li>
+            <li>Unordered list item</li>
+        </ul>
+        <ol>
+            <li>Ordered list item</li>
+            <li>Ordered list item</li>
+        </ol>
+        ```
+      </script>
     </section>
     
     <section class="slide" data-markdown>
-## Parent, Child, Siblings & Indentation
+      <script type="text/template">
+        #HTML: Tags with Attributes
 
-Notice the way that the tags are indented, so that you can easily read the HTML and see what is a child, parent, and sibling of what elements. This will come in handy later, so keep up this way of indenting.
+        Attributes are used to provide more information about the HTML element. Let's look at a few common ones.
+        
+        Links use the `<a>` tag and an `href` *attribute* to specify where to link to.
 
-```xml
-&lt;body&gt; &lt;!--this body element is a parent to the div element --&gt;
-  &lt;div&gt; &lt;!--this div is a child of the body element, and a parent of the p elements--&gt;
-    &lt;p&gt;I am a sibling of the p below me! I am also a child of the div.&lt;/p&gt;
-    &lt;p&gt;I am a sibling of the p above me! I am also a child of the div&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/body&gt;
-```
+        ```
+        <a href="http://website.com">link</a>
+        ```
+
+        Images use an `<img>` tag and the `src` attribute, to link to the image file and and `alt` for accessiblity. Also note that the image tag has no closing tag.
+        ```
+        <img src="path/to/image.jpg" alt="alternative text">
+        ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #More Attributes
+
+        Here are two more attributes, mostly used for CSS styling.
+
+        **class** - can be used multiple times per page
+        
+        ```xml
+        <div class="column">Class example</div>
+        ```
+        
+        **id** - can be used for CSS styling, in-page links and only once per page
+        
+        ```xml
+        <div id="about">About section</div>
+        ```
+        
+        ---
+        ###Resource
+        [HTML attribute reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes) of all of them!
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+      #HTML Element Relationships
+
+      Elements have relationships with other elements in the HTML document that follow a family tree-like structure with branches of descendants, siblings, parents and children.
+
+      ![](framework/img/workshop/dom-tree.png)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Parent, Child, Siblings & Indentation
+
+        Nested HTML tags are indented, to increase readability of the code. 
+        
+        Using whitespace helps to show which element is a child, parent or sibling of its surrounding elements.
+
+        ```xml
+        <body> <!--this body element is a parent to the div element -->
+          <div> <!--this div is a child of the body element, and a parent of the p elements-->
+            <p>I am a sibling of the p below me! I am also a child of the div.</p>
+            <p>I am a sibling of the p above me! I am also a child of the div</p>
+          </div>
+        </body>
+        ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #HTML Comments
+        
+        HTML comments are useful for leaving notes for yourself (or others) but do not display in the browser. Comments are often used for:
+
+        * hiding code for later use
+        * leaving notes, reminders, explanations
+        * organizing the document
+
+        The syntax for comments start with `<!--` and ends with `-->`.
+        
+        ```
+        <!-- Comments should ALWAYS be included between the dashes. -->
+        ```
+      </script>
+    </section>
+    
+  
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #Enough talk, let's code!
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+      #Open the project files
+
+      Inside of the folder you downloaded today, add the **project** folder in your text editor to edit your project.
+
+      ```
+      llc-responsive-design-master
+        |-- framework // Contains files needed for slide presentation. Do not edit!
+        |-- project // Contains the exercise files for this workshop. (images, CSS & HTML files)
+        |-- slides.html // This is the file you are viewing right now!
+      ```
+
+      Go to **File** > ** Add Project Folder**. A popup will appear.
+      
+      ![](framework/img/workshop/editor-add-project-1.jpg)
+      
+      Then, navigate to the **llc-responsive-design-master** folder and select the **project**. With the entire folder selected, click **Open**.
+      
+      ![](framework/img/workshop/editor-add-project-2.jpg)
+
+      The folder and included files will appear in the text editor side bar. Double click on **index.html** to open it.
+      
+      ![](framework/img/workshop/editor-add-project-3.jpg)
+      </script>
     </section>
 
     <section class="slide" data-markdown>
-## One more thing...HTML Attributes!
+      <script type="text/template">
+      # Exercise: Update the content (15mins)
 
-Elements can also include **attributes**. There's also lots of attributes, but for today, here's a few you'll need: 
+      We’re focusing on the HTML so don’t worry about how it looks right now. Take some time to personalize your content. Some content to update:
 
-*   `class` - used mostly for styling
-*   `id` - used mostly for styling and in-page links
-*   `href` - used in the opening anchor tag, it contains a URL for the link
-*   `alt` - used as alternate text if the website can't represent the content or a screen reader is being used
-*   `src` - meaning source, used mostly for images, gives the url path for the embedded content
+      *   Header section: name & tagline
+      *   About Me / Profile blurb & image
+      *   Work Experience
 
-[Here's another handy list](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes) of all of them!
+      **Important!** Avoid changing the existing tags since there is existing CSS attached to it but feel free to add/remove non-structural elements like paragraphs and images. Ask your mentors if you're not sure!
+      </script>
+    </section>
+    
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        <h1>Hello CSS!</h1>
+      </script>
     </section>
 
     <section class="slide" data-markdown>
-##Enough talk, let's code!
+      <script type="text/template">
+      #CSS Overview
 
-Inside of the folder you downloaded today, there are several folders that contain different content. 
+      CSS (Cascading Style Sheet) is used to style the HTML elements.
 
-```
-llc-responsive-design-master
-  |-- framework // Contains files needed for slide presentation. Do not edit!
-  |-- project // Contains all the exercise files for this workshop. (images, CSS & HTML files)
-  |-- slides.html // This is the file you are viewing right now!
-```
+      A CSS document is made up of a bunch "rules", that reference the HTML elements in the HTML document. These rules include a **selector** and one or more **declarations**. 
+      
+      Each declaration has a **property** and a **value**.
 
-In Sublime Text, let's open [index.html](project/index.html) in your **project** folder and make some changes.
+      ```css
+      selector {
+        property: value;
+      }
+      ```
 
-Open Sublime Text and go to **File > Open**.
+      The **selector** specifies which element(s) to apply the styling to. The **declaration** contains what styles to apply. 
 
-![](http://cl.ly/image/103C1W2s2T1H/Image%202015-01-28%20at%209.51.34%20PM.png)
-
-Then, navigate to the **project** folder (in the folder you downloaded with today's slides). With the entire folder selected, click **Open**.  
-
-**OR** go to your Finder/Windows Explorer, click once and drag & drop the folder into Sublime Text.
-
-The folder and included files will appear in Sublime's side bar. Double click on **index.html** to open it.
+      ```css
+      h1 {
+        color: red;
+      }
+      ``` 
+      </script>
     </section>
 
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #CSS Syntax
+        
+        ```
+        /* This is a CSS comment */
+        
+        div {
+          border: 3px solid #333;
+          background-color: lightblue;
+        }
+        ```
+
+        * property & values are separated by a _colon_
+        * each declaration ends in a _semi-colon_
+        * write each declaration on its own line to make it easier to read
+        * there are MANY CSS properties
+
+        ---
+        ###Resource
+        [Mozilla Developer Network: CSS Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Practice writing some CSS
+        
+        Try changing the color value below and increase/decrease the padding values and see what happens!
+        
+        <textarea class="snippet" data-subject="#css-practice">color: slateblue; 
+        padding: 10px 15px 80px 60px;</textarea>
+
+        <div id="css-practice" class="example">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt sint beatae dolor dolorum aliquid quis explicabo vitae numquam.
+        </div>
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Writing CSS - Where Does it Go?
+
+        CSS can be added a few ways but today we'll use the recommended method, an external stylesheet. The CSS will be contained in it's own file, separate from the HTML.
+
+        CSS files are referenced in the `<head>` element with a `<link>` tag and two **attributes**, `rel` and `href`. The `href` value points to the location of the style sheet file. 
+
+        ```
+        <head>
+          <title>Page Title</title>
+          <meta charset="utf-8">
+          <link rel="stylesheet" href="css/style.css">
+        </head>
+        ```
+        <!-- .element: class="note" -->**Pro tip!** Though not required, css files are often saved in a separate css folder for organization, so make sure the file path points to the appropriate directory.
+    </script>
+  </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class exercise: Reference the CSS
+
+        Go back to your text editor and make sure **index.html** is open. Let's link the existing CSS file, **styles.css** and see what happens!
+        
+        **Pro tip!** For a shortcut, type "link" + tab key. Ta da!
+        
+        ```
+        <link rel="stylesheet" href="css/styles.css">
+        ```
+        
+        > The styles are there but try resizing the browser.  What happens?
+          
+        Before we go into responsive design techniques, let's review some fundamental CSS concepts first to make sense of the existing CSS provided in today's project.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Type & Descendant Selectors
+
+        Type selectors select HTML elements by using the tag name.
+
+        ```css
+        p {
+          /* styles for all paragraphs on the page*/
+        }
+        a {
+          /* styles for all links on the page*/  
+        }
+        ```
+
+        Descendant selectors target any child/descendant elements.  Note the space *in between* the element names.
+
+        ```css
+        section p {
+          /* all paragraphs that are descendants of any section tag */
+        }
+
+        ul li a {
+          /* links inside of list items, inside of unordered lists. */
+        }
+        ```
+        
+        > Will `ul li a` affect the links inside of ordered lists (`<ol>`)?
+      </script>
+    </section>
+    
     <section class="slide">
-      <h2>Exercise (20mins)</h2>
-
-      <p>We’re still focusing on the HTML so don’t worry about how it looks right now.  Take some time to personalize your content but don’t add or change any HTML tags just yet!</p>
-
-      <p>Some content to update:</p>
-
-      <ul>
-        <li>Header section: name &amp; tagline</li>
-        <li>About Me / Profile blurb &amp; image</li>
-        <li>Work Experience</li>
-        <li>Pretty much all the content on the page!</li>
-      </ul>
-
-      <p><strong>Note:</strong> Avoid changing the existing tags since there is existing CSS attached to it but feel free to add/remove non-structural elements like paragraphs and images.  Ask your mentors if you're not sure!</p>
-
-      <div class="presenter-notes">
-        <p>Let the class know that they are not expected to update all the content.  Just enough to get a handle on updating the HTML. Now would be a good time to be open to a discussion or questions about HTML since it is not specifically covered in this workshop.  Newer learners can ask questions while more experience learners can continue to update the content.</p>
-      </div>
-    </section>
-    
-    <section class="slide title">
-      <h1>Goodbye Defaults,<br> Hello CSS!</h1>
-    </section>
-
-    <section class="slide" data-markdown>
-##CSS Overview
-
-CSS stands for "Cascading Style Sheets" and is used to style the HTML elements by overriding the default styles or adding new styles.
-
-A CSS document is made up of a bunch of lines of code, or "rules", that keep referring back to the HTML elements in our HTML document. These rules are always made up of a **selector** and one or more **declarations**. Each declaration has a **property** and a **value**.
-
-```css
-selector {
-  property: value;
-}
-```
-
-The **selector** specifies which element(s) to apply the styling to. The **declaration** contains what styles to apply. 
-
-```css
-h1 {
+      <!-- <script type="text/template"> -->
+        <h1>Practice Selecting an element (type selector)</h1>
+        <p>Using the HTML example below, change the “selector” to apply the styles.</p>
+<pre><code>&lt;p&gt;This is a paragraph&lt;/p&gt;
+&lt;a href="#"&gt;This is a link&lt;/a&gt;
+</code></pre>
+<textarea class="snippet" data-subject="#css-selectors">selector { /* select the paragraph */
   color: red;
 }
-``` 
+selector { /* select the link */
+  color: blue;
+}</textarea>
+        <div id="css-selectors" class="example">
+          <p>This is a paragraph</p>
+          <a>This is a link</a>
+        </div>
+      <!-- </script> -->
     </section>
-
-    <section class="slide">
-      <h2>CSS Syntax</h2>
-<pre><code>div {
-  border: 3px solid #333;
-  background-color: lightblue;
-}
-</code></pre>
-      <p>Notice that property & values are separated by a <em>colon</em> and each declaration ends in a <em>semi-colon</em>. These are necessary for the browser to understand your styles. The colon and semi-colon are used here a lot like they are in English!</p> 
-      <p>Although you could write all the styles on one line, that's hard to read, so always format your CSS rules this way, with each declaration on its own line.</p>
-    </section>
-    
-    <section class="slide">
-      <h2>CSS Properties</h2>
-      <p>If you thought there were a lot of HTML elements, there are even more CSS properties!</p>
-      <p>Here's a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference" alt="list of CSS properties">great resource</a> for all of them.</p>
-    </section>
-
-
-    <section class="slide" data-markdown>
-##Writing CSS - Where Does it Go?
-
-You can add CSS to your web page in many ways. Today we're going to put the CSS in it's own document, in a linked/external style sheet. This method is recommended because it separates the CSS from the HTML document and can be referenced on any HTML page where the styles need to be included.
-
-Referenced in the `&lt;head>` element with a `&lt;link&gt;` tag and two **attributes**, `rel` and `href`. Just like creating links, the value of the `href` points to the location of the style sheet. Though it is not required, css files are often saved in a css folder for organization, so make sure the file path points to the appropriate directory.
-
-
-```
-&lt;head&gt;
-    &lt;title&gt;Page Title&lt;/title&gt;
-    &lt;meta charset=&quot;utf-8&quot;&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&gt;
-&lt;/head&gt;
-```
-
-**Pro tip!**  Sublime Text shortcut: type "link" + tab key. Ta da!
-    </section>
-    
-    <section class="slide" data-markdown>
-##Class exercise
-
-For today's final project, we are going to take a web page that is already styled but not mobile friendly or optimized for different screen sizes.  
-
-Go back to Sublime and **index.html**.  We're going to link the existing CSS file, **styles.css** to and see what happens!  The styles are there but try resizing the browser.  What happens?
   
-Before we go into responsive design techniques, let's go over & review some fundamental concepts first so we can make sense of the existing CSS provided in today's project.
+    <section class="slide" data-markdown>
+      <script type="text/template">
+      #Class attribute & selector
+
+      Classes are used mostly for CSS styles and can be used one or more times on the same page.  The value of the class is named by you!
+      
+      To use it, add it in the *opening* HTML tag. You can have more than one class for the same element.
+
+      ```xml
+      <div class="button"></div>
+      <div class="button warning"></div>
+
+      ```
+
+      In the CSS, a class selector starts with a leading period.
+
+      ```
+      .button {
+        background-color: lightblue;
+      }
+      ```
+      </script>
     </section>
 
     <section class="slide" data-markdown>
-## First up: the class attribute!
+      <script type="text/template">
+      #Class attribute & selector
 
-Classes are used mostly for styling and can be reused throughout your code.  Name the class anything you want! To use it, include it in the *opening* tag. You can have an unlimited number of classes on each element, but only add them if you absolutely need to.
+      Classes as selectors can be combined with other classes or type selectors.
+      
+      ```xml
+      <div class="button"></div>
+      <div class="button warning"></div>
+      <span class="button"></span>
 
-```xml
-&lt;div class="message">&lt;/div>
-&lt;div class="message warning">&lt;/div>
+      ```
 
-```
+      ```css
+      .button {
+        /* style for any element with a class of button */
+      }
+      .button.warning {
+        /* style for any element with a class of button AND warning */
+      }
+      span.warning {
+        /* style for only a span element with a class of warning */
+      }
+      ```
+      </script>
+    </section>
+    
+    <section class="slide">
+      <!-- <script type="text/template"> -->
+        <h1>Practice Selecting an element (type selector)</h1>
+        <p>Using the sample HTML below, try updating the CSS selectors.</p>
+        
+<pre><code>&lt;div class=&quot;button warning&quot;&gt;&lt;/div&gt;
+&lt;span class=&quot;warning&quot;&gt;&lt;/span&gt;</code></pre>
 
-In the CSS, a class selector starts with a leading period, unlike HTML element selectors. (More on this soon.)
-
-```
-.warning {
-  background-color: red;
+<div id="css-classes" class="example">
+  <div class="message warning">Message & Warning class</div>
+  <span class="warning">Only  class</span>
+</div>
+        
+<textarea class="snippet" data-subject="#css-classes">selector { /* select the warning class */
+  color: red;
 }
-```
+selector { /* select the warning AND message class */
+  color: blue;
+}</textarea>
 
-Let's look at the **index.html** and **styles.css** files for examples.
+      
+      <!-- </script> -->
     </section>
 
-    <section class="slide" data-markdown>
-##Type & Descendant Selectors
-
-Type selectors select HTML elements by using the tag name.
-
-```css
-div {
-  /*styles for all divs on the page*/
-}
-a {
-  /*styles for all links on the page*/  
-}
-```
-
-Descendant selectors target any child/descendant elements.  Note the space *in between* the element names.
-
-```css
-div p {
-  /*all paragraphs that are descendants of any divs*/
-}
-
-ul li a {
-  /*links inside of list items, inside of unordered lists. 
-  Question: will this affect links inside of ordered lists (ol's)?*/
-}
-```
-    </section>
-
-    <section class="slide" data-markdown>
-##Class Selectors
-
-Selects elements based on class names.  Can be combined with other classes or type selectors.
-
-```css
-.container {
-  /*styles for all elements with a class of container, no matter what element type*/
-}
-p.container {
-  /* styles for all paragraph elements with a class of "container" - matches type & class */
-}
-.container.warning {
-  /* styles for all elements with BOTH a class of container and warning */
-}
-.container .warning {
-  /* how is this different from the one above? */
-}
-p.container a {
-  /* guess what this one does! */
-}
-
-```
-    </section>
-
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown><script type="text/template">
 ##Combining selectors
 Sometimes you'll have several elements that share the same styles.  You can *combine* the selectors.
 
@@ -531,9 +690,9 @@ p, a {
   /*what will this one select?*/
 }
 ```
-    </section>
+    </script></section>
 
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown><script type="text/template">
 ## CSS Selectors
 
 Let's go back to **styles.css** and try to find each type of selector and combinations we've just learned about:
@@ -542,9 +701,11 @@ Let's go back to **styles.css** and try to find each type of selector and combin
 *   Descendant Selectors
 *   Class Selectors
 *   Combined Selectors
-    </section>
 
-    <section class="slide" data-markdown>
+>Let's look at the **index.html** and **styles.css** files for examples.
+    </script></section>
+
+    <section class="slide" data-markdown><script type="text/template">
 ## Inheritance
 
 In the **styles.css** file, the body selector contains a `font-family` property. 
@@ -558,9 +719,9 @@ body {
 Why is it declared here?
 
 Remember, CSS stands for *Cascading* Style Sheets. The browser reads the CSS from *top to bottom* (or cascades) and some of these styles are inherited from their parent elements. This makes it more efficient than declaring this same styles over and over again for each element.
-    </section>
+    </script></section>
 
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown><script type="text/template">
 ##Specificity
 
 What's going on here? Why are there so many `h2`'s?
@@ -582,9 +743,9 @@ section h2 {
   margin-bottom: 20px;
 }
 ```
-    </section>
+    </script></section>
 
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown><script type="text/template">
 ##Specificity cont.
 The most specific selector OR the most recent CSS rule will be selected and rendered into the browser. Which one gets selected is based largely on magic.
 
@@ -599,8 +760,8 @@ p.special-paragraph {
 /* only paragraphs with this class - more specific */
 }
 ```
-    </section>
-<section class="slide" data-markdown>
+    </script></section>
+<section class="slide" data-markdown><script type="text/template">
 ##What is this?
 
 You will see this little snippet at the top of your CSS file. But what does it do?
@@ -610,9 +771,9 @@ You will see this little snippet at the top of your CSS file. But what does it d
   box-sizing: border-box;
 }
 ```
-    </section>
+    </script></section>
 
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown><script type="text/template">
 ##The Box Model
 
 Margins, padding, widths, and borders, oh my: the glorious box model.
@@ -628,13 +789,13 @@ This snippet is the fix for the way the box model handles the sizing of elements
 ```
 
 More info about this fix here: [http://www.paulirish.com/2012/box-sizing-border-box-ftw/](http://www.paulirish.com/2012/box-sizing-border-box-ftw/)
-    </section>
+    </script></section>
 
-    <section class="slide title">
+    <section class="slide title" data-markdown><script type="text/template">
       <h1>Ok, let's make something responsive already!</h1>
-    </section>
+    </script></section>
 
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown><script type="text/template">
 ##Percentages and CSS3 Media Queries
 
 A fluid layout using percentages + media queries = responsive design
@@ -650,9 +811,9 @@ Smaller resolutions, not so good:
 On the phone, it's even worse! (Screen shot from Chrome's emulator dev tool - more on this later.)
 
 ![](http://cl.ly/image/1u0r0i0z0w1L/Image%202015-01-30%20at%2012.03.46%20AM.png)
-    </section>
+    </script></section>
 
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown><script type="text/template">
 ##Percentages first, then media queries
 
 In **styles.css**, look for this code block.  It should be around line 79.  Notice that the width is set to a fixed width of 1000px.  
@@ -670,7 +831,7 @@ That means no matter what, that container will always be 1000px.
 Let's change it to `max-width: 1000px;` and also add `width: 80%;` and see how that changes the page.
 
 **Pro tip!** In Sublime, select **Find > Find...**  OR Control/Command F -- this will open a bar at the bottom of the screen.  Type in **.content-wrap** and select Find.  This will make it easier to search for code snippets.
-    </section>
+    </script></section>
 
     <section class="slide side-by-side" data-markdown>
 ##Fluid is not the same as responsive
@@ -681,7 +842,7 @@ It works much better now, the content is scaled relative to the size of the brow
 ![](http://cl.ly/image/3Z3U023P361J/Image%202015-01-30%20at%2012.37.27%20AM.png)
 
 But sometimes, when you get to a smaller size, you might want to make changes that go beyond just scaling up/down the width of the page components. 
-    </section>
+    </script></section>
 
     <section class="slide side-by-side" data-markdown>
 ##What if we did something like this?
@@ -690,9 +851,9 @@ This is an example of a responsive change. The CSS has *changed* based on a scre
 
 ![](http://cl.ly/image/3Z3U023P361J/Image%202015-01-30%20at%2012.37.27%20AM.png)
 ![](http://cl.ly/image/03403z392120/Screen%20Shot%202015-01-30%20at%2012.33.31%20AM.png)
-    </section>
+    </script></section>
 
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown><script type="text/template">
 ##Media Queries
 
 Media queries are the key to making a responsive website because it allows you to apply CSS to your document *only* when the screen has reach a certain size. Lets take a look at a basic media query.
@@ -720,9 +881,9 @@ Notice how the CSS is nested inside of what looks like another CSS rule? You can
 ```
 
 The above CSS gets applied when the browser reaches a width of 940px or smaller. This is referred to as a **breakpoint**.
-    </section>
+    </script></section>
 
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown><script type="text/template">
 ##Media Queries and Width
 
 The most common way to use media queries is by targeting the width of a device.
@@ -742,9 +903,9 @@ You can also specify a range by combining min-width and max-width. This will onl
     ...     
 }
 ```
-    </section>
+    </script></section>
 
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown><script type="text/template">
 ##Media Queries and Heights
 
 Heights can be targeting in the same way as widths are using min-height or max-height.
@@ -764,9 +925,9 @@ You can also mix height and width in the same media query:
 ```
 
 **Note**: Height-based media queries can be tricky. For example, browser bars may take up different heights and most of the time, you want your content to just flow as long as it needs to be. 
-    </section>
+    </script></section>
 
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown><script type="text/template">
 ##Class Exercise: Media Queries!
 
 Let's add our first media query!  Adding a noticeable change like a background colour into each media query can help us to see easily where our breakpoints are, like this:
@@ -795,9 +956,9 @@ Where to add the media queries? Personal preference.
 Some people like to create a separate style sheet just for media queries, others like to group it with the CSS section it's being applied to (e.g. responsive header changes are added directly under the base header styles).
 
 For today, let's just group all of our media queries at the bottom of the style sheet.
-    </section>
+    </script></section>
 
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown><script type="text/template">
 ##Common breakpoints
 
 There are many different device sizes so trying to target a specific device is tricky.  It's best to combine fluid techniques *with* media queries so the design is still flexible in between common breakpoints. Here are some to consider:
@@ -812,9 +973,9 @@ There are many different device sizes so trying to target a specific device is t
 These are just general guidelines. Add media queries to optimize for desktop/laptops, tablets and mobile phones. Use fluid techniques wherever possible, then add a breakpoint when the design breaks and is no longer suitable that viewport.
 
 On the other hand, be careful about using too many breakpoints. If you find that you have two media queries that are close, see if you can move the styles to one or the other instead of creating another breakpoint.
-    </section>
+    </script></section>
 
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown><script type="text/template">
 ##Exercise (15 mins)
 
 Using the general breakpoint guidelines and the first media query example, add two more media queries to target tablet and mobile.  
@@ -827,10 +988,10 @@ Don't forget to test it!
 Change your accent colour! Using Chrome's dev tools, *inspect* any element that has a colour, try the "Hello" background or a link, to see if you can figure out where the blue CSS color is coming from and change it to your own colour choice.
 
 Here's a great resource for colours: http://colours.neilorangepeel.com/
-    </section>
+    </script></section>
 
 
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown><script type="text/template">
 ## Exercise Solution
 
 These are just general suggestions, you may find that you'll need to adjust these sizes as you start to make changes to your page design & layout. Let's discuss what breakpoints you all chose to use.
@@ -855,9 +1016,9 @@ These are just general suggestions, you may find that you'll need to adjust thes
   }
 }
 ```
-    </section>
+    </script></section>
 
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown><script type="text/template">
 ## A Brief Interlude: the Web Inspector
 
 We have a handy tool to see our page in specific device sizes, and to help us figure out what elements get what styles from where. It's the Web Inspector!
@@ -868,25 +1029,25 @@ We have a handy tool to see our page in specific device sizes, and to help us fi
 *   Refresh the browser
       
 ![](http://f.cl.ly/items/3S1g1h1c383845123O0P/Image%202015-01-28%20at%2012.58.57%20PM.png)
-    </section>
+    </script></section>
 
-    <section class="slide">
+    <section class="slide" data-markdown><script type="text/template">
       <h2>A Brief Interlude: the Web Inspector</h2>
        <a href="https://developer.chrome.com/devtools/docs/device-mode">More about the web inspector</a>
       <p>The red box: our website. The green box: our HTML. The orange box: our CSS rules.</p>
       <img src="framework/img/workshop/emulator.jpg">
-    </section>
+    </script></section>
 
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown><script type="text/template">
 ##Don't Forget the Viewport Meta Tag!
 
 The viewport meta tag **must** be included in the <head> of your HTML document to ensure that the page responds on mobile devices. This tag tells browsers (primarily mobile browsers) how to size itself.
 
 ```xml
-&lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 ```
 
-* `meta` is the tag name and goes in the `&lt;head` of the web page.
+* `meta` is the tag name and goes in the `<head` of the web page.
 * `name="viewport"` use viewport to tell the browser sizing information.
 * `content` provides info about how to size the viewport. Multiple `key=value` are comma separated.
 * `width=device-width` tells the browser to be as wide as the device.
@@ -895,9 +1056,9 @@ The viewport meta tag **must** be included in the <head> of your HTML document t
 * `minimum-scale` & `maximum-scale` will limit how far in or out a user can scale/zoom into the website.
 
 In the Chrome emulator, see how the layout changes once the viewport meta tag is added.
-    </section>
+    </script></section>
 
-    <section class="slide">
+    <section class="slide" data-markdown><script type="text/template">
       <h2>What Can We Improve?</h2>
       <p>Here are some things to look out for when optimizing design and page layouts for different screens.</p>
       <ul>
@@ -907,9 +1068,9 @@ In the Chrome emulator, see how the layout changes once the viewport meta tag is
         <li class="delayed">:hover effects don't work on mobile.</li>
         <li class="delayed">Spacing, whitespace, alignment of elements.</li>
       </ul>
-    </section>
+    </script></section>
 
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown><script type="text/template">
 ##Class Exercise
 
 Let's figure out what we need to change to get it to look like this:
@@ -921,9 +1082,9 @@ Let's figure out what we need to change to get it to look like this:
 1. Adjust the width of the image and content area.
 
 This means we have to override the current CSS.  To override it, we need to use the same selector or a more specific selector.  Using the Chrome dev tools will make it easier to figure out rather than just looking at the CSS files.  Let's open it now, look for the selectors to target and test out some CSS changes.
-    </section>
+    </script></section>
 
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown><script type="text/template">
 ##Exercise (15mins) - Updating the About section
 
 After looking through the dev tools, we've determine where and what changes to make.  
@@ -950,9 +1111,9 @@ Hints:
 * Since you can't delete CSS with media queries, use the value of `none` to reset a float.
 
 (A sample answer is on the next slide.)
-    </section>
+    </script></section>
 
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown><script type="text/template">
 Your CSS should be similar to the below snippet. Your width values may vary depending on what you decide looks best to you.
 
 ```
@@ -975,9 +1136,9 @@ Your CSS should be similar to the below snippet. Your width values may vary depe
   }
 }
 ```
-    </section>
+    </script></section>
     
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown><script type="text/template">
       ##What else can we change?
 
       The **Work Experience** section looks fine at this breakpoint but once we start going smaller, it starts to get squished.  So let's go back to the Chrome dev tools and see what to adjust here.
@@ -985,9 +1146,9 @@ Your CSS should be similar to the below snippet. Your width values may vary depe
       Perhaps changing it from two columns, side by side, to stacking the content on top of each other will do the trick.  Let's check it out! 
 
       Heads up: making responsive changes requires a lot of tweaking and testing and inspecting elements.  Be prepared to do a lot of experimenting!
-    </section>
+    </script></section>
 
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown><script type="text/template">
 ##Exercise (15mins) - Updating Work Experience 
 
 After looking at the Work Experience section, we've determined where the changes need to be made. The below snippet is the base CSS.  To get rid of the floated two columns styles, reset the float (hint: use `none`), adjust the width to span all the way across and remove/update any padding & margin to your liking.
@@ -1008,9 +1169,9 @@ After looking at the Work Experience section, we've determined where the changes
 **Pro tip!** Only use the properties that need to be changed.  For example, if the font-size doesn't need to be change, no need to add it to the media query.
 
 Sample CSS on the next slide.
-    </section>
+    </script></section>
 
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown><script type="text/template">
 
 Sample solution for the previous slide's exercise. This should be included inside of the appropriate media query.
 
@@ -1025,17 +1186,17 @@ Sample solution for the previous slide's exercise. This should be included insid
   float: none; /* removed float */
 }
 ```
-    </section>
+    </script></section>
 
-    <section class="slide">
+    <section class="slide" data-markdown><script type="text/template">
       <h2>Typography</h2>
       <p>We could have an entire class on web typography alone.</p>
       <p><strong>Margin, padding, line-height, text-size, and font-family.</strong></p>
       <p>These are all extremely important in responsive design - keep your text limited and meaningful, use one to two readable fonts, and make sure text is a good size for all screen sizes.</p>
       <p>Typography on a responsive site should be: easy to read, efficient and responsive itself. How do we accomplish this?</p>
-    </section>
+    </script></section>
 
-    <section class="slide">
+    <section class="slide" data-markdown><script type="text/template">
       <h2>Responsive Type: Rems and Ems Versus Pixels</h2>
       <ul>
         <li class="delayed"><strong>px:</strong> pixels, fixed size, not responsive. Boo.</li>
@@ -1044,8 +1205,8 @@ Sample solution for the previous slide's exercise. This should be included insid
       </ul>
       <p class="delayed">This can be very confusing. Here's a great way to approach it: <a href="http://css-tricks.com/rems-ems/" alt="css tricks rems versus ems article">http://css-tricks.com/rems-ems</a></p>
       <p class="delayed">When in doubt, use rems, and set a base font-size on your html element. The default is equivalent to 16px, but you can set it to anything you want.</p>
-    </section>
-    <section class="slide" data-markdown>
+    </script></section>
+    <section class="slide" data-markdown><script type="text/template">
 ##Making font sizes responsive
 
 How do we calculate rems?  If you want the font-size to be equivalent to 80px, then divide it by the base font-size to get the rem value.
@@ -1074,9 +1235,9 @@ h2 {
 ```
 
 **Pro tip!** Using percent-based & relative measurements can give you finer control because you can use decimals with pixels.
-    </section>
+    </script></section>
 
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown><script type="text/template">
 ##How does this make it responsive?
 
 Let's go back to the browser and look our header text. When we hit our 600px breakpoint, we can make the text smaller to fit the viewport better.  Pixels are fixed units, so to make this change we would have to override both heading values.  Something like this:
@@ -1120,8 +1281,8 @@ h2 {
 ```
 
 Let's add this update and see how it affects our page.
-    </section>
-    <section class="slide" data-markdown>
+    </script></section>
+    <section class="slide" data-markdown><script type="text/template">
 ##rem & px
 
 In the previous example, changing the root font size (`html`) made all of the relative units size accordingly, but you can still use pixels for the styles that need to be at a fixed size and not relative.  For example, you may just want your headings to get smaller but the paragraphs remain the same.
@@ -1146,8 +1307,8 @@ p {
   }
 }
 ```
-    </section>
-    <section class="slide" data-markdown>
+    </script></section>
+    <section class="slide" data-markdown><script type="text/template">
 ##Hiding Elements
 Here's how to do it, but don't make this a habit. It's convenient but the browser still needs to load this code, and that slows your site down. Use it sparingly!
 
@@ -1159,9 +1320,9 @@ Here's how to do it, but don't make this a habit. It's convenient but the browse
 }
 ```
 That's it! 
-    </section>
+    </script></section>
 
-    <section class="slide">
+    <section class="slide" data-markdown><script type="text/template">
       <h2>Final Notes</h2>
       <p>Responsive is an iterative process. Don't get discouraged if every time you look back at your site, something needs to be changed! Websites are never "done", even the best can always be improved.</p>
       <p>When in doubt:</p>
@@ -1174,9 +1335,9 @@ That's it!
 
       <p>Take a look at <strong>final.html</strong> & <strong>final.css</strong> to get some more ideas!</p>
       <p>Check out the next slide for more resources.</p>
-    </section>
+    </script></section>
 
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown><script type="text/template">
       ##Additional Resources
 
       * [Learn to Code Advanced HTML & CSS](http://learn.shayhowe.com/advanced-html-css/)
@@ -1186,9 +1347,9 @@ That's it!
       * http://responsivenavigation.net/ - responsive navigation examples
       * [Google: The New Multi-Screen World](https://www.thinkwithgoogle.com/research-studies/the-new-multi-screen-world-study.html)
       
-    </section>
+    </script></section>
 
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown><script type="text/template">
       ##Getting your site online
 
       You will need to register a domain name (www.mysite.com) and get hosting. Here are a couple domain & hosting suggestions:
@@ -1204,7 +1365,7 @@ That's it!
 
       Here's a nice tutorial getting your files online using FileZilla: [FileZilla Client Tutorial](https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_%28en%29)  
       Feeling adventurous? Try [Hosting Static Sites on Github for Beginners](http://thephuse.com/development/hosting-static-sites-on-github-for-beginners/).
-    </section>
+    </script></section>
 
     <!-- Last slide -->
     <section class="slide last">
@@ -1224,15 +1385,30 @@ That's it!
       </ul> -->
 
       <p class="attribution">Slide presentation created with <a href="https://github.com/LeaVerou/csss">Lea Verou's CSS-based SlideShow System</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
-    </section>
-  </main><!-- cls main section -->
+    </script></section>
+    
+    <!-- Last slide -->
+    <section class="slide last">
+      <h1>Thank you!</h1>
+      <h2 class="heading-bg">
+        <span>Title of Workshop</span><br>
+        <span>Second line</span>
+      </h2>  
 
-  <footer>
-      <p class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.svg" /></a> by <a prefix="cc: http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
-      <p class="instructions">Use the left <i class="fa fa-arrow-left"></i> and right <i class="fa fa-arrow-right"></i> arrow keys to navigate</p>
-  </footer>
+      <img class="instructor" src="http://cl.ly/image/0r3Q3H110G36/profile-generic.jpg" alt="instructor name">
+      <h2><span class="cursive">with</span> Instructor Name</h2>
+      <ul>
+        <li><a href="mailto:">hello@email.com</a></li>
+        <li><a href="#">mywebsite.com</a></li>
+        <li><a href="http://twitter.com/">@twitter</a></li>
+      </ul>
+
+      <p class="attribution">Slide presentation created by <a href="http://christinatruong.com">Christina Truong</a> based on <a href="https://github.com/LeaVerou/csss">Lea Verou's SlideShow</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
+    </script></section>
+
+  </main><!-- cls main section -->
   
-  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="framework/scripts/jquery-1.11.0.min.js"></script>
   <script src="framework/scripts/slideshow.js"></script>
 
   <!-- Uncomment the plugins you need -->
@@ -1243,23 +1419,17 @@ That's it!
 
   <script src="framework/scripts/plugins/markdown/marked.js"></script>
   <script src="framework/scripts/plugins/markdown/markdown.js"></script>
-  <!-- <script src="framework/scripts/plugins/highlight/highlight.js"></script> -->
   <script src="framework/scripts/plugins/highlight/highlight-8.4.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
-
+  <script src="framework/scripts/llc.js"></script>
   <script>
-      var slideshow = new SlideShow();
+    var slideshow = new SlideShow();
 
-      // Grabs all the .snippet elements
-      var snippets = document.querySelectorAll('.snippet');
-      for(var i=0; i<snippets.length; i++) {
-          new CSSSnippet(snippets[i]);
-      }
-
-      // Adds "edit me" note to editable code areas
-      jQuery(document).ready(function(){
-          jQuery(".snippet").before("<span class=\"edit\">edit me</span>");
-      });
+    // Grabs all the .snippet elements
+    var snippets = document.querySelectorAll('.snippet');
+    for(var i=0; i<snippets.length; i++) {
+      new CSSSnippet(snippets[i]);
+    }
   </script>
 </body>
 </html>
