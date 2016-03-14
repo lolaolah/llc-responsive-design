@@ -20,23 +20,19 @@
 <!-- Timer/progress bar: Define the presentation duration using "data-duration" in minutes. -->
 <body class="en" data-duration="360">
   <main>
-    <section class="slide welcome">
+    <section class="slide welcome highlight">
       <h1><img class="logo-stacked" src="framework/img/llc-logo-stacked-white.png" alt="Ladies Learning Code logo">Welcome!</h1>
       
-      <div class="instructions no-bullet-list">
-        
+      <div class="instructions">
         <!-- ADD WIFI INFO HERE -->
-        <!-- <h2>Get Connected</h2>
-        <ul class="connected">
-          <li>Network: wifi network</li>
-          <li>Password: wifi password</li>
-        </ul>
-        <hr> -->
+        <h2>Get <br>Connected</h2>
+        <p><strong>Wifi:</strong> wifi network</p>
+        <p><strong>Password:</strong> wifi password</p>
+        <hr>
         
-        <!-- ADD ANY ADDITIONAL INSTRUCTIONS HERE -->
         <h2>Download<br> & Install</h2>
-        <ul class="downloads">
-          <li>Learner files (zip file): <a href="http://bit.ly/llc-responsive">bit.ly/llc-responsive</a>
+        <ol class="downloads">
+          <li>Learner files (zip file): <a href="https://github.com/ladieslearningcode/llc-responsive-design/archive/master.zip">bit.ly/llc-responsive</a>
             <ul>
               <li>unzip the learner file (<em>extract all</em> if you’re on a PC)</li>
               <li>open <strong>slides.html</strong> in the browser to view the slides</li>
@@ -45,15 +41,14 @@
           <li>Atom Text Editor: <a href="http://atom.io">atom.io</a></li>
           <li>Chrome Browser: <a href="https://www.google.ca/chrome/browser/desktop/">google.ca/chrome</a></li>
           </li>
-        </ul>
+        </ol>
       </div>
-
       <footer>
         <a class="left" rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.png" /></a>
         <p class="left">Content created by <a href="https://twitter.com/agentemily">Emily Porta</a> and <a href="http://christinatruong.com">Christina Truong</a> for <a prefix="cc: http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
         <p class="right">Use the left <span class="arrow">&#8592;</span> and right <span class="arrow">&#8594;</span> arrow keys to navigate</p>
       </footer>
-    </section>
+    </section> 
     
     <section class="slide intro">
       <img class="logo" src="framework/img/llc-logo-white.png" alt="Ladies Learning Code logo">
@@ -92,6 +87,14 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
+        # Course Outline
+        
+        <div class="table-of-contents"></div> 
+      </script>
+    </section>
+
+    <section class="slide" data-markdown data-toc>
+      <script type="text/template">
       #Getting Set Up
 
       **[Atom](https://atom.io/)** - a text editor with colour highlighting and other useful features. 
@@ -124,7 +127,7 @@
       </script>
     </section>
 
-    <section class="slide title" data-markdown>
+    <section class="slide title" data-markdown data-toc>
       <script type="text/template">
         #What is Responsive <br>Web Design?
       </script>
@@ -221,7 +224,7 @@
       </script>
     </section>
 
-    <section class="slide title" data-markdown>
+    <section class="slide title" data-markdown data-toc>
       <script type="text/template">
       <h1>HTML Overview</h1>
       </script>
@@ -501,7 +504,7 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-      # Exercise: Update the content (20mins)
+      # Exercise: Update the content (~15mins)
 
       We’re still focusing on the HTML so don’t worry about how it looks just yet. Take this time to personalize your content. Some suggestions are:
 
@@ -519,7 +522,7 @@
       </script>
     </section>
 
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown data-toc>
       <script type="text/template">
       #CSS Overview
 
@@ -797,11 +800,13 @@ selector { /* select the paragraph inside of the about element */
       </script>
     </section>
 
-    <section class="slide title" data-markdown><script type="text/template">
-      <h1>Ok, let's make something responsive already!</h1>
-    </script></section>
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+      # Ok, let's make something responsive already!
+      </script>
+    </section>
 
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown data-toc>
       <script type="text/template">
         #Percentages and CSS3 Media Queries
 
@@ -809,6 +814,12 @@ selector { /* select the paragraph inside of the about element */
 
         Here's how a fixed width project looks in a larger resolution. Not bad.
         ![](framework/img/workshop/not-fluid-1.png) <!-- .element: width="70%" -->
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Percentages and CSS3 Media Queries
 
         Smaller resolutions, not so good. The content gets cut off and you'll have to scroll horizontally to see the rest of the content.
         ![](framework/img/workshop/not-fluid-2.png) <!-- .element: width="475" -->
@@ -994,7 +1005,7 @@ selector { /* select the paragraph inside of the about element */
       </script>
     </section>
 
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown data-toc>
       <script type="text/template">
         #Common breakpoints
 
@@ -1013,7 +1024,7 @@ selector { /* select the paragraph inside of the about element */
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Exercise: Media Queries (15 mins)
+        #Exercise: Media Queries (~15 mins)
 
         Using the breakpoint guidelines and the first media query example, add two more media queries to target tablet and mobile.  
 
@@ -1059,9 +1070,9 @@ selector { /* select the paragraph inside of the about element */
       </script>
     </section>
     
-    <section class="slide title" data-markdown>
+    <section class="slide title" data-markdown data-toc>
       <script type="text/template">
-        #Intro to Responsive<br> Web Design
+        #Device Testing <br>& Exercises
         ##Part Two!
       </script>
     </section>
@@ -1095,7 +1106,7 @@ selector { /* select the paragraph inside of the about element */
       </script>
     </section>
     
-    <section class="slide no-bullet-list" data-markdown>
+    <section class="slide nested-list" data-markdown>
       <script type="text/template">
         #Don't Forget the Viewport Meta Tag!
 
@@ -1149,7 +1160,7 @@ selector { /* select the paragraph inside of the about element */
 
     <section class="slide list-sm" data-markdown>
       <script type="text/template">
-        #Exercise (20mins) - Updating the About section
+        #Exercise (~20mins) - Updating the About section
 
         Using the dev tools, we've determine where and what changes to make. Take this time to try the instructions below to add these updates to your project.  Work with a partner or with a mentor! 
 
@@ -1218,9 +1229,9 @@ selector { /* select the paragraph inside of the about element */
       </script>
     </section>
 
-    <section class="slide no-bullet-list" data-markdown>
+    <section class="slide nested-list" data-markdown>
       <script type="text/template">
-        #Exercise (20mins) - Updating Work Experience 
+        #Exercise (~20mins) - Updating Work Experience 
 
         After looking at the Work Experience section, we've determined where the changes need to be made. The below snippet is the base CSS.  
         
@@ -1303,7 +1314,7 @@ selector { /* select the paragraph inside of the about element */
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Exercise: Update the header (20mins)
+        #Exercise: Update the header (~20mins)
         
         Make these changes in the 600px media query.
         
@@ -1407,7 +1418,7 @@ selector { /* select the paragraph inside of the about element */
       </script>
     </section>
     
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown data-toc>
       <script type="text/template">
       #Additional Resources
 
