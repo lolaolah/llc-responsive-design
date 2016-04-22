@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Ladies Learning Code</title>
+  <link rel="stylesheet" href="framework/css/slideshow.css" data-noprefix>
+  <link rel="stylesheet" href="framework/css/fonts.css" data-noprefix>
+  <link rel="stylesheet" href="framework/css/highlightjs/github.css" data-noprefix>
+  <link rel="stylesheet" href="framework/css/styles.css" data-noprefix>
+  <link rel="shortcut icon" href="framework/img/favicon.ico">
+
+  <!-- Takes care of CSS3 prefixes -->
+  <script src="framework/scripts/prefixfree.min.js"></script>
+
+  <!-- opens all links in a new window -->
+  <base target="_blank">
+</head>
+
+<!-- Timer/progress bar: Define the presentation duration using "data-duration" in minutes. -->
+<body class="en" data-duration="360">
+  <main>
+    <section class="slide welcome highlight">
+      <h1><img class="logo-stacked" src="framework/img/llc-logo-stacked-white.png" alt="Ladies Learning Code logo">Welcome!</h1>
+
+      <div class="instructions">
+        <!-- ADD WIFI INFO HERE -->
+        <!-- <h2>Get <br>Connected</h2>
+        <p><strong>Wifi:</strong> wifi network</p>
+        <p><strong>Password:</strong> wifi password</p>
+        <hr> -->
+
+        <h2>Download<br> & Install</h2>
+        <ol class="downloads">
+          <li>Learner files (zip file): <a href="https://github.com/ladieslearningcode/llc-responsive-design/archive/master.zip">bit.ly/llc-responsive</a>
+            <ul>
+              <li>unzip the learner file (<em>extract all</em> if you’re on a PC)</li>
+              <li>open <strong>slides.html</strong> in the browser to view the slides</li>
+            </ul>
+          </li>
+          <li>Atom Text Editor: <a href="http://atom.io">atom.io</a></li>
+          <li>Chrome Browser: <a href="https://www.google.ca/chrome/browser/desktop/">google.ca/chrome</a></li>
+          </li>
+        </ol>
+      </div>
+      <footer>
+        <a class="left" rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.png" /></a>
+        <p class="left">Content created by <a href="https://twitter.com/agentemily">Emily Porta</a> and <a href="http://christinatruong.com">Christina Truong</a> for <a prefix="cc: http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
+        <p class="right">Use the left <span class="arrow">&#8592;</span> and right <span class="arrow">&#8594;</span> arrow keys to navigate</p>
+      </footer>
+    </section>
+
+    <section class="slide intro">
+      <img class="logo" src="framework/img/llc-logo-white.png" alt="Ladies Learning Code logo">
+      <h1 class="heading-bg">
+        <span>Intro to Responsive <br>Web Design</span>
+      </h1>
+
+      <!-- FILL IN INSTRUCTOR DETAILS -->
+      <!-- <img class="instructor" src="http://placehold.it/225x225" alt="Christina Truong">
+      <h2><span class="cursive">with</span> Instructor name</h2>
+      <ul>
+        <li><a href="mailto:">hello@email.com</a></li>
+        <li><a href="http://website.com">website.com</a></li>
+        <li><a href="http://twitter.com/">@twitter</a></li>
+      </ul> -->
+
+      <div class="sponsor">
+        <p>In partnership with<br> <img src="framework/img/telus-logo-white.svg" alt="Telus"></p>
+      </div>
+      <footer>
+        <a class="left" rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.png" /></a>
+        <p class="left">Content created by <a href="https://twitter.com/agentemily">Emily Porta</a> and <a href="http://christinatruong.com">Christina Truong</a> for <a prefix="cc: http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
+        <p class="right">Use the left <span class="arrow">&#8592;</span> and right <span class="arrow">&#8594;</span> arrow keys to navigate</p>
+      </footer>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Today's Project
+
+        For today's final project, we'll take an existing web page and optimize it for different screen sizes. Follow [this link](project/final.html) to see the whole project!
+
+        ![final project](framework/img/workshop/final-project.jpg)
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Course Outline
+
+        <div class="table-of-contents"></div>
+      </script>
+    </section>
+
+    <section class="slide" data-markdown data-toc>
+      <script type="text/template">
+      #Getting Set Up
+
+      **[Atom](https://atom.io/)** - a text editor with colour highlighting and other useful features.
+
+      If you are unable to install Atom, try installing: <!-- .element: class="note" -->[Notepad++](http://notepad-plus-plus.org/) (Windows), [Sublime Text](http://www.sublimetext.com) (Mac or Windows) or [Text Wrangler](http://www.barebones.com/products/textwrangler/download.html) (older Macs).
+
+      **[Google Chrome](https://www.google.com/intl/en-CA/chrome/browser/)** - Choose a modern web browser that supports current web standards and has good development tools.
+
+      To set Chrome as your default browser, follow<!-- .element: class="note" --> [these instructions](https://support.google.com/chrome/answer/95417?hl=en).
+
+      Firefox, Safari, and IE 10+ are great, but their dev tools are slightly different so stick to Chrome for this class please!
+
+      Visit <!-- .element: class="note" -->[browsehappy.com](http://browsehappy.com) for more info about modern browsers.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+      #Chrome Developer Tools
+
+      **Developer tools** can be used to *inspect* any web page and also includes a *mobile device emulator*. Access the tool in 2 ways:
+
+      * Right-click / two-finger tap on any web page. Select **Inspect**.
+      * keyboard shortcut: **Ctrl + Shift + I** (PC) / **Cmnd + Option + I** (Mac)
+
+      ![](framework/img/workshop/dev-tools-emulator.jpg)
+      Once open, click on the the phone icon to start the emulator. The icon will change to blue. Click it again to turn it off.
+
+      <!-- .element: class="note" --> **Pro tip!** Features are always being added/updated so make sure you're up to date by copying`chrome://chrome/` into your browser address bar.
+      </script>
+    </section>
+
+    <section class="slide title" data-markdown data-toc>
+      <script type="text/template">
+        #What is Responsive <br>Web Design?
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Different types of web design
+
+        In order to understand responsive web design and web development better, we have to understand what the options are:
+
+        Fixed/Static, Fluid/Liquid, Adaptive, Responsive
+
+        > Let's take a look at and discuss this example: http://www.liquidapsive.com/
+        >
+        > Make your browser window bigger and smaller.  How do the different designs styles change?
+
+        ---
+        ###Resources
+        * Read the [article](http://alistapart.com/article/responsive-web-design) that started the Responsive Design movement.
+        * [http://liquidapsive.com](http://liquidapsive.com/)
+        * [9 basic principles of responsive web design](http://blog.froont.com/9-basic-principles-of-responsive-web-design/)
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+      #Fixed Web Design
+
+      *   Everything has a set width (eg. 960px).
+      *   Popular method before mobile browsing became commonplace.
+      *   On a mobile screen, it is zoomed out to the size of the device making the content really small.
+      *   Needs a separate site, usually an "m dot" site, to make something mobile friendly :(
+
+      > Try opening these sites on your phone or resize the browser. What are the differences?
+      [m.facebook.com](https://m.facebook.com/), [facebook.com](https://facebook.com)
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Fluid web design
+
+        *   Based on percentage widths, each block of content takes up a percentage of the page. (e.g. a sidebar with a width of 30% and main section with a width of ~70%)
+        *   When you resize the browser, the blocks will resize *relative* to the size of the page (aka the "viewport").
+        *   Not optimized for smaller screens & mobile devices.
+
+        >Let's take a look at an example [here](http://alistapart.com/d/responsive-web-design/ex/ex-site-flexible.html).  Try making your browser window bigger and smaller.  What happens to the page layout?
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+      #Adaptive web design
+
+      *   Uses a series of fixed layouts.
+      *   Uses _media queries_ to target specific viewport sizes (more on this later).
+      *   The content itself changes.
+      *   Best to think of it as a _set_ of fixed layouts that are invoked in response to the device size.
+
+      >Let's take a look at an example [here](http://www.screamingfrog.co.uk/). Try making your browser window bigger and smaller. How is this different from the fluid layout?
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #And finally...responsive web design!
+
+        *   Uses a fluid grid layout.
+        *   Page components are **flexible** in between common device sizes.
+        *   _Also_ uses media queries to change the layout based on device size.
+        *   Designed with **breakpoints** to present content in the most suitable way for common device sizes.
+
+        > Let's compare the difference between a [fluid layout](http://alistapart.com/d/responsive-web-design/ex/ex-site-flexible.html) vs [fluid and responsive](http://alistapart.com/d/responsive-web-design/ex/ex-site-FINAL.html).
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+      #Mobile-first design
+
+      When responsive design was introduced, it was common to start with a desktop design, then make the design responsive for smaller screens.
+
+      This has changed with smartphones and tablets, giving rise to another approach, *mobile first design*:
+
+      *   design an experience for mobile devices first, then desktop
+      *   make mobile integral, not an afterthought
+      *   *graceful degradation* and *progressive enhancement*
+
+      ---
+      ###Resource
+      [Mobile First Design: Why It’s Great and Why It Sucks](http://designshack.net/articles/css/mobilefirst/)
+      </script>
+    </section>
+
+    <section class="slide title" data-markdown data-toc>
+      <script type="text/template">
+      <h1>HTML Overview</h1>
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #HTML (HyperText Markup Language)
+
+        * HTML is the language browsers read, HTML5 is the latest version
+        * used to wrap content to assign meaning to the web document
+        * use *tags* to create HTML *elements*
+
+        ```xml
+        <p>This is a paragraph.</p>
+        ```
+
+        Almost all elements have an "opening" tag and a "closing" tag. The closing tag has a forward slash (`/`).
+
+        Example:
+
+        ```xml
+        <p>Paragraph with a <a href="#">link</a>.</p>
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # HTML Elements
+
+        We'd be here all day if we had to go over every single HTML & HTML5 element - there are so many! So here's a [handy list](https://developer.mozilla.org/en/docs/Web/Guide/HTML/HTML5/HTML5_element_list) for reference.
+
+        More resources:
+
+        * [http://www.sitepoint.com/web-foundations/elements/](http://www.sitepoint.com/web-foundations/elements/)
+        * [http://websitesetup.org/html5-cheat-sheet/](http://websitesetup.org/html5-cheat-sheet/)
+        * [html-elements.txt](project/html-elements.txt), located in your **project** folder
+
+        Let's go over some commonly used tags.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Common HTML elements: title
+
+        * found in the `<head>` section of the HTML document
+        * defines the page title
+        * displays in the browser's tab, search engine results and bookmarks
+
+        ```xml
+        <head>
+          <title>Page Title</title>
+        </head>
+        ```
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Common HTML Element: Lists
+
+        There are two kinds of lists:
+
+        * ordered (`ol`) for numbered lists
+        * unordered (`ul`) for lists that don't require a specified order
+
+        Content must be included only within the list item (`li`).
+
+        ```xml
+        <ul>
+          <li>Unordered list item</li>
+          <li>Unordered list item</li>
+        </ul>
+
+        <ol>
+          <li>Ordered list item</li>
+          <li>Ordered list item</li>
+        </ol>
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Common HTML Elements: Headings & Paragraphs
+
+        ##Headings
+        There are 6 heading tags (`<h1>,<h2>,...,<h6>`) and they follow a hierarchical structure.
+
+        ```xml
+        <h1>Most Important Heading</h1>
+        <h2>Second Most Important Heading</h2>
+        ```
+
+        It's important to use the appropriate heading tag to describe the content, not for the default heading styles. That's what CSS is for!
+
+        ##Paragraphs
+
+        Created with the `<p></p>` tags.
+        ```xml
+        <p>I'm a paragraph.</p>
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #HTML with Attributes
+
+        There are some common HTML elements that require the addition of *attributes* to provide more information about the HTML element.
+
+        **Links** use an `<a>` tag and an `href` *attribute* to specify where to link to.
+        ```
+        <a href="http://website.com">link</a>
+        ```
+        **Images** use an `<img>` tag and the `src` attribute, to link to the image file. An `alt` attribute should also be added for accessiblity.
+        ```
+        <img src="path/to/image.jpg" alt="alternative text">
+        ```
+        Also note that the image tag has no closing tag.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #More Attributes
+
+        Here are two more attributes, mostly used for CSS styling.
+
+        **class** - can be used multiple times per page
+
+        ```xml
+        <div class="column">Class example</div>
+        ```
+
+        **id** - can be used for CSS styling, in-page links and only once per page
+
+        ```xml
+        <div id="about">About section</div>
+        ```
+
+        ---
+        ###Resource
+        [HTML attribute reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes) of all of them!
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Nested tags
+
+        When HTML tags are nested (written inside of other tags), whitespace is used to increase the readability of the code.
+
+        *Tab* once to show that an element is nested.
+
+        ```xml
+        <body>
+          <div>
+            <p>Paragraph 1.</p>
+            <p>Paragraph 2.</p>
+          </div>
+        </body>
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+      #HTML Relationships
+
+      Nested elements create relationships within the HTML document.  It follows a family tree-like structure with branches of descendants, siblings, parents and children.
+
+      ![](framework/img/workshop/dom-tree.png)
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Parent, Child, Siblings & Indentation
+
+        Using whitespace helps to show which element is a child, parent or sibling of its surrounding elements.
+
+        ```xml
+        <body> <!--this body element is a parent to the div element -->
+          <div> <!--this div is a child of the body element, and a parent of the p elements-->
+            <p>I am a sibling of the p below me! I am also a child of the div.</p>
+            <p>I am a sibling of the p above me! I am also a child of the div</p>
+          </div>
+        </body>
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #HTML Comments
+
+        HTML comments are useful for leaving notes for yourself (or others) but do not display in the browser. Comments are often used for:
+
+        * hiding code for later use
+        * leaving notes, reminders, explanations
+        * organizing the document
+
+        The syntax for comments start with `<!--` and ends with `-->`.
+
+        ```
+        <!-- Comments should ALWAYS be included between the dashes. -->
+        ```
+      </script>
+    </section>
+
+
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #Enough talk, let's code!
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+      #Open the project files
+
+      Inside of the folder you downloaded today, open the **project** folder in your text editor to edit your project.
+
+      ```
+      llc-responsive-design-master
+        |-- framework // Contains files needed for slide presentation. Do not edit!
+        |-- project // Contains the exercise files for this workshop. (images, CSS & HTML files)
+        |-- slides.html // This is the file you are viewing right now!
+      ```
+
+      Go to **File** > ** Add Project Folder**. A popup will appear.
+
+      ![](framework/img/workshop/editor-add-project-1.jpg)
+
+      Then, navigate to the **llc-responsive-design-master** folder, select the **project** and click **Open**.
+
+      ![](framework/img/workshop/editor-add-project-2.jpg)
+
+      The folder and included files will appear in the text editor's side bar. Double click on **index.html** to open it.
+
+      ![](framework/img/workshop/editor-add-project-3.jpg)
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Getting to know Atom
+
+        Having a good text editor and learning how to use it to its full potential will help your work flow. Today, let's update the text wrapping option to make it easier to read long blocks of code and text.
+
+        Go to **Preferences** to open the customization options.
+
+        ![](framework/img/workshop/atom-preferences.jpg)<!-- .element: width="70%" -->
+
+        The **Settings** tab will show by default. Scroll down to **Soft Wrap** option.
+
+        ![](framework/img/workshop/atom-settings.jpg)<!-- .element: width="70%" -->
+
+        Make sure the **Soft Wrap** option is checked.
+
+        ![](framework/img/workshop/atom-soft-wrap.jpg)<!-- .element: width="70%" -->
+
+        ---
+        ###Resources
+
+        *   [Atom documentation](https://atom.io/docs)
+        *   [Atom Shortcuts cheat sheet](https://bugsnag.com/blog/atom-editor-cheat-sheet)
+        *   [Customizing Atom](https://atom.io/docs/v0.61.0/customizing-atom)
+        *   [Themes](https://atom.io/themes) for Atom
+        *   [Snippets](https://github.com/atom/snippets) - create your own code snippet shortcuts
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+      # Exercise: Update the content (~15mins)
+
+      We’re still focusing on the HTML so don’t worry about how it looks just yet. Take this time to personalize your content. Some suggestions are:
+
+      *   Header section: name & tagline
+      *   About Me / Profile blurb & image
+      *   Work Experience
+
+      **Important!** Avoid changing the existing HTML tags since there will be existing CSS applied to it. But feel free to add/remove non-structural elements like paragraphs, link and images. Ask your mentors if you're not sure!
+      </script>
+    </section>
+
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        <h1>Hello CSS!</h1>
+      </script>
+    </section>
+
+    <section class="slide" data-markdown data-toc>
+      <script type="text/template">
+      #CSS Overview
+
+      CSS (Cascading Style Sheet) is used to style the HTML elements.
+
+      A CSS document is made up of many style rules that reference the HTML. These rules include a **selector** and **property: value** pairs.
+
+      ```css
+      selector {
+        property: value;
+      }
+      ```
+
+      The **selector** specifies which element(s) to apply the styling to. The **property: value** pairs contain what styles to apply.
+
+      ```css
+      h1 {
+        color: red;
+      }
+      ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #CSS Syntax
+
+        ```
+        /* This is a CSS comment by the way */
+        div {
+          border: 3px solid #333;
+          background-color: lightblue;
+        }
+        ```
+
+        * property & values are separated by a _colon_
+        * each declaration ends in a _semi-colon_
+        * write each declaration on its own line to make it easier to read
+        * there are MANY CSS properties, see resource below
+
+        ---
+        ###Resource
+        [Mozilla Developer Network: CSS Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Practice writing some CSS
+
+        Try changing the color value below and increase/decrease the padding values and see what happens!
+
+        <textarea class="snippet" data-subject="#css-practice">color: slateblue;
+        padding: 10px 15px 80px 60px;</textarea>
+
+        <div id="css-practice" class="example">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt sint beatae dolor dolorum aliquid quis explicabo vitae numquam.
+        </div>
+      </script>
+    </section>
+
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #CSS Selectors
+        ##Applying styles to HTML
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Type & Descendant Selectors
+
+        **Type selectors** select HTML elements by using the tag name.
+
+        ```css
+        p {
+          /* styles for all paragraphs on the page*/
+        }
+        a {
+          /* styles for all links on the page*/
+        }
+        ```
+
+        **Descendant selectors** target any child/descendant elements.  Note the space *in between* the element names.
+
+        ```css
+        section p {
+          /* all paragraphs that are descendants of any section tag */
+        }
+
+        ul li a {
+          /* links inside of list items, inside of unordered lists. */
+        }
+        ```
+      </script>
+    </section>
+
+    <section class="slide">
+      <!-- <script type="text/template"> -->
+        <h1>Practice Selecting an element (type selector)</h1>
+        <p>Using the HTML example below, change the “selector” to apply the instructions in the comments.</p>
+<pre><code>&lt;p&gt;This is a paragraph&lt;/p&gt;
+&lt;a href="#"&gt;This is a link&lt;/a&gt;
+</code></pre>
+<textarea class="snippet" data-subject="#css-selectors">selector { /* select the paragraph */
+  color: red;
+}
+selector { /* select the link */
+  color: blue;
+}</textarea>
+        <div id="css-selectors" class="example">
+          <p>This is a paragraph</p>
+          <a>This is a link</a>
+        </div>
+      <!-- </script> -->
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+      #Class attribute & selector
+
+      Classes are used mostly for CSS styles and can be used one or more times on the same page.  The value of the class is named by you!
+
+      To use it, add it in the *opening* HTML tag. You can have more than one class for the same element.
+
+      ```xml
+      <div class="wrapper">
+        content here
+      </div>
+      ```
+
+      In the CSS, a class selector starts with a leading period.
+
+      ```
+      .wrapper {
+        width: 1000px;
+      }
+      ```
+      </script>
+    </section>
+
+    <section class="slide">
+      <!-- <script type="text/template"> -->
+        <h1>More Selector Practice</h1>
+        <p>Using the sample HTML below, try updating the CSS selectors.</p>
+
+<pre><code>&lt;section class=&quot;about&quot;&gt;
+  &lt;a href=&quot;#&quot;&gt;This is a link&lt;/a&gt;
+  &lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+
+<div id="css-classes" class="example">
+  <section class="about">
+    <a href="#">This is a link</a>
+    <p>This is a paragraph.</p>
+  </section>
+</div>
+
+<textarea class="snippet" data-subject="#css-classes">selector { /* select the about class */
+  padding: 20px;
+}
+selector { /* select the paragraph inside of the about element */
+  color: blue;
+}</textarea>
+      <!-- </script> -->
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Combining selectors
+        Sometimes you'll have several elements that share the same styles. *Combine* the selectors to target them all at once.
+
+        ```css
+        h2, h3, h4 {
+          font-family: "Open Sans", sans-serif;
+          font-weight: 400;
+          margin: 0;
+        }
+        h2, h3 {
+          text-transform: uppercase;
+        }
+        h2 {
+          font-size: 32px;
+        }
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Exercice en classe: Référencer le CSS
+
+        Retournez à votre éditeur de texte et vérifiez que **index.html** soit ouvert. On va lier le fichier existant CSS, **styles.css**, et voir ce qui se passe!
+
+        Utilisez la balise `<link>` pour référencer le fichier.
+        <br><span class="note">**Conseil de pro!** Pour un raccourci clavier, tapez "link" + la touche 'tab'. Et voilà!</span>
+
+        ```
+        <link rel="stylesheet" href="css/styles.css">
+        ```
+
+
+        > Les styles sont là mais essayez de redimensionner le navigateur. Qu'est-ce qui se passe?
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Exercice en classe: Changez l'image de fond
+
+        Vous pouvez en choisir une parmi celles dans le dossier **images**. Elles commencent toutes avec le préfixe "background-".
+
+        Cherchez le sélecteur `body, vers le haut du fichier **styles.css** et changez le nom du fichier de l'image.
+
+        ```
+        body {
+          ...
+          background: url(../images/background-4.jpg) no-repeat fixed;
+          ...
+        }
+        ```
+
+      </script>
+    </section>
+
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Succession CSS
+
+        Dans **styles.css**, le sélecteur `body` contient aussi une propriété `font-family`.
+
+        ```css
+        body {
+          font-family: "Merriweather", serif;
+        }
+        ```
+        Pourquoi le déclare t-on ici?
+
+        En CSS, plusieurs styles sont hérités des éléments parents.
+
+        Les éléments imbriqués vont hériter les styles, ce qui est plus efficace que de répéter les styles pour les éléments individuels.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Déroulement (cascading) & Specificité
+
+        Le navigateur lit les règles CSS de haut en bas, donc le sélecteur le plus récent l'emportera sur le sélecteur qui l'a précédé. Veillez à ne pas utiliser de sélecteurs doubles!
+
+        ```css
+        h2 {
+          margin: 0;
+        }
+        h2 {
+          margin: 20px; /* ce style sera appliqué */
+        }
+        ```
+        Par contre, si le sélecteur est plus *specifique*, cette règle s'appliquera même si ce n'est pas la règle la plus récente.
+
+        ```css
+        section h2 {
+          margin: 20px; /* ce style s'appliquera au h2 dans un ""élément de section" */
+        }
+        h2 {
+          margin: 0;
+        }
+        ```
+
+        ---
+        ###Ressources
+        * https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity
+        * http://www.sitepoint.com/web-foundations/specificity/
+      </script>
+    </section>
+
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+      # Ok, faisons quelque chose d'adaptive maintenant!
+      </script>
+    </section>
+
+    <section class="slide" data-markdown data-toc>
+      <script type="text/template">
+        #Pourcentages et les CSS3 Media Queries
+
+        Une disposition fluide qui utilise des pourcentages + media queries = design responsive
+
+        Un projet à largeur fixe ressemble à ceci quand on augmente la résolution. Pas mal.
+        ![](framework/img/workshop/not-fluid-1.png) <!-- .element: width="70%" -->
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Pourcentages et CSS3 Media Queries
+
+        Les résolutions plus petites, pas si bon. Le contenu est coupé et il faut défiler horizontalement pour voir le reste du contenu.
+        ![](framework/img/workshop/not-fluid-2.png) <!-- .element: width="475" -->
+
+        Sur le téléphone, c'est encore pire! (Capture d'écran de l'outil dév émulateur Chrome - on en reparlera sous peu.) Ça affiche un zoom arrière pour figurer dans la taille d'écran de l'appareil mobile donc tout a l'air petit.
+
+        ![](framework/img/workshop/not-fluid-3.png)<!-- .element: width="350" -->
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Exercise en classe: Pourcentages d'abord, puis ensuite les media queries
+
+        Dans **styles.css**, cherchez ce bloc de code. Remarquez que la largeur est réglée à une largeur fixe de 1000px.  Cela veut dire que dans toutes les conditions, ce conteneur sera toujours de 1000px.
+
+        ```css
+        .content-wrap {
+          width: 1000px;
+          margin: 0 auto;
+          padding: 90px 0;
+        }
+        ```
+
+        <!-- .element: class="note" -->**Conseil de pro!** Dans Atom, selectionnez **Find > Find in Buffer**  OU ctrl/cmnd + F &mdash; ceci ouvrira une barre en bas de l'écran.  Tapez-y **.content-wrap** et sélectionnez **Find**.  C'est une façon plus facile de chercher des extraits de code.
+
+        Changeons-le à `max-width: 1000px;` et ajoutons aussi `width: 80%;` regardons comme ça change la page.
+      </script>
+    </section>
+
+    <section class="slide side-by-side" data-markdown>
+      <script type="text/template">
+        #"Fluid" n'est pas la même chose que "responsive"
+
+        Ça marche beaucoup mieux maintenant. Le contenu est adapté relativement à la taille du navigateur.
+
+        Mais ce n'est pas encore *responsive*.
+
+        Pour les petites tailles d'écran, on peut vouloir faire des changements autre que de simplement augmenter/diminuer la largeur des éléments de la page. Pour faire ce genre de changements, il faut utiliser des techniques responsive et des media queries.
+      </script>
+    </section>
+
+    <section class="slide side-by-side" data-markdown>
+      <script type="text/template">
+        #Changements "Responsive"
+
+        ![](framework/img/workshop/profile-left.png)
+        ![](framework/img/workshop/profile-right.png)
+
+        Voici un exemple d'un changement "responsive", parce que l'image *change* de taille et de position (de gauche à droite). Regardons comment on peut cibler des tailles d'écran différents avec des media queries, pour faire ce genre de changement.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Media Queries
+
+        Les media queries sont la clef pour faire un site web "responsive", parce que qu'ils vous permettent d'ajouter du CSS à votre document *seulement* quand l'écran a atteint une grandeur spécifique.
+
+        Regardons de plus près un media query de base.
+
+        ```css
+        @media (max-width: 940px) {
+          body {
+            background: red;
+          }
+        }
+        ```
+        Ici on cible tous les [types de media](https://developer.mozilla.org/en-US/docs/Web/CSS/@media), ainsi que le max-width de 940px. Tout ce qui est *égal à* ou *moins de* 940px de largeur appliquera cette CSS.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Media Queries
+
+        Vous pouvez avoir de multiples blocs de déclaration CSS en un media query.
+
+        ```css
+        @media (max-width: 940px) {
+          body {
+            background: red;
+          }
+          h2 {
+            font-size: 20px;
+          }
+        }
+        ```
+
+        Prenez note de comment la CSS est imbriquée dans les parenthèses accolades du media query `{ }`.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+      #Media Queries
+
+      Vous pouvez aussi utiliser `min-width` dans les media queries.
+
+      ```css
+      @media (max-width: 940px) {
+        /* any screen 940px and below */
+      }
+      @media (min-width: 941px) {
+        /* any screen 941px and above */
+      }
+      ```
+      >Pourquoi pensez-vous que 941px a été utilisé pour min-width au lieu de 940px dans l'example ci-dessus?
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Media Queries
+
+        Vous pouvez aussi spécifier une étendue de grandeurs en combinant `min-width` et `max-width`.
+
+        ```css
+        @media (min-width: 768px) and (max-width: 940px) {
+          ...
+        }
+        ```
+
+        Ceci s'appliquera seulement quand la largeur du navigateur est:
+
+        *  plus grande ou égale à 768px
+        *  plus petite ou égale à 940px
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Media Queries et Hauteurs
+
+        Les hauteurs de clôture peuvent être ciblées en utilisant `min-height` ou `max-height`.
+
+        ```css
+        @media (min-height: 568px) {
+          /* anything as high or higher than the iPhone 5 */
+        }
+        ```
+
+        **Note**: Les media queries qui visent la hauteur peuvent être difficiles. Par exemple, les barres de navigateur peuvent prendre des hauteurs différentes, et la plupart du temps vous voulez que votre contenu flotte aussi longtemps que nécessaire.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+      #Tester les Media Queries
+
+      En ajoutant un changement perceptible à chaque media query on peut facilement voir où sont les "breakpoints" (points de rupture). Comme ceci:
+
+      ```css
+      @media (max-width: 1000px) {
+        body {
+          background-color: lightblue;
+        }
+      }
+      ```
+
+      Toutefois, dans notre projet d'aujourd'hui, il y une image en guise de fond, donc dans cet exemple particulier, ce style ne sera pas facile à voir.  Changeons la couleur de police au lieu.
+
+    </script>
+  </section>
+
+  <section class="slide" data-markdown>
+    <script type="text/template">
+      #Exercise en classe: Les Media Queries!
+
+      Où dans votre feuille de style devez-vous ajouter les media queries?
+
+      Quelques options seraient de créer une feuille de style séparée seulement pour les media queries, ou de la grouper avec la section CSS à laquelle elle s'applique.
+
+      Une autre option serait de regrouper tous les media queries ensemble à la fin de la feuille de style. Procédons de cette façon aujourd'hui pour être cohérant.
+
+      ```css
+      @media (max-width: 1000px) {
+        body {
+          color: lightblue;
+        }
+      }
+      ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown data-toc>
+      <script type="text/template">
+        #Breakpoints courants
+
+        C'est difficile de cibler un appareil spécifique parce qu'il y en a tellement. Voici des directives générales à suivre:
+
+        <ul>
+          <li>320px — Mobile - portrait</li>
+        <li>480px — Mobile - paysage</li>
+        <li>600px — Petite tablette</li>
+        <li>768px — Tablette - portrait</li>
+        <li>940px - 1024px — Tablette paysage, petit ordinateur</li>
+        <li>1280px & plus grand — Ordinateur
+      </ul>
+        <!-- .element: class="note" -->**Conseils de pro!** Utilisez de la CSS fluide autant que possible, et ajoutez un breakpoint (point de rupture) quand le design casse ou n'est plus approprié pour cette fenêtre. De même, veillez à ne pas utiliser trop de breakpoints. Si vous avez deux media queries de taille similaire, essayez de bouger les styles à l'un ou l'autre.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Exercice: Media Queries (~15 mns)
+
+        En vous référant aux directives de breakpoint et au premier exemple de media query, ajoutez deux autres media queries pour cibler les tablettes et les applications mobiles.
+
+        N'oubliez pas de les tester en redimensionnant la fenêtre du navigateur!
+
+        (Regardez la prochaine diapo pour la réponse, mais seulement si vous êtes vraiment bloquées!)<!-- .element: class="note" -->
+
+        **Exercice bonus**:
+        Changez votre couleur d'accent! En utilisant les outils dév Chrome, *inspectez* un élément qui a une couleur (par exemple, le fond "Hello" ou un lien) pour voir si vous pouvez trouver d'où vient la couleur bleu CSS et la changer à la couleur de votre choix.
+
+        ---
+        ###Ressource
+        * http://colours.neilorangepeel.com/
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Solution de l'exercice & révision
+
+        ```css
+        /* MEDIA QUERIES
+        --------------------*/
+        @media (max-width: 1000px) {
+          body {
+            color: lightblue;
+          }
+        }
+        @media (max-width: 800px) {
+          body {
+            color: blue;
+          }
+        }
+        @media (max-width: 600px) {
+          body {
+            color: red;
+          }
+        }
+        ```
+        > Quels breakpoints avez-vous choisis et pourquoi?
+
+        Vous trouverez peut-être que vous devrez ajuster la taille des breakpoints quand vous commencerez à faire des changements au design et disposition de votre page.
+      </script>
+    </section>
+
+    <section class="slide title" data-markdown data-toc>
+      <script type="text/template">
+        #Testing d'applications <br>& Exercices
+        ##Deuxième Partie!
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Testing: Mode Application mobile
+
+        Regardons de quoi à l'air notre projet sur une application mobile.
+
+        *   cliquez à droite n'importe où dans le viewport (fenêtre d'affichage) du navigateur & sélectionnez **Inspect**
+        *   cliquez l'icône téléphone pour démarrer l'émulateur (l'icône sera bleu)
+        *   cliquez-le de nouveau pour le fermer
+        *   rafraîchissez le navigateur
+
+        ![](framework/img/workshop/dev-tools-emulator.jpg)
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Testing: Mode Appareil ou "Device Mode"
+
+        Pourquoi ça ressemble à une plus petite version du site pour ordinateur?
+
+        ![](framework/img/workshop/emulator-test-1.png)
+
+        ---
+        ###Resource
+        Plus sur le Device Mode de Chrome DevTools [ici](https://developers.google.com/web/tools/chrome-devtools/iterate/device-mode/).
+      </script>
+    </section>
+
+    <section class="slide nested-list" data-markdown>
+      <script type="text/template">
+        #N'oubliez pas la balise meta viewport!
+
+        La balise `<meta>` viewport **doit** être incluse dans le `<head>` de votre document HTML pour s'assurer que la page réagit sur les appareils mobiles.
+
+        ```xml
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        ```
+
+        * Regardons les valeurs de la balise <meta> une à une:
+          * `name="viewport"` - information sur le dimensionnement du viewport
+          * `content` - donne de l'info sur comment dimensionner le viewport
+          * `width=device-width` - dit au navigateur d'être aussi large que l'appareil
+          * `initial-scale` - la valeur à laquelle le site est agrandi ou réduit par défaut
+
+        >Maintenant ajoutons-la à notre projet et voyons comment la disposition change dans l'émulateur Chrome.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+      # Qu'est-ce qu'on peut améliorer?
+
+      Voici des choses à prendre en note quand vous optimisez votre design et mise-en-page pour des écrans différents.
+
+      *   cacher des éléments pour des écrans de tailles différentes <!-- .element: class="delayed" --><br><span class="note">(à utiliser de façon modérée; si vous cachez beaucoup de contenu, en avez-vous même besoin?)</span>
+      *   marge, remplissage et dimensionnement de texte <!-- .element: class="delayed" -->
+      *   taille de l'image et positionnement <!-- .element: class="delayed" -->
+      *   les effets "hover" ne marchent pas sur mobile  <!-- .element: class="delayed" -->
+      *   espacement, espace, alignement des éléments <!-- .element: class="delayed" -->
+      </script>
+    </section>
+
+    <section class="slide profile-img" data-markdown>
+      <script type="text/template">
+        #Exercice en classe
+
+        Essayons de comprendre quelles étapes sont nécessaires pour optimiser notre section About ("à propos"):
+
+        <img src="framework/img/workshop/profile-right.png">
+
+        1. choisissez un breakpoint où vous voulez faire ce changement
+        1. bouger l'image à droite
+        1. ajustez la largeur de l'image et de la zone du contenu
+
+        On peut y parvenir en changeant la CSS actuelle. Pour cela il faudra utiliser le même sélecteur ou un sélecteur qui est plus spécifique.
+
+        > Utilisons les outils Chrome dév pour inspecter notre page projet et déterminer quel sélecteur utiliser, et ensuite tester des styles, au lieu de simplement regarder le fichier CSS.
+        </script>
+      </section>
+
+    <section class="slide list-sm" data-markdown>
+      <script type="text/template">
+        #Exercice (~20mn) - Mise-à-jour de la section "About"
+
+        En utilisant les outils dév, nous avons déterminé quels changements à apporter et où. Prenez un moment pour suivre les instructions ci-dessous pour ajouter ces mises-à-jour à votre projet.  Travaillez avec une partenaire ou avec un/e mentor/e!
+
+        1. Ajoutez un media query avec un breakpoint d'environ 768px - 900px
+        1. Pour `.profile-image`, voici les valeurs qui doivent changer:
+        ```
+        float: left;
+        width: 27%;
+        margin-right: 3%;
+        ```
+          * ajustez ces valeurs pour le faire flotter à droite
+          * augmentez la largeur de `.profile-image`
+        1. Pour `.profile .summary`, voici les valeurs qui doivent changer:
+        ```
+        float: left;
+        width: 70%;
+        ```
+          * ajustez ces valeurs pour refléter les changements de largeur dans l'image de profil
+          * enlevez le float pour que le texte coule autour de l'image
+
+        ##Indices:
+        * veillez à ce que le total des pourcentages de largeur égalent 100%, y compris la marge!
+        * utilisez la valeur de `none` pour réinitialiser un float
+        * une solution modèle se trouve sur la diapo suivante
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Solution à l'exercice & révision
+
+        Vos valeurs de largeur peuvent varier dépendant de vos préférences de design.
+
+        ```
+        @media (max-width: 800px) {
+          /* ceci est ici seulement pour faire du testing */
+          body {
+            color: blue;
+          }
+
+          /* section About */
+          .profile-image {
+            width: 48%;
+            float: right;
+            margin: 0 0 15px 2%;
+          }
+          .profile .summary {
+            width: auto; /* réinitialise le réglage de largeur */
+            /* on peut aussi utiliser width: 50% - si vous ne voulez pas que le texte coule */
+            float: none; /* enlève le float */
+          }
+        }
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+      #Quoi d'autre pouvons-nous changer?
+
+      À une plus petite résolution, la section **Work Experience** commence à avoir l'air écrasé. Retournons aux outils dév Chrome pour voir quoi ajuster ici.
+
+      Peut-être que transformer la section en deux colonnes, côte à côte, et empiler le contenu l'un dessus l'autre fera l'affaire. Essayons-le!
+
+      Conseil: faire des changements "responsive" demande beaucoup de fignolement, de testing et d'inspection d'éléments.  Soyez préparées à faire beaucoup d'expérimentation!
+      </script>
+    </section>
+
+    <section class="slide nested-list" data-markdown>
+      <script type="text/template">
+        #Exercice (~20mn) - Mise-à jour de Work Experience
+
+        Après avoir regardé la section Work Experience, nous avons déterminé où il fallait faire les changements. L'extrait de code ci-dessous est la CSS de base.
+
+        ```css
+        .work-experience .details {
+          float: left;
+          width: 30%;
+          padding-right: 30px;
+        }
+        .work-experience .description {
+          font-size: 14px;
+          width: 70%;
+          float: right;
+          margin-top: 5px;
+        }
+        ```
+
+        * pour vous débarasser des deux colonnes qui flottent, essayez d'ajouter ces styles:
+          * réinitialisez le float (indice: utilisez `none`)
+          * ajustez la largeur pour couvrir l'étendue de la page
+          * enlevez/mettez à jour n'importe quel remplissage et marge qui vous plaît
+
+
+        <!-- .element: class="note" -->**Conseil de pro!** Utilisez seulement les propriétés qui doivent être changées. Par exemple, si la taille de police n'a pas besoin d'être changé, pas besoin de l'ajouter au media query.
+
+        Solution au CSS sur la prochaine diapo, mais essayez de ne pas y jeter un coup d'oeil!
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+      #Solution à l'exercice & révision
+
+      Repassons la solution de l'exercice de la diapo précédente.
+
+      Ceci pourrait être inclu dans soit le media query de 600px ou dans celui de 800px, dépendant de votre préférence de design.
+
+      ```css
+      .work-experience .details {
+        float: none; /* le float a été enlevé */
+        width: 100%; /* auto marcherait aussi */
+        padding-right: 0px; /* plus besoin de remplissage maintenant que ça couvre l'étendue de la page */
+      }
+      .work-experience .description {
+        width: 100%;
+        float: none; /* le float a été enlevé */
+      }
+      ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Typographie
+
+        Nous pourrions avoir une classe entière sur la typographie pour le web! Mais voici quelques propriétés CSS relatives aux styles et à l'espacement du texte pour aider à rendre votre page plus facile à lire.
+
+        Essayez de changer les valeurs et voyez comment cette diapo change!
+
+        <textarea class="snippet">margin: 0;
+        padding: 45px 64px;
+        line-height: 1.4;
+        font-size: 32px;</textarea>
+      </script>
+    </section>
+
+    <section class="slide header-tablet" data-markdown>
+      <script type="text/template">
+        #Mise-à-jour du header
+
+        ![](framework/img/workshop/header-tablet.png)
+
+        À une résolution d'environ 600px, la zone du header devient difficile à lire et peut prendre beaucoup d'espace pour un écran plus petit.
+
+        Celà devrait être mis à jour pour mieux utiliser l'espace à cette résolution.
+
+        Des choses qui pourraient être mises à jour sont le `padding` dans la balise `header` et le `font-size` du `h1` et `h2` dans le header.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Exercice: Mise-à-jour du header (~20mn)
+
+        Faites ces changements dans le media query 600px.
+
+        1. Réduisez le remplissage dans le `header`.
+        1. Changez le font-size du h1 et h2 MAIS vérifier à ne cibler que les headings *nested* dans la balise `header`.
+
+        **Indice!** Utilisez un sélecteur descendant.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Solution à l'exercice & révision
+
+        ```css
+        @media (max-width: 600px) {
+          /* ceci est ici seulement pour faire du testing */
+          body {
+            color: red;
+          }
+
+          header {
+            padding: 75px 40px;
+          }
+          header h1 {
+            font-size: 45px;
+          }
+          header h2 {
+            font-size: 24px;
+          }
+        }
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Cacher les éléments
+
+        Voici comment le faire, mais n'en faites pas une habitude.
+
+        C'est pratique, mais le navigateur a quand même besoin de charger ce code, ce qui ralentit votre site.
+
+        ```css
+        @media (max-width: somewidthpx) {
+          selector {
+            display: none;
+          }
+        }
+        ```
+
+        Utilisez-le de manière modérée!
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #min-width
+
+        Jusqu'à présent on a utilisé `max-width` pour déclarer nos media queries et par la suite prévaler sur quelques uns des styles, quand les tailles d'écran deviennent plus petites.
+
+        Une autre technique serait d'utiliser min-width et max-width pour spécifier des styles pour des écrans différents.
+
+        ```
+        @media (min-width: 601px) {
+          header h1 {
+            font-size: 60px;
+          }
+        }
+        @media (max-width: 600px) {
+          header h1 {
+            font-size: 45px;
+          }
+        }
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+      #Conseils & Recommandations pour RWD ("Responsive web design")
+
+      Le "Responsive web design" est un procès itératif. Les sites web ne sont jamais "finis", même les meilleurs peuvent être améliorés. Ne vous découragez pas!
+
+      *   Essayez d'éviter les éléments fixes & les effets hover comme éléments essentiels à la fonctionnalité de votre site.
+      *   Pensez à **COMMENT** votre utilisateur se servira de votre site: les interactions mobiles sont différentes!
+      *   Gardez le tout simple! moins de mots, et utilisez de l'espace blanc.
+      *   Rapellez-vous que votre site n'aura jamais l'air précis au pixel sur 100% des tailles de fenêtre d'écran.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Et ensuite?
+
+        Il y a d'autres changements que vous pouvez faire pour ajouter à la finesse de votre page. Regardez **final.html** & **final.css** pour prendre des idées!
+
+        Expérimentez, parlez à vos mentors/es et amusez-vous!
+
+        Voyez la prochaine diapositive pour plus de ressources.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown data-toc>
+      <script type="text/template">
+      #Ressources Supplémentaires
+
+      * [Learn to Code Advanced HTML & CSS](http://learn.shayhowe.com/advanced-html-css/)
+      * [Mobile First](http://www.lukew.com/resources/mobile_first.asp) par Luke Wroblewski
+      * [Ressources Responsive](http://bradfrost.github.io/this-is-responsive/resources.html)
+      * [mediaqueri.es/](http://mediaqueri.es/) - collection de sites web responsive
+      * http://responsivenavigation.net/ - exemples de navigations responsive
+      * [Google: The New Multi-Screen World](https://www.thinkwithgoogle.com/research-studies/the-new-multi-screen-world-study.html)
+      * Explorez d'autres ateliers Ladies Learning Code en suivant notre feuille de route: [Roadmap](http://ladieslearningcode.com/roadmap/).
+
+      </script>
+    </section>
+
+    <section class="slide small-type" data-markdown>
+      <script type="text/template">
+      #Mettre votre site en ligne
+
+      Vous devez enregistrer un nom de domaine et acheter un hébergement web. Voici des suggestions:
+
+      * [dreamhost.com](http://www.dreamhost.com/r.cgi?2085384) - domaines et hébergement - utilisez le code promo **LLC40** pour bénéficier de moins $40 sur votre enregistrement!
+      * [hover.com](http://hover.com/ladiescode) - domaines - épargnez 10% avec le code promo "learningcode"
+
+      Pourquoi garder vos domaines et hébergement séparés?<!-- .element: class="note" --> [Apprenez plus sur Hover](http://ladieslearningcode.com/getting-hosted-domains-with-hover/).
+
+      Vous devriez aussi télécharger vos fichiers vers votre compte d'hébergement. Vous aurez besoin d'info qui sont généralement fournis par votre hébergeur internet: Adresse FTP, nom d'utilisateur, mot de passe.
+
+      Voici un tutoriel pour mettre vos fichiers en ligne avec FileZilla: [FileZilla Client Tutorial](https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_%28en%29)
+      </script>
+    </section>
+
+    <!-- Last slide -->
+    <section class="slide last">
+      <h1>Merci!</h1>
+      <h2 class="heading-bg">
+        <span>Introduction au Web Responsive</span>
+      </h2>
+
+      <!-- instructor info -->
+      <!-- <img class="instructor" src="http://cl.ly/image/0r3Q3H110G36/profile-generic.jpg" alt="instructor name">
+      <h2><span class="cursive">with</span> Instructor Name</h2>
+      <ul>
+        <li><a href="mailto:">hello@email.com</a></li>
+        <li><a href="#">mywebsite.com</a></li>
+        <li><a href="http://twitter.com/">@twitter</a></li>
+      </ul> -->
+
+      <p class="attribution">Présentation de diapositives créée par <a href="http://christinatruong.com">Christina Truong</a> et basé sur <a href="https://github.com/LeaVerou/csss"> le diaporama de Lea Verou</a> et <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
+    </section>
+
+  </main><!-- cls main section -->
+
+  <script src="framework/scripts/jquery-1.11.0.min.js"></script>
+  <script src="framework/scripts/slideshow.js"></script>
+
+  <!-- Uncomment the plugins you need -->
+  <script src="framework/scripts/plugins/css-edit.js"></script>
+  <script src="framework/scripts/plugins/css-snippets.js"></script>
+  <script src="framework/scripts/plugins/css-controls.js"></script>
+  <!-- <script src="plugins/code-highlight.js"></script>-->
+
+  <script src="framework/scripts/plugins/markdown/marked.js"></script>
+  <script src="framework/scripts/plugins/markdown/markdown.js"></script>
+  <script src="framework/scripts/plugins/highlight/highlight-8.4.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script src="framework/scripts/llc.js"></script>
+  <script>
+    var slideshow = new SlideShow();
+
+    // Grabs all the .snippet elements
+    var snippets = document.querySelectorAll('.snippet');
+    for(var i=0; i<snippets.length; i++) {
+      new CSSSnippet(snippets[i]);
+    }
+  </script>
+</body>
+</html>
